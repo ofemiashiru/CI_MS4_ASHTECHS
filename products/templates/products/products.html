@@ -13,7 +13,10 @@
     <div class="container">
         <div class="row">
             <div class="col text-white">
-            {{ products }}
+            {% for product in products %}
+                <p>{{ product.description }}</p>
+                <img alt="{{ product.name }}" scr="{{ product.image }}" >
+            {% endfor %}
             </div>
         </div>
     </div>
