@@ -1,6 +1,10 @@
 :root{
     --white: #FFFFFF;
-    --black: #000000;
+    --black: #0C1120;
+    --grey: #DFE0E0;
+    --navy-blue: #2C4D90;
+    --light-blue: #3282E0;
+
 }
 
 html {
@@ -12,28 +16,27 @@ html {
 }
 
 body {
-    background: url('') no-repeat center center fixed;
+    background: url('/media/main_header_image.webp') no-repeat center 150px fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: var(--black);
     font-family: 'Roboto', sans-serif;
 }
 
-/* from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-.logo-font {
-    text-transform: uppercase;
+.logo-font span {
+    font-family: 'Pacifico', sans-serif;
 }
 
 .main-logo-link {
     width: fit-content;
+}
+
+.free-shipping-banner{
+    
+}
+
+.header-container {
+    padding-top: 164px;
 }
 
 .pb-btn {
@@ -53,28 +56,87 @@ body {
     background: var(--white);
 }
 
+.grey-back-g{
+    background: var(--grey);
+}
+
+.navy-blue-back-g{
+    background: var(--navy-blue);
+}
+
+.light-blue-back-g{
+    background: var(--light-blue);
+}
+
+
 .thick-text{
     font-weight: 500;
 }
 
 .text-black {
-    color: #000 !important;
+    color: var(--black) !important;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-navy-blue{
+    color: var(--navy-blue); 
 }
 
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid var(--black) !important;
 }
 
-/* -------------------------------- Media Queries */
+/* Media Queries */
 
-/* Slightly larger container on xl screens */
+/* Mobile */
+@media (min-width: 320px){
+
+    .search-lg, .account-lg, .logo-lg{
+        display: none;
+    }
+
+    .mobile-ul{
+        padding-left: 0;
+    }
+
+    .mobile-ul .list-inline-item{
+        margin-right: 0;
+    }
+
+    .mobile-ul .list-inline-item a{
+        padding: 0 8px;
+    }
+
+}
+
+/* Tablet */
+@media (min-width: 768px){
+
+    .search-lg, .account-lg{
+        display: none;
+    }
+
+    .logo-lg{
+        display: block;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px){
+
+
+}
+
+/* Larger Desktop */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
+    .container {
+      max-width: 80%;
+    }
   }
-}
-
-/* fixed top navbar only on medium and up */
+  
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -84,7 +146,7 @@ body {
         z-index: 1030;
     }
 
-    .header-container {
-        padding-top: 164px;
+    .search-lg, .account-lg, .logo-lg{
+        display: block;
     }
 }
