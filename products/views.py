@@ -1,6 +1,14 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from .models import Product
 
 
-# Create your views here.
-def see_products(request):
-    return HttpResponse('Hello')
+def see_all_products(request):
+    """ view returns all the products and handles searching and sorting """
+
+    products = Product.objects.all()
+
+    context = {
+        'products': products
+    }
+
+    return render(request, 'products/products.html', context)
