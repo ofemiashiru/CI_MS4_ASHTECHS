@@ -15,14 +15,8 @@ def see_all_products(request):
     direction = None
 
     if request.GET:
-
         if 'accessory' in request.GET:
             products = products.filter(is_accessory=True)
-
-            if 'category' in request.GET:
-                categories = request.GET['category'].split(',')
-                products = products.filter(category__name__in=categories)
-                categories = Category.objects.filter(name__in=categories)
 
         if 'sort' in request.GET:
             sort_key = request.GET['sort']
@@ -38,12 +32,10 @@ def see_all_products(request):
             
             products = products.order_by(sort_key)
 
-
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
-
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -57,7 +49,6 @@ def see_all_products(request):
                     name__icontains=query) | Q(description__icontains=query)
                 products = products.filter(queries)
 
-    
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -68,7 +59,6 @@ def see_all_products(request):
     }
 
     return render(request, 'products/products.html', context)
-
 
 # def see_all_accessories(request):
     """ view returns all the accessories """
@@ -89,7 +79,6 @@ def see_all_products(request):
     }
 
     return render(request, 'products/products.html', context)
-
 
 def see_product_details(request, product_id):
     """ view each product and its details """
