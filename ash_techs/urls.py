@@ -17,13 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from products.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
-    path('products/', see_all_products, name='products'),
-    path('products/<product_id>', see_product_details, name='product_details')
-
+    path('products/', include('products.urls'), name='products'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
