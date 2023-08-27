@@ -5,10 +5,10 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Brand</a>
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=brand&direction=asc" class="dropdown-item">By Brand</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -18,11 +18,11 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessory-products-link">
-                <a href="{% url 'accessories' %}?category=desktop_computer" class="dropdown-item ">Desktop</a>
-                <a href="{% url 'accessories' %}?category=laptop_computer" class="dropdown-item ">Laptop</a>
-                <a href="{% url 'accessories' %}?category=tablet" class="dropdown-item">Tablet</a>
-                <a href="{% url 'accessories' %}?category=mobile_phone" class="dropdown-item">Phone</a>
-                <a href="{% url 'accessories' %}" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?accessory=true&category=desktop_computer" class="dropdown-item ">Desktop</a>
+                <a href="{% url 'products' %}?accessory=true&category=laptop_computer" class="dropdown-item ">Laptop</a>
+                <a href="{% url 'products' %}?accessory=true&category=tablet" class="dropdown-item">Tablet</a>
+                <a href="{% url 'products' %}?accessory=true&category=mobile_phone" class="dropdown-item">Phone</a>
+                <a href="{% url 'products' %}?accessory=true" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
