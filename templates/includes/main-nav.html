@@ -1,10 +1,10 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="women-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="women-products-link">
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="" class="dropdown-item">By Brand</a>
                 <a href="" class="dropdown-item">By Price</a>
                 <a href="" class="dropdown-item ">By Rating</a>
@@ -14,16 +14,15 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="kids-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="accessory-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="kids-products-link">
-                <a href="" class="dropdown-item ">Desktop</a>
-                <a href="" class="dropdown-item ">Laptop</a>
-                <a href="" class="dropdown-item">Tablet</a>
-                <a href="" class="dropdown-item">Phone</a>
-                <a href="" class="dropdown-item">Audio</a>
-                <a href="" class="dropdown-item">Video</a>
+            <div class="dropdown-menu border-0" aria-labelledby="accessory-products-link">
+                <a href="{% url 'accessories' %}?category=desktop_computer" class="dropdown-item ">Desktop</a>
+                <a href="{% url 'accessories' %}?category=laptop_computer" class="dropdown-item ">Laptop</a>
+                <a href="{% url 'accessories' %}?category=tablet" class="dropdown-item">Tablet</a>
+                <a href="{% url 'accessories' %}?category=mobile_phone" class="dropdown-item">Phone</a>
+                <a href="{% url 'accessories' %}" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
