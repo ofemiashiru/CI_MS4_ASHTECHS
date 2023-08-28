@@ -35,12 +35,12 @@ body {
 }
 
 .pb-btn {
-    color: white;
+    color: var(--white);
     min-width: 160px;
 }
 
 .pb-btn:hover {
-    color: white;
+    color: var(--white);
 }
 
 .black-back-g{
