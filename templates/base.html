@@ -45,7 +45,8 @@
     </head>
 
     <body>
-        <header class="container-fluid fixed-top white-back-g">
+        
+        <header id="top-page" class="container-fluid fixed-top white-back-g">
             <div class="row navy-blue-back-g py-2 free-shipping-banner">
                 <p class="text-white mx-auto my-auto thick-text">FREE SHIPPING ON ORDERS OVER £{{ free_shipping_threshold }}</p>
             </div>
@@ -137,7 +138,6 @@
         {% block content %}
         {% endblock %}
         
-        <!-- Font Awesome JS Script -->
         {% block postloadjs %}
         {% endblock %}
     </body>

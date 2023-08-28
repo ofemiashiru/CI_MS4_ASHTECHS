@@ -2,6 +2,7 @@ from django.shortcuts import (
         render, get_object_or_404, redirect, reverse, HttpResponse)
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from .models import Product, Category
 
 
@@ -21,15 +22,21 @@ def see_all_products(request):
         if 'sort' in request.GET:
             sort_key = request.GET['sort']
             sort = sort_key
+
             if sort_key == 'name':
                 sort_key = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-            
+
+            if sort_key == 'brand':
+                sort_key = 'brand__name'
+            elif sort_key == 'category':
+                sort_key = 'category__name'
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sort_key = f'-{sort_key}'
-            
+
             products = products.order_by(sort_key)
 
         if 'category' in request.GET:
@@ -60,25 +67,6 @@ def see_all_products(request):
 
     return render(request, 'products/products.html', context)
 
-# def see_all_accessories(request):
-    """ view returns all the accessories """
-
-    products = Product.objects.filter(is_accessory=True)
-    categories = None
-
-    if request.GET:
-
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
-
-    context = {
-        'products': products,
-        'current_categories': categories
-    }
-
-    return render(request, 'products/products.html', context)
 
 def see_product_details(request, product_id):
     """ view each product and its details """
