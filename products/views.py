@@ -19,7 +19,7 @@ def see_all_products(request):
     if request.GET:
 
         if 'brandName' in request.GET:
-            brand = request.GET['brand'].split(',')
+            brand = request.GET['brandName'].split(',')
             products = products.filter(brand__name__in=brand)
             brand = Brand.objects.filter(name__in=brand)
 
