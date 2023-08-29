@@ -73,17 +73,26 @@
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                                             {% if product.category %}
-                                                <p class="small mt-1 mb-0">
+                                                <span class="small mt-1 mb-0">
                                                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                         <i class="fa-solid fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                     </a>
-                                                </p>
+                                                </span>
                                             {% endif %}
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fa-regular fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                            {% if product.brand %}
+                                                <span class="small mt-1 mb-0">
+                                                    <a class="text-muted" href="{% url 'products' %}?brandName={{ product.brand.name }}">
+                                                        <i class="fa-solid fa-tag mr-1"></i>{{ product.brand.friendly_name }}
+                                                    </a>
+                                                </span>
                                             {% endif %}
+                                            <div class="rating-section">
+                                                {% if product.rating %}
+                                                    <small class="text-muted"><i class="fa-regular fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                                {% else %}
+                                                    <small class="text-muted">No Rating</small>
+                                                {% endif %}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

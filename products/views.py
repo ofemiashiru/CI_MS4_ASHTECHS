@@ -3,7 +3,7 @@ from django.shortcuts import (
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Brand
 
 
 def see_all_products(request):
@@ -12,10 +12,17 @@ def see_all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
+    brand = None
     sort = None
     direction = None
 
     if request.GET:
+
+        if 'brandName' in request.GET:
+            brand = request.GET['brand'].split(',')
+            products = products.filter(brand__name__in=brand)
+            brand = Brand.objects.filter(name__in=brand)
+
         if 'accessory' in request.GET:
             products = products.filter(is_accessory=True)
 
