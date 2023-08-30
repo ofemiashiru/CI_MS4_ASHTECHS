@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
-                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                            {% if search_term or current_categories or current_sorting or current_brand != 'None_None' %}
                                 <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
                             {% endif %}
                             {{ products|length }} 
@@ -72,17 +72,17 @@
                                     <div class="row">
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                                            {% if product.brand %}
+                                                <span class="small mt-1 mb-0 mr-2">
+                                                    <a class="text-muted" href="{% url 'products' %}?brandName={{ product.brand.name }}">
+                                                        <i class="fa-solid fa-tag mr-1"></i>{{ product.brand.friendly_name }}
+                                                    </a>
+                                                </span>
+                                            {% endif %}
                                             {% if product.category %}
                                                 <span class="small mt-1 mb-0">
                                                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                         <i class="fa-solid fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                                    </a>
-                                                </span>
-                                            {% endif %}
-                                            {% if product.brand %}
-                                                <span class="small mt-1 mb-0">
-                                                    <a class="text-muted" href="{% url 'products' %}?brandName={{ product.brand.name }}">
-                                                        <i class="fa-solid fa-tag mr-1"></i>{{ product.brand.friendly_name }}
                                                     </a>
                                                 </span>
                                             {% endif %}

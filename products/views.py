@@ -18,11 +18,6 @@ def see_all_products(request):
 
     if request.GET:
 
-        if 'brandName' in request.GET:
-            brand = request.GET['brandName'].split(',')
-            products = products.filter(brand__name__in=brand)
-            brand = Brand.objects.filter(name__in=brand)
-
         if 'accessory' in request.GET:
             products = products.filter(is_accessory=True)
 
@@ -45,6 +40,11 @@ def see_all_products(request):
                     sort_key = f'-{sort_key}'
 
             products = products.order_by(sort_key)
+        
+        if 'brandName' in request.GET:
+            brand = request.GET['brandName'].split(',')
+            products = products.filter(brand__name__in=brand)
+            brand = Brand.objects.filter(name__in=brand)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -67,9 +67,10 @@ def see_all_products(request):
 
     context = {
         'products': products,
-        'search': query,
+        'search_term': query,
         'current_categories': categories,
-        'current_sorting': current_sorting
+        'current_sorting': current_sorting,
+        'current_brand': brand
     }
 
     return render(request, 'products/products.html', context)
