@@ -40,7 +40,7 @@ def see_all_products(request):
                     sort_key = f'-{sort_key}'
 
             products = products.order_by(sort_key)
-        
+
         if 'brandName' in request.GET:
             brand = request.GET['brandName'].split(',')
             products = products.filter(brand__name__in=brand)
