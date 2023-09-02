@@ -67,10 +67,14 @@
                             </div>
 
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="pb-btn btn white-back-g thick-text border text-black rounded-0 text-uppercase py-3">
+                                <a href="{% url 'products' %}" class="pb-btn btn black-back-g thick-text border text-white rounded-0 text-uppercase py-3">
+                                    <i class="fa-solid fa-chevron-left fa-beat"></i>
                                     <span class="">Keep shopping</span>
                                 </a>
-                                <input type="submit" class="pb-btn btn black-back-g thick-text text-white border rounded-0 text-uppercase py-3" value="Add to Bag">
+                                <button type="submit" class="pb-btn btn white-back-g thick-text text-black border rounded-0 text-uppercase py-3">
+                                    Add to Bag
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

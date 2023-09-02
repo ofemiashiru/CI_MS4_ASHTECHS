@@ -80,6 +80,10 @@ body {
     color: var(--navy-blue); 
 }
 
+.text-light-blue{
+    color: var(--light-blue);
+}
+
 .border-black {
     border: 1px solid var(--black) !important;
 }
