@@ -1,0 +1,23 @@
+<script type="text/javascript">
+   // Update the quantity of product
+   const updateLinks = document.querySelectorAll('.update-link');
+    updateLinks.forEach(function(item){
+        item.addEventListener('click', function(){
+            let form = this.previousElementSibling;
+            form.submit();
+        });
+    });
+
+
+    const removeItemLinks = document.querySelectorAll('.remove-item');
+    removeItemLinks.forEach(function(item){
+        item.addEventListener('click', function(){
+            let csrfToken = '{{ csrf_token }}';
+            let itemId = this.id.split('_')[1];
+            let url = `/bag/remove-item/${itemId}`;
+            console.log(url);
+        });
+    });
+
+
+</script>

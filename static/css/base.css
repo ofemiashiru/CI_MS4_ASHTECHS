@@ -108,6 +108,12 @@ body {
     object-fit: contain;
 }
 
+/* Shopping bag */
+
+.shopping-bag-btn{
+    cursor: pointer;
+}
+
 /* Go to top */
 .top-link-container{
     position: fixed;

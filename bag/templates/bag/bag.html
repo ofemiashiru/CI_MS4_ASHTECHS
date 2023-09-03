@@ -71,8 +71,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        <a class="shopping-bag-btn update-link text-info"><small>Update</small></a>
+                                        <a class="shopping-bag-btn remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.sub_total|floatformat:2 }}</p>
@@ -133,8 +133,6 @@
 {% block postloadjs %}
     {{ block.super }}
     {% include "products/includes/handle_quantity_script.html" %}
-    <script type="text/javascript">
-        
-    </script>
+    {% include "bag/includes/handle_update_delete_script.html" %}
 
 {% endblock %}
