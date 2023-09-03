@@ -1,0 +1,19 @@
+<script type='text/javascript'>
+    const increaseQuantityBtn = document.querySelector('.increase_quantity');
+    const decreaseQuantityBtn = document.querySelector('.decrease_quantity');
+    const quantityInput = document.querySelector('.qty_input');
+
+
+    increaseQuantityBtn.addEventListener('click', function(event){
+        event.preventDefault();
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue + 1;        
+    });
+
+    decreaseQuantityBtn.addEventListener('click', function(event){
+        event.preventDefault();
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue - 1;
+    });
+
+</script>
