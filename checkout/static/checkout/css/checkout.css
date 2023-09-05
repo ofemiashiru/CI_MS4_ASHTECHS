@@ -1,0 +1,11 @@
+
+.order-summary{
+    position: fixed;
+    right: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .order-summary{
+        position: inherit;
+    }
+}

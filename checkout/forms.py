@@ -1,15 +1,16 @@
 from django import forms
-from .models import Order
+from checkout.models import Order
 
 
 class OrderForm(forms.ModelForm):
-    model = Order
-    fields = (
-        'f_name', 'l_name', 'email', 'phone_number', 'address_line_1',
-        'address_line_2', 'city', 'post_code', 'country',
-    )
+    class Meta:
+        model = Order
+        fields = (
+            'f_name', 'l_name', 'email', 'phone_number', 'address_line_1',
+            'address_line_2', 'city', 'post_code', 'country',
+        )
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
         labels and set autofocus on first field
