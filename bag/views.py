@@ -66,17 +66,6 @@ def remove_from_bag(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     bag = request.session.get('bag')
 
-    # del bag[product_id]
-    # request.session['bag'] = bag
-
-    # msg = f'You successfully removed "{product}" from your bag!'
-    # messages.success(request, msg)
-    # if len(bag) == 0:
-    #     msg = 'Your shopping bag is empty'
-    #     messages.info(request, msg)
-
-    # return redirect(reverse('shopping_bag'))
-
     try:
         del bag[product_id]
         msg = f'You successfully removed "{product}" from your bag!'
@@ -85,9 +74,7 @@ def remove_from_bag(request, product_id):
             msg = 'Your shopping bag is empty'
             messages.info(request, msg)
         request.session['bag'] = bag
-        # return HttpResponse('shopping_bag')
         return redirect(reverse('shopping_bag'))
     except Exception as e:
-        # return HttpResponse(status=500)
         messages.error = f'{e}'
         return redirect(reverse('shopping_bag'))
