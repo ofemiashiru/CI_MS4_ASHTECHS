@@ -1,5 +1,6 @@
 {% extends "base.html" %} 
 {% load static %} 
+{% load bag_tools %}
 
 {% block extra_title %} Shopping Bag{% endblock %}
 
@@ -49,7 +50,7 @@
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="">
+                                        <form class="form update-form" method="POST" action="{% url 'update_bag' item.product.id %}">
                                             {% csrf_token %}
                                             <div class="form-row">
                                                 <div class="col-12">
@@ -72,10 +73,10 @@
                                             </div>
                                         </form>
                                         <a class="shopping-bag-btn update-link text-info"><small>Update</small></a>
-                                        <a class="shopping-bag-btn remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        <a href="{% url 'remove_from_bag' item.product.id %}" class="shopping-bag-btn remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">£{{ item.sub_total|floatformat:2 }}</p>
+                                        <p class="my-0">£{{ item.product.price | caluclate_sub_total:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -95,7 +96,7 @@
                                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_shipping_difference > 0 %}
                                         <p class="mb-1 text-danger">
-                                            You could get free shipping by spending just <strong>£{{ free_shipping_difference }}</strong> more!
+                                            Get free shipping if you spend <strong>£{{ free_shipping_difference }}</strong> more!
                                         </p>
                                     {% endif %}
                                 </td>

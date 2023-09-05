@@ -1,9 +1,9 @@
 <script type='text/javascript'>
     
-    const increaseQuantityBtn = document.querySelector('.increase_quantity');
-    const decreaseQuantityBtn = document.querySelector('.decrease_quantity');
+    const increaseQuantityBtn = document.querySelectorAll('.increase_quantity');
+    const decreaseQuantityBtn = document.querySelectorAll('.decrease_quantity');
     const allQuantityInputs = document.querySelectorAll('.qty_input');
-    const quantityInput = document.querySelector('.qty_input');
+    const quantityInput = document.querySelectorAll('.qty_input');
 
     function handleEnableDisableBtns(itemId){
         let currentValue = parseInt(document.querySelector(`#id_qty_${itemId}`).value);
@@ -12,7 +12,7 @@
         let plusDisable = currentValue > 98;
 
         document.querySelector(`#decrease_quantity_of_prod_${itemId}`).disabled = minusDisable;
-        document.querySelector(`#increase_quantity_of_prod_${itemId}`).disabled = plusDisable ;
+        document.querySelector(`#increase_quantity_of_prod_${itemId}`).disabled = plusDisable;
     }
 
     
@@ -21,29 +21,35 @@
         handleEnableDisableBtns(itemId);
     }
 
-    quantityInput.addEventListener('change', function(){
-        let itemId = this.dataset.itemId;
-        handleEnableDisableBtns(itemId);
+    quantityInput.forEach((input)=>{
+        input.addEventListener('change', function(){
+            let itemId = this.dataset.itemId;
+            handleEnableDisableBtns(itemId);
+        });
     });
 
-    increaseQuantityBtn.addEventListener('click', function(event){
-        event.preventDefault();
-        let closestInput = this.closest('.input-group').querySelectorAll('.qty_input')[0];
-        let currentValue = parseInt(closestInput.value);
-        closestInput.value = currentValue + 1;
+    increaseQuantityBtn.forEach((btn)=>{
+        btn.addEventListener('click', function(event){
+            event.preventDefault();
+            let closestInput = this.closest('.input-group').querySelectorAll('.qty_input')[0];
+            let currentValue = parseInt(closestInput.value);
+            closestInput.value = currentValue + 1;
 
-        let itemId = this.dataset.itemId;
-        handleEnableDisableBtns(itemId);
+            let itemId = this.dataset.itemId;
+            handleEnableDisableBtns(itemId);
+        });
     });
 
-    decreaseQuantityBtn.addEventListener('click', function(event){
-        event.preventDefault();
-        let closestInput = this.closest('.input-group').querySelectorAll('.qty_input')[0];
-        let currentValue = parseInt(closestInput.value);
-        closestInput.value = currentValue - 1;
+    decreaseQuantityBtn.forEach((btn)=>{
+        btn.addEventListener('click', function(event){
+            event.preventDefault();
+            let closestInput = this.closest('.input-group').querySelectorAll('.qty_input')[0];
+            let currentValue = parseInt(closestInput.value);
+            closestInput.value = currentValue - 1;
 
-        let itemId = this.dataset.itemId;
-        handleEnableDisableBtns(itemId);
+            let itemId = this.dataset.itemId;
+            handleEnableDisableBtns(itemId);
+        });
     });
 
 </script>

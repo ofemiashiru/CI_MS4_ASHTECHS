@@ -4,7 +4,11 @@
     updateLinks.forEach(function(item){
         item.addEventListener('click', function(){
             const form = this.previousElementSibling;
-            form.submit();
+            const inputValue = parseInt(form.elements.quantity.value);
+            if(inputValue > 0 && inputValue < 100){
+                form.submit();
+            }
+            
         });
     });
 
