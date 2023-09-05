@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.contrib import messages
 from products.models import Product
 
@@ -12,18 +14,22 @@ def see_shopping_bag(request):
 def add_to_bag(request, product_id):
     """ Add chosen quantity to the bag """
 
-    product = Product.objects.get(id=product_id)
+    product = get_object_or_404(Product, id=product_id)
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
 
     bag = request.session.get('bag', {})
 
+    plural = '\'s' if quantity > 1 else ''
+
     if product_id in list(bag.keys()):
         bag[product_id] += quantity
+        msg = f'You have {bag[product_id]} "{product}{plural}" in your bag!'
+        messages.success(request, msg)
     else:
         bag[product_id] = quantity
-        msg = f'You added "{product}" to your bag'
+        msg = f'You added {bag[product_id]} "{product}{plural}" to your bag!'
         messages.success(request, msg)
 
     request.session['bag'] = bag
@@ -34,13 +40,21 @@ def add_to_bag(request, product_id):
 def update_bag(request, product_id):
     """ Update the quantity of chosen item in the bag """
 
+    product = get_object_or_404(Product, id=product_id)
+
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
+    plural = '\'s' if quantity > 1 else ''
+
     if quantity > 0:
         bag[product_id] = quantity
+        msg = f'You have {bag[product_id]} "{product}{plural}" in your bag!'
+        messages.success(request, msg)
     else:
         bag.pop(product_id)
+        msg = f'You successfully removed "{product}" from your bag!'
+        messages.success(request, msg)
 
     request.session['bag'] = bag
 
@@ -49,14 +63,30 @@ def update_bag(request, product_id):
 
 def remove_from_bag(request, product_id):
     """ Removes specific product from shopping bag """
+    product = get_object_or_404(Product, id=product_id)
 
     bag = request.session.get('bag')
-    del bag[product_id]
-    request.session['bag'] = bag
-    return redirect(reverse('shopping_bag'))
-    # try:
-    #     del bag[product_id]
-    #     request.session['bag'] = bag
-    #     return HttpResponse(status=200)
-    # except Exception as e:
-    #     return HttpResponse(status=500)
+    # del bag[product_id]
+    # request.session['bag'] = bag
+
+    # msg = f'You successfully removed "{product}" from your bag!'
+    # messages.success(request, msg)
+    # if len(bag) == 0:
+    #     msg = 'Your shopping bag is empty'
+    #     messages.info(request, msg)
+
+    # return redirect(reverse('shopping_bag'))
+    try:
+        del bag[product_id]
+        msg = f'You successfully removed "{product}" from your bag!'
+        messages.success(request, msg)
+        if len(bag) == 0:
+            msg = 'Your shopping bag is empty'
+            messages.info(request, msg)
+        request.session['bag'] = bag
+        # return HttpResponse('shopping_bag')
+        return redirect(reverse('shopping_bag'))
+    except Exception as e:
+        # return HttpResponse(status=500)
+        messages.error = f'{e}'
+        return redirect(reverse('shopping_bag'))
