@@ -55,7 +55,8 @@ def see_all_products(request):
             query = request.GET['q']
 
             if not query:
-                messages.error(request, 'No search criteria was entered')
+                msg = 'No search criteria was entered. Please try again!'
+                messages.error(request, msg)
                 return redirect(reverse('products'))
 
             if query:

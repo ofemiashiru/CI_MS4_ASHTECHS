@@ -121,6 +121,16 @@ body {
     right: 10px;
 }
 
+/* Messages */
+
+.message-container{
+    position: fixed;
+    z-index: 99999999;
+    top: 110px;
+    right: 15px;
+
+}
+
 /* Media Queries */
 
 /* Mobile */
