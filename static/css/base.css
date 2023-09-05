@@ -136,6 +136,13 @@ body {
     overflow-y: auto;
 }
 
+.bag-amount-display{
+    font-size: .9rem;
+    font-weight: 700;
+    margin-left: 4px;
+    border-radius: 50%;
+}
+
 /* Media Queries */
 
 /* Mobile */
