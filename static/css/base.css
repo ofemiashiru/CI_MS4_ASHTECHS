@@ -144,6 +144,10 @@ body {
     right: 10px;
 }
 
+.top-link-container a{
+    border-radius: 50%;
+}
+
 /* Messages */
 
 .message-container{
