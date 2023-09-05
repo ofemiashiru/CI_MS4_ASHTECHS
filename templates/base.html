@@ -51,32 +51,31 @@
                 <p class="text-white mx-auto my-auto thick-text">FREE SHIPPING ON ORDERS OVER £{{ free_shipping_threshold }}</p>
             </div>
             <div id="top-nav" class="row pt-lg-2 dg-lg-flex">
-                <div class="col-lg-4 order-lg-1 order-md-3 order-sm-3 order-xs-3 my-auto py-1 search-lg">
-                    <form method="GET" action="{% url 'products' %}">
+                <div class="col-lg-4 col-md-12 logo-lg">
+                    <a href="{% url 'home' %}" class="nav-link main-logo-link mx-auto logo-section">
+                        <h2 class="text-black my-0"><strong class="text-uppercase">Ash</strong>|<span class="text-navy-blue text-uppercase">Techs</span></h2>
+                    </a>
+                </div>
+                <div class="col-lg-4 my-auto py-1 search-lg">
+                    <form method="GET" action="{% url 'products' %}" class="search-form">
                         <div class="input-group w-100">
-                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site" required>
+                            <input class="search-bar form-control" type="text" name="q" placeholder="Search our site" required>
                             <div class="input-group-append">
-                                <button class="form-control btn border border-black rounded-0" type="submit" >
-                                    <span class="icon">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </span>
+                                <button class="form-control btn search-btn navy-blue-back-g" type="submit" >
+                                    <i class="fa-solid fa-magnifying-glass text-white"></i>
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-4 col-md-12 order-lg-2 order-md-1 order-sm-1 order-xs-1 my-auto py-1 py-lg-0 text-center logo-lg">
-                    <a href="{% url 'home' %}" class="nav-link main-logo-link mx-auto logo-section">
-                        <h2 class="text-black my-0"><strong class="text-uppercase">Ash</strong>|<span class="text-navy-blue text-uppercase">Techs</span></h2>
-                    </a>
-                </div>
+
                 <div class="col-lg-4 col-md-6 col-xs-6 order-lg-3 order-md-2 order-sm-2 order-xs-2 my-auto py-1 py-lg-0 account-lg">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
+                                <p class="my-0 under-icon-nav">My Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -99,7 +98,7 @@
                             <a href="{% url 'shopping_bag' %}" class="nav-link text-black" aria-label="You have {{ product_count }} product in your bag">
                                 <div class="text-center">
                                     <div><i class="fa-solid fa-bag-shopping fa-lg {% if product_count > 0 %}fa-beat{% endif %}"></i>{% if product_count > 0 %}<span class="text-danger bag-amount-display">{{ product_count }}</span>{% endif %}</div>
-                                    <p class="my-0">Bag</p>
+                                    <p class="my-0 under-icon-nav">Bag</p>
                                 </div>
                             </a>
                         </li>
@@ -109,7 +108,7 @@
             <div class="row bg-white">
                 <nav class="navbar navbar-expand-lg navbar-light w-100">
                     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa-solid fa-bars fa-beat fa-xl text-black"></i>
+                        <i class="fa-solid fa-bars fa-beat text-black"></i>
                     </button>
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}

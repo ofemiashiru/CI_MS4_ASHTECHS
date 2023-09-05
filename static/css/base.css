@@ -1,7 +1,7 @@
 :root{
     --white: #FFFFFF;
     --black: #0C1120;
-    --grey: #DFE0E0;
+    --grey: #D3D3D3;
     --navy-blue: #2C4D90;
     --light-blue: #3282E0;
 
@@ -84,6 +84,10 @@ body {
     color: var(--light-blue);
 }
 
+.text-grey{
+    color: var(--grey)
+}
+
 .border-black {
     border: 1px solid var(--black) !important;
 }
@@ -99,6 +103,25 @@ body {
     background: var(--white);
     z-index: -1;
 }
+
+/* Search bar */
+
+.search-form{  
+    border: 1px solid var(--black);
+    border-radius: 20px;
+    border-color: var(--grey);
+}
+
+.search-bar{
+    border: transparent;
+    border-radius: 20px;
+}
+
+.search-btn{
+    border-radius: 50% !important;
+    margin: 1px;
+}
+
 
 /* Products Page */
 
@@ -141,6 +164,10 @@ body {
     font-weight: 700;
     margin-left: 4px;
     border-radius: 50%;
+}
+
+.under-icon-nav {
+    font-size: .8rem;
 }
 
 /* Media Queries */
