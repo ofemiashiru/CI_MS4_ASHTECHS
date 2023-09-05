@@ -19,9 +19,6 @@
             const csrfToken = '{{ csrf_token }}';
             const itemId = this.id.split('_')[1];
             const url = `/bag/remove/${itemId}`;
-            const data = {
-                'csrfmiddlewaretoken': csrfToken
-            }
 
             const postRequest = new XMLHttpRequest();
 
@@ -29,7 +26,8 @@
 
             postRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-            postRequest.send(data);
+            postRequest.send('csrfmiddlewaretoken=' + encodeURIComponent(csrfToken));
+            
 
         });
     });

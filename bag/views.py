@@ -64,8 +64,8 @@ def update_bag(request, product_id):
 def remove_from_bag(request, product_id):
     """ Removes specific product from shopping bag """
     product = get_object_or_404(Product, id=product_id)
-
     bag = request.session.get('bag')
+
     # del bag[product_id]
     # request.session['bag'] = bag
 
@@ -76,6 +76,7 @@ def remove_from_bag(request, product_id):
     #     messages.info(request, msg)
 
     # return redirect(reverse('shopping_bag'))
+
     try:
         del bag[product_id]
         msg = f'You successfully removed "{product}" from your bag!'
