@@ -1,7 +1,7 @@
 :root{
     --white: #FFFFFF;
     --black: #0C1120;
-    --grey: #D3D3D3;
+    --grey: #aab7c4;
     --navy-blue: #2C4D90;
     --light-blue: #3282E0;
 
@@ -18,6 +18,10 @@ body {
     height: calc(100vh - 164px);
     color: var(--black);
     font-family: 'Roboto', sans-serif;
+}
+
+input::placeholder{
+    color: var(--grey) !important;
 }
 
 .page-title,

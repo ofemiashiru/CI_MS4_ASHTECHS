@@ -4,6 +4,19 @@
     right: 0;
 }
 
+.StripeElement,
+.stripe-style-input{
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus{
+    border:1px solid var(--light-blue);
+    box-shadow: none;
+}
+
 @media screen and (max-width: 992px) {
     .order-summary{
         position: inherit;
