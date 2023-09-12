@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .forms import OrderForm
 
-from pathlib import Path
 import os
 
 if os.path.exists("env.py"):
