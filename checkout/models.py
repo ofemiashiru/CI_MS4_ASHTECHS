@@ -39,7 +39,7 @@ class Order(models.Model):
         """ update grand total everytime a lineitem has been added  """
         self.order_total = self.lineitems.aggregate(
             Sum('line_item_total')
-        )['line_item__sum']
+        )['line_item__sum'] or 0
 
         if self.order_total < settings.FREE_SHIPPING_THRESHOLD:
             self.shipping_costs = (
