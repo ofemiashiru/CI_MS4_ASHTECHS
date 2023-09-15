@@ -45,7 +45,6 @@ def checkout(request):
             for item_id, quantity in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    print(isinstance(quantity, int))
                     if isinstance(quantity, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -107,10 +106,11 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
-    messages.success(request, f'Your order has been succesfull.\n \Your order \
-        number is {order_number}. \n\n Confirmation of your order will \
-            be sent to {order.email}'
-        )
+    messages.success(
+        request, f'Your order has been succesfull. Your order \
+        number is {order_number}. Confirmation of your  \
+        order will be sent to {order.email}'
+    )
 
     if 'bag' in request.session:
         del request.session['bag']
