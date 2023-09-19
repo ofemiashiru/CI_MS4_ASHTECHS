@@ -26,7 +26,7 @@ class OrderAdmin(admin.ModelAdmin):
     )
 
     list_display = (
-        'order_number', 'date', 'f_name', 'l_name', 
+        'order_number', 'date', 'f_name', 'l_name',
         'shipping_costs', 'order_total', 'grand_total'
     )
 

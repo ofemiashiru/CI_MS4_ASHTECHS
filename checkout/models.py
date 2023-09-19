@@ -36,19 +36,20 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        """ update grand total everytime a lineitem has been added  """
-        self.order_total = self.lineitems.aggregate(
-            Sum('line_item_total')
-        )['line_item_total__sum'] or 0
-
+        """ update grand total everytime a line_item has been added  """
+        self.order_total = (
+            self.lineitems.aggregate(
+                Sum('line_item_total'))['line_item_total__sum'] or 0
+            )
         if self.order_total < settings.FREE_SHIPPING_THRESHOLD:
             self.shipping_costs = (
                 self.order_total * settings.STANDARD_SHIPPING_PERCENTAGE / 100
             )
         else:
-            self.order_total = 0
+            self.shipping_costs = 0
         self.grand_total = self.order_total + self.shipping_costs
         self.save()
+
 
     def save(self, *args, **kwargs):
         """ set the order number if it has not already been set """
@@ -66,6 +67,7 @@ class OrderLineItem(models.Model):
         Order, null=False, blank=False,
         on_delete=models.CASCADE, related_name='lineitems'
     )
+
     product = models.ForeignKey(
         Product, null=False, blank=False, on_delete=models.CASCADE
     )
@@ -73,6 +75,7 @@ class OrderLineItem(models.Model):
     line_item_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, blank=False, editable=False
     )
+
     def save(self, *args, **kwargs):
         """ set the line item total field overriding it save method """
         self.line_item_total = self.product.price * self.quantity
