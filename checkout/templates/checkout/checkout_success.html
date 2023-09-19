@@ -25,30 +25,26 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 text-center">
-                
-            </div>
-        </div>
-        <div class="row">
+        <div class="row text-lg-left text-sm-center border rounded mx-2">
             <div class="col-12">
                 <div class="order-confirmation">
                     <div class="row mt-3">
                         <div class="col">
-                            <small class="muted">Order info</small>
+                            <small class="muted text-navy-blue">Order info</small>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Order number</div>
+                        <div class="col-12 col-md-6 thick-text">Order number</div>
                         <div class="col-12 col-md-6">{{ order.order_number}}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Order date</div>
+                        <div class="col-12 col-md-6 thick-text">Order date</div>
                         <div class="col-12 col-md-6">{{ order.date}}</div>
                     </div>
+                    <hr>
                     <div class="row mt-3">
                         <div class="col">
-                            <small class="muted">Order details</small>
+                            <small class="muted text-navy-blue">Order details</small>
                         </div>
                     </div>
                     {% for item in order.lineitems.all %}
@@ -57,17 +53,18 @@
                         <div class="col-12 col-md-6">£{{ item.line_item_total }}</div>
                     </div>
                     {% endfor %}
+                    <hr>
                     <div class="row mt-3">
                         <div class="col">
-                            <small class="muted">Shipping to</small>
+                            <small class="muted text-navy-blue">Shipping to</small>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Full Name</div>
+                        <div class="col-12 col-md-6 thick-text">Full Name</div>
                         <div class="col-12 col-md-6">{{ order.f_name }} {{ order.l_name }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Address</div>
+                        <div class="col-12 col-md-6 thick-text">Address</div>
                         <div class="col-12 col-md-6">{{ order.address_line_1 }}</div>
                     </div>
                     <div class="row">
@@ -75,40 +72,41 @@
                         <div class="col-12 col-md-6">{{ order.address_line_2 }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">City</div>
+                        <div class="col-12 col-md-6 thick-text">City</div>
                         <div class="col-12 col-md-6">{{ order.city }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Post Code</div>
+                        <div class="col-12 col-md-6 thick-text">Post Code</div>
                         <div class="col-12 col-md-6">{{ order.post_code }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Country</div>
+                        <div class="col-12 col-md-6 thick-text">Country</div>
                         <div class="col-12 col-md-6">{{ order.country }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Phone Number</div>
+                        <div class="col-12 col-md-6 thick-text">Phone Number</div>
                         <div class="col-12 col-md-6">{{ order.phone_number }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Email</div>
+                        <div class="col-12 col-md-6 thick-text">Email</div>
                         <div class="col-12 col-md-6">{{ order.email }}</div>
                     </div>
+                    <hr>
                     <div class="row mt-3">
                         <div class="col">
-                            <small class="muted">Billing info</small>
+                            <small class="muted text-navy-blue">Billing info</small>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Order total</div>
+                        <div class="col-12 col-md-6 thick-text">Order total</div>
                         <div class="col-12 col-md-6">£{{ order.order_total }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6">Shipping costs</div>
+                        <div class="col-12 col-md-6 thick-text">Shipping costs</div>
                         <div class="col-12 col-md-6">£{{ order.shipping_costs }}</div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">Grand total</div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6 thick-text">Grand total</div>
                         <div class="col-12 col-md-6">£{{ order.grand_total }}</div>
                     </div>
                 </div>
