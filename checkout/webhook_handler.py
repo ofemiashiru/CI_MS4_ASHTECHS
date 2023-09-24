@@ -29,3 +29,4 @@ class StripeWebhookHandler:
             content=f'Webhook was received: {event["type"]}',
             status=200
         )
+

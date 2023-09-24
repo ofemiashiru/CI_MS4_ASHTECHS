@@ -45,7 +45,7 @@ paymentForm.addEventListener('submit', function(event){
     
     const newURL = '/checkout/cache_checkout_data/'; 
 
-    $.post(newURL, postData).done(function () {
+    $.post(newURL, postData).done(function() {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,

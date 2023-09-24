@@ -29,13 +29,13 @@ def cache_checkout_data(request):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
-            'save_info': request.POST['save-info'],
+            'save_info': dict(request.POST)['save_info'][0],
             'username': request.user
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Payment Cannot be processed. \
-            Please try again')
+        messages.error(request, 'Your payment Cannot be processed. \
+            Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
