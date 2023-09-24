@@ -34,23 +34,64 @@ const paymentForm = document.getElementById('payment-form');
 paymentForm.addEventListener('submit', function(event){
     event.preventDefault();
     card.update({ 'disabled': true });
+
+    const saveInfo = paymentForm.elements['id-save-info'].checked;
+    const csrfToken = paymentForm.elements.csrfmiddlewaretoken.value;
+    const postData = {  
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo
+    };
     
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
-        }
-    })
-    .then(function(result){
-        if(result.error){
-            const errorOutput = document.getElementById('card-errors');
-            errorOutput.innerHTML = `${result.error.message}`;
+    const newURL = '/checkout/cache_checkout_data/'; 
 
-            card.update({ 'disabled': false });
-
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                paymentForm.submit();
+    $.post(newURL, postData).done(function () {
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details :{
+                    name: `${paymentForm.elements.f_name.value.trim()} ${paymentForm.elements.l_name.value.trim()}`, 
+                    email: paymentForm.elements.email.value.trim(),
+                    phone: paymentForm.elements.phone_number.value.trim(),
+                    address:{
+                        line1: paymentForm.elements.address_line_1.value.trim(),
+                        line2: paymentForm.elements.address_line_2.value.trim(),
+                        city: paymentForm.elements.city.value.trim(),
+                        country: paymentForm.elements.country.value.trim(),
+                    }
+                }
+            },
+    
+            shipping :{
+                name: `${paymentForm.elements.f_name.value.trim()} ${paymentForm.elements.l_name.value.trim()}`, 
+                phone: paymentForm.elements.phone_number.value.trim(),
+                address:{
+                    line1: paymentForm.elements.address_line_1.value.trim(),
+                    line2: paymentForm.elements.address_line_2.value.trim(),
+                    city: paymentForm.elements.city.value.trim(),
+                    postal_code: paymentForm.elements.post_code.value.trim(),
+                    country: paymentForm.elements.country.value.trim(),
+                }
             }
-        }
+        })
+        .then(function(result){
+            if(result.error){
+                const errorOutput = document.getElementById('card-errors');
+                errorOutput.innerHTML = `${result.error.message}`;
+    
+                card.update({ 'disabled': false });
+    
+            } else {
+
+                if (result.paymentIntent.status === 'succeeded') {
+                    paymentForm.submit();
+                }
+            }
+        });
+
+    }).fail(function () {
+        location.reload();
     });
+
+
 });
