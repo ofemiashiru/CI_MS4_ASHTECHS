@@ -1,21 +1,21 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 text-uppercase" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <u>All Products</u>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=brand&direction=asc" class="dropdown-item">By Brand</a>
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="accessory-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Accessories
+            <a class="logo-font font-weight-bold nav-link text-black mr-5 text-uppercase" href="#" id="accessory-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <u>Accessories</u>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessory-products-link">
                 <a href="{% url 'products' %}?accessory=true&category=desktop_computer" class="dropdown-item ">Desktop</a>
@@ -27,8 +27,8 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
+            <a class="logo-font font-weight-bold nav-link text-black text-uppercase" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <u>Special Offers</u>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                 <a href="" class="dropdown-item">New Arrivals</a>

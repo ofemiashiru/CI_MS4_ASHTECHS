@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 import stripe
 from .models import Order, OrderLineItem
+from products.models import Product
 import json
+import time
 
 
 class StripeWebhookHandler:
@@ -33,40 +35,52 @@ class StripeWebhookHandler:
         grand_total = round(stripe_charge.amount / 100, 2)
 
         order_exists = False
-        try:
-            order = Order.objects.get(
-                f_name__iexact=shipping_details.f_name,
-                l_name__iexact=shipping_details.l_name,
-                email__iexact=shipping_details.email,
-                phone_number__iexact=shipping_details.phone,
-                address_line_1__iexact=shipping_details.line_1,
-                address_line_2__iexact=shipping_details.line_2,
-                city__iexact=shipping_details.city,
-                post_code__iexact=shipping_details.postal_code,
-                country__iexact=shipping_details.country,
-                grand_total=shipping_details.grand_total,
-            )
+        attempt = 1
 
-            order_exists = True
+        while attempt <= 5:
+            try:
+                order = Order.objects.get(
+                    f_name__iexact=shipping_details.name.split()[0],
+                    l_name__iexact=shipping_details.name.split()[1],
+                    phone_number__iexact=shipping_details.phone,
+                    address_line_1__iexact=shipping_details.address.line1,
+                    address_line_2__iexact=shipping_details.address.line2,
+                    city__iexact=shipping_details.address.city,
+                    post_code__iexact=shipping_details.address.postal_code,
+                    country__iexact=shipping_details.address.country,
+                    grand_total=shipping_details.grand_total,
+                    original_bag=bag,
+                    stripe_pid=pid,
+                )
+
+                order_exists = True
+                break
+
+            except Order.DoesNotExist():
+                attempt += 1
+                time.sleep(1)
+        if order_exists:
             return HttpResponse(
                 content=f'Webhook was received: {event["type"]} \
                 | Order in Database',
                 status=200
             )
-
-        except Order.DoesNotExist():
+        else:
+            order = None
             try:
                 for item_id, quantity in json.loads(bag).items():
                     order = Order.objects.create(
-                        f_name=shipping_details.f_name,
-                        l_name=shipping_details.l_name,
+                        f_name=shipping_details.name.split()[0],
+                        l_name=shipping_details.name.split()[1],
                         email=shipping_details.email,
                         phone_number=shipping_details.phone,
-                        address_line_1=shipping_details.line_1,
-                        address_line_2=shipping_details.line_2,
-                        city=shipping_details.city,
-                        post_code=shipping_details.postal_code,
-                        country=shipping_details.country,
+                        address_line_1=shipping_details.address.line1,
+                        address_line_2=shipping_details.address.line2,
+                        city=shipping_details.address.city,
+                        post_code=shipping_details.address.postal_code,
+                        country=shipping_details.address.country,
+                        original_bag=bag,
+                        stripe_pid=pid,
                     )
 
                     product = Product.objects.get(id=item_id)
@@ -87,7 +101,7 @@ class StripeWebhookHandler:
                 )
 
         return HttpResponse(
-            content=f'Webhook was received: {event["type"]}',
+            content=f'Webhook was received: {event["type"]}|Success',
             status=200
         )
 
