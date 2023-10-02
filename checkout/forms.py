@@ -21,7 +21,6 @@ class OrderForm(forms.ModelForm):
             'l_name': 'Last Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'country': 'Country',
             'post_code': 'Postal Code',
             'city': 'City',
             'address_line_1': 'Address Line 1',
@@ -30,10 +29,11 @@ class OrderForm(forms.ModelForm):
 
         self.fields['f_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'country':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False

@@ -3,12 +3,19 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from products.models import Product
+from profiles.models import UserProfile
+
+from django_countries.fields import CountryField
 
 # Create your models here.
 
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='orders'
+    )
     f_name = models.CharField(max_length=50, null=False, blank=False)
     l_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=255, null=False, blank=False)
@@ -19,7 +26,9 @@ class Order(models.Model):
     address_line_2 = models.CharField(max_length=90, null=False, blank=False)
     city = models.CharField(max_length=40, null=False, blank=False)
     post_code = models.CharField(max_length=20, null=True, blank=True)
-    country = models.CharField(max_length=50, null=False, blank=False)
+    country = CountryField(
+        blank_label='Country *', max_length=50, null=False, blank=False
+    )
     date = models.DateField(auto_now_add=True)
     shipping_costs = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0
@@ -53,7 +62,6 @@ class Order(models.Model):
             self.shipping_costs = 0
         self.grand_total = self.order_total + self.shipping_costs
         self.save()
-
 
     def save(self, *args, **kwargs):
         """ set the order number if it has not already been set """

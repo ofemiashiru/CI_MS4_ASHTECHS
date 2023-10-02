@@ -25,14 +25,9 @@ class StripeWebhookHandler:
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        # Get the Charge object
-        stripe_charge = stripe.Charge.retrieve(
-            intent.latest_charge
-        )
-
-        billing_details = stripe_charge.billing_details
+        billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
-        grand_total = round(stripe_charge.amount / 100, 2)
+        grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         order_exists = False
         attempt = 1
@@ -40,8 +35,9 @@ class StripeWebhookHandler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    f_name__iexact=shipping_details.name.split()[0],
-                    l_name__iexact=shipping_details.name.split()[1],
+                    f_name__iexact=shipping_details.name.split()[0].strip(),
+                    l_name__iexact=shipping_details.name.split()[1].strip(),
+                    email=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
                     address_line_1__iexact=shipping_details.address.line1,
                     address_line_2__iexact=shipping_details.address.line2,
@@ -72,7 +68,7 @@ class StripeWebhookHandler:
                     order = Order.objects.create(
                         f_name=shipping_details.name.split()[0],
                         l_name=shipping_details.name.split()[1],
-                        email=shipping_details.email,
+                        email=billing_details.email,
                         phone_number=shipping_details.phone,
                         address_line_1=shipping_details.address.line1,
                         address_line_2=shipping_details.address.line2,
