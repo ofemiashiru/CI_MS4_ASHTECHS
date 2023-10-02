@@ -17,7 +17,7 @@ class UserProfile(models.Model):
     d_city = models.CharField(max_length=40, null=True, blank=True)
     d_post_code = models.CharField(max_length=20, null=True, blank=True)
     d_country = CountryField(
-        blank_label='Country *', max_length=50, null=True, blank=True
+        blank_label='Country', max_length=80, null=True, blank=True
     )
 
     def __str__(self):

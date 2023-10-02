@@ -96,12 +96,11 @@ input::placeholder{
 }
 
 .signup input:focus,
-.login  input:focus,
+.login input:focus,
 .password_reset input:focus{
     border:1px solid var(--light-blue);
     box-shadow: none;
 }
-
 
 
 /* All pages except home */
