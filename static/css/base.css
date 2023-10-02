@@ -95,6 +95,15 @@ input::placeholder{
     border: 1px solid var(--black) !important;
 }
 
+.signup input:focus,
+.login  input:focus,
+.password_reset input:focus{
+    border:1px solid var(--light-blue);
+    box-shadow: none;
+}
+
+
+
 /* All pages except home */
 
 .overlay{
@@ -115,9 +124,17 @@ input::placeholder{
     border-color: var(--grey);
 }
 
+.search-form:focus-within{
+    border:1px solid var(--light-blue);
+}
+
 .search-bar{
     border: transparent;
     border-radius: 20px;
+}
+
+.search-bar:focus{
+    box-shadow: none;
 }
 
 .search-btn{
