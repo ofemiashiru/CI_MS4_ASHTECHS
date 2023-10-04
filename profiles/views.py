@@ -4,6 +4,8 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 
+from checkout.models import Order, OrderLineItem
+
 
 def profile(request):
     """ Show Users profile """
@@ -13,7 +15,7 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid:
             form.save()
-            success_message = ' Your Profile has been updated'
+            success_message = 'Your Profile has been updated'
             messages.success(request, success_message)
 
     form = UserProfileForm(instance=profile)
@@ -26,3 +28,17 @@ def profile(request):
         'on_profile': True
     }
     return render(request, 'profiles/profile.html', context)
+
+
+def order_history(request, order_number):
+    """ link to order history """
+    order = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(request, f'Order history for order {order.order_number}')
+
+    context = {
+        'order': order,
+        'from_profile': True,
+    }
+
+    return render(request, 'checkout/checkout_success.html', context)

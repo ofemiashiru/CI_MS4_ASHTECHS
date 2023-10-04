@@ -9,6 +9,8 @@ from bag.contexts import bag_contents
 
 from products.models import Product
 from checkout.models import Order, OrderLineItem
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 
 
 import stripe
@@ -85,7 +87,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('shopping_bag'))
 
-            request.session['save_info'] = 'save_info' in request.POST
+            request.session['save_info'] = 'save-info' in request.POST
 
             return redirect(
                 reverse('checkout_success', args=[order.order_number])
@@ -110,10 +112,29 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY
         )
 
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'f_name': profile.user,
+                    'email': profile.user.email,
+                    'phone_number': profile.d_phone_number,
+                    'address_line_1': profile.d_address_line_1,
+                    'address_line_2': profile.d_address_line_2,
+                    'city': profile.d_city,
+                    'post_code': profile.d_post_code,
+                    'country': profile.d_country,
+                })
+
+
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
+
     if not stripe_public_key:
         messages.warning(request, 'Something went wrong! Public key missing.')
 
-    order_form = OrderForm
     template = 'checkout/checkout.html'
 
     context = {
@@ -129,6 +150,25 @@ def checkout_success(request, order_number):
     """ Feedback to user if their order has been successful """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+
+        if save_info:
+            profile_data = {
+                'd_phone_number': order.phone_number,
+                'd_address_line_1': order.address_line_1,
+                'd_address_line_2': order.address_line_2,
+                'd_city': order.city,
+                'd_post_code': order.post_code,
+                'd_country': order.country,
+            }
+
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
 
     messages.success(
         request, f'Your order has been succesfull. Your order \

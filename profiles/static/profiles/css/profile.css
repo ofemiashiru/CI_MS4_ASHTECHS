@@ -1,3 +1,7 @@
+.order-history{
+    overflow-y: auto;
+}
+
 .default-info-form input:focus,
 .default-info-form select:focus{
     border:1px solid var(--light-blue);
