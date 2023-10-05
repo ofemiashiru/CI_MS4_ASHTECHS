@@ -1,9 +1,10 @@
 from django.shortcuts import (
-        render, get_object_or_404, redirect, reverse, HttpResponse)
+        render, get_object_or_404, redirect, reverse, HttpResponse,)
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Brand
+from reviews.models import Review
 
 
 def see_all_products(request):
@@ -81,9 +82,11 @@ def see_product_details(request, product_id):
     """ view each product and its details """
 
     product = get_object_or_404(Product, id=product_id)
+    reviews = Review.objects.filter(product=product_id)
 
     context = {
-        'product': product
+        'product': product,
+        'reviews': reviews
     }
 
     return render(request, 'products/product_details.html', context)
