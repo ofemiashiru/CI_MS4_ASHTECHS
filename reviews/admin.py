@@ -3,6 +3,7 @@ from .models import Review
 
 # Register your models here.
 
+
 class ReviewAdmin(admin.ModelAdmin):
 
     fields = (
@@ -10,7 +11,7 @@ class ReviewAdmin(admin.ModelAdmin):
     )
 
     list_display = (
-        'user_profile', 'product', 'title', 'review_content', 'rating', 'date'
+        'title', 'review_content', 'rating', 'product', 'user_profile', 'date'
     )
 
     ordering = ('-date',)

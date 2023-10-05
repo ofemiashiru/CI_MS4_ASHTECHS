@@ -21,6 +21,18 @@ def see_all_products(request):
 
         if 'accessory' in request.GET:
             products = products.filter(is_accessory=True)
+        
+        if 'new_arrival' in request.GET:
+            products = products.filter(new_arrival=True)
+        
+        if 'deals' in request.GET:
+            products = products.filter(deal=True)
+        
+        if 'clearance' in request.GET:
+            products = products.filter(clearance=True)
+
+        if 'all_specials' in request.GET:
+            products = products.filter(Q(clearance=True) | Q(deal=True) | Q(new_arrival=True))
 
         if 'sort' in request.GET:
             sort_key = request.GET['sort']

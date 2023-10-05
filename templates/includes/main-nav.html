@@ -2,7 +2,7 @@
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5 text-uppercase" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <u>All Products</u>
+                All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=brand&direction=asc" class="dropdown-item">By Brand</a>
@@ -15,7 +15,7 @@
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5 text-uppercase" href="#" id="accessory-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <u>Accessories</u>
+                Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessory-products-link">
                 <a href="{% url 'products' %}?accessory=true&category=desktop_computer" class="dropdown-item ">Desktop</a>
@@ -28,13 +28,13 @@
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black text-uppercase" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <u>Special Offers</u>
+                Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?new_arrival=true" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?deals=true" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?clearance=true" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?all_specials=true" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
