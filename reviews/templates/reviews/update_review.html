@@ -34,23 +34,21 @@
                             <img class="card-img-top border" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
                     {% else %}
-                        <a href="">
+                        <a href="{{ MEDIA_URL }}noimage.png">
                             <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
                     {% endif %}
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-6">
-                <p class="text-muted">Complete your review</p>
-                <form action="{% url 'update_review' product.id %}" method="POST" id="review-form" class="review-form-item">
+                <p class="text-muted">Update your review</p>
+                <form action="{% url 'update_review' review.id %}" method="POST" id="review-form" class="review-form-item">
                     {% csrf_token %}
                     <input type="hidden" name="user_profile" value="{{request.user}}" />
                     <input type="hidden" name="product_id" value="{{product.id}}" />
                     <fieldset class="rounded px-3">
                         <legend class="fieldset-label">Review</legend>
-                        {{ review_form.title | as_crispy_field }}
-                        {{ review_form.review_content | as_crispy_field }}
-                        {{ review_form.rating | as_crispy_field }}
+                        {{ form|crispy }}
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-5">
@@ -70,6 +68,6 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
+    <!-- {{ block.super }} -->
 
 {% endblock %}

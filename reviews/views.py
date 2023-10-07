@@ -44,20 +44,40 @@ def add_review(request, product_id):
                 return render(request, 'reviews/add_review.html', context)
 
         return render(request, 'reviews/add_review.html', context)
-
-    messages.info(request, 'You need to be logged in to leave a review.')
-    return redirect('products')
+    else:
+        messages.info(request, 'You need to be logged in to leave a review.')
+        return redirect('products')
 
 
 def update_review(request, review_id):
     """ Allow users to update their review"""
 
     if request.user.is_authenticated:
-
         review = get_object_or_404(Review, id=review_id)
+        product = get_object_or_404(Product, id=review.product.id)
 
-        print(review)
-    return HttpResponse(f'Updating review {review_id}')
+        if request.method == 'POST':
+            if str(review.user_profile) == str(request.user):
+                form = ReviewForm(request.POST, instance=review)
+                if form.is_valid:
+                    form.save()
+                    messages.success(request, 'Review succesfully updated.')
+            else:
+                messages.warning(
+                    request, 'You can only update your own reviews.'
+                )
+        form = ReviewForm(instance=review)
+
+        context = {
+            'form': form,
+            'product': product,
+            'review': review,
+            'from_review': True
+        }
+        return render(request, 'reviews/update_review.html', context)
+    else:
+        messages.info(request, 'You need to be logged in to update a review.')
+        return redirect('products')
 
 
 def delete_review(request, review_id):
@@ -69,7 +89,9 @@ def delete_review(request, review_id):
         if str(review.user_profile) == str(request.user):
             review.delete()
             messages.success(request, 'Review successfully deleted.')
+            return redirect('products')
         else:
             messages.warning(request, 'You can only delete your own reviews.')
-
-    return redirect('products')
+    else:
+        messages.info(request, 'You need to be logged in to delete a review.')
+        return redirect('products')

@@ -125,6 +125,7 @@
                                 <li> 
                                     <p class="mb-n1 mt-2 thick-text">{{ review.user_profile }}</p>
                                     <span class="small">{{ review.date }}</span>
+                                    <h4>{{review.title}}</h4>
                                     <p class="mt-2 font-italic">"{{ review.review_content }}"</p>
                                     <p><i class="fa-regular fa-star mr-1"></i>{{review.rating|floatformat:-2}} / <span class="thick-text">100</span></p>
                                     {% if review.user_profile|stringformat:"s" == request.user|stringformat:"s" %}
