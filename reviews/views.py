@@ -49,6 +49,17 @@ def add_review(request, product_id):
     return redirect('products')
 
 
+def update_review(request, review_id):
+    """ Allow users to update their review"""
+
+    if request.user.is_authenticated:
+
+        review = get_object_or_404(Review, id=review_id)
+
+        print(review)
+    return HttpResponse(f'Updating review {review_id}')
+
+
 def delete_review(request, review_id):
     """ Allow users to delete their review """
 

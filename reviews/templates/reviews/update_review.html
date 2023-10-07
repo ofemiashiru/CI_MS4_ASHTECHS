@@ -1,0 +1,75 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
+{% endblock %}
+
+{% block extra_title %}Update Review for {{product.name}}{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col mt-3">
+                <h2 class="page-title">Review
+                    "<a href="{% url 'product_details' product.id %}">{{product.name}}</a>"
+                </h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-4 order-lg-last offset-lg-2">
+                <div class="image-container my-5">
+                    {% if product.image %}
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="card-img-top border" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <a href="">
+                            <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6">
+                <p class="text-muted">Complete your review</p>
+                <form action="{% url 'update_review' product.id %}" method="POST" id="review-form" class="review-form-item">
+                    {% csrf_token %}
+                    <input type="hidden" name="user_profile" value="{{request.user}}" />
+                    <input type="hidden" name="product_id" value="{{product.id}}" />
+                    <fieldset class="rounded px-3">
+                        <legend class="fieldset-label">Review</legend>
+                        {{ review_form.title | as_crispy_field }}
+                        {{ review_form.review_content | as_crispy_field }}
+                        {{ review_form.rating | as_crispy_field }}
+                    </fieldset>
+
+                    <div class="submit-button text-right mt-5 mb-5">
+                        <a href="{% url 'product_details' product.id %}" class="btn black-back-g py-3 text-white border rounded-0">
+                            <i class="fas fa-chevron-left fa-beat"></i> 
+                            <span class="text-uppercase thick-text">Back to Product</span>
+                        </a>
+                        <button id="submit-button" class="btn white-back-g py-3 thick-text text-black border rounded-0"> 
+                            <span class="text-uppercase">Update Review</span> 
+                            <i class="fa-solid fa-paper-plane fa-beat ml-2"></i>
+                        </button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+
+{% endblock %}

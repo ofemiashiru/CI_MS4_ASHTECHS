@@ -131,7 +131,7 @@
                                         <button type="button" title="Delete Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" data-toggle="modal" data-target="#deleteModal{{review.id}}" aria-label="Delete Review">
                                             <i class="fa-solid fa-trash fa-beat"></i>
                                         </button>
-                                        <a href="" title="Update Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" aria-label="Update Review">
+                                        <a href="{% url 'update_review' review.id %}" title="Update Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" aria-label="Update Review">
                                             <i class="fa-solid fa-pen-to-square fa-beat"></i>
                                         </a>
                                     {% endif %}
