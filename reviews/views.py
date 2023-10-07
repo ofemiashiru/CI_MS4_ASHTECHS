@@ -18,7 +18,7 @@ def add_review(request, product_id):
 
     if request.user.is_authenticated:
         product = get_object_or_404(Product, id=product_id)
-        user  = get_object_or_404(UserProfile, user=request.user)
+        user = get_object_or_404(UserProfile, user=request.user)
         review_form = ReviewForm()
 
         context = {
@@ -40,11 +40,25 @@ def add_review(request, product_id):
                 review.user_profile = user
                 review.save()
 
-                messages.success(request, 'Review succesfully added')
+                messages.success(request, 'Review succesfully added.')
                 return render(request, 'reviews/add_review.html', context)
-
 
         return render(request, 'reviews/add_review.html', context)
 
-    messages.info(request, 'You need to be logged in to leave a review')
+    messages.info(request, 'You need to be logged in to leave a review.')
+    return redirect('products')
+
+
+def delete_review(request, review_id):
+    """ Allow users to delete their review """
+
+    if request.user.is_authenticated:
+        review = get_object_or_404(Review, id=review_id)
+
+        if str(review.user_profile) == str(request.user):
+            review.delete()
+            messages.success(request, 'Review successfully deleted.')
+        else:
+            messages.warning(request, 'You can only delete your own reviews.')
+
     return redirect('products')

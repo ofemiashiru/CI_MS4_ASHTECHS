@@ -124,8 +124,8 @@
                                           Deleting this review will permanentely remove it from this product.
                                         </div>
                                         <div class="modal-footer">
-                                          <button type="button" class="btn-secondary btn black-back-g thick-text border text-white rounded-0 text-uppercase" data-dismiss="modal">Close</button>
-                                          <button type="button" class="btn-primary btn white-back-g thick-text border text-black rounded-0 text-uppercase">Delete Review</button>
+                                          <button type="button" aria-label="No" class="btn-secondary btn black-back-g thick-text border text-white rounded-0 text-uppercase" data-dismiss="modal">No</button>
+                                          <a href="{% url 'delete_review' review_id=review.id %}" type="button" aria-label="Yes" class="btn-primary btn white-back-g thick-text border text-black rounded-0 text-uppercase">Yes</a>
                                         </div>
                                       </div>
                                     </div>
