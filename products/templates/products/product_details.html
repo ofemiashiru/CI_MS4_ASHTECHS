@@ -106,6 +106,19 @@
                 <div class="row">
                     <div class="col-lg-8 mt-3 offset-lg-2">
                         <h2 class="page-title text-lg-left text-sm-center">Customer Reviews</h2>
+                        <div class="leave-review text-lg-left text-sm-center">
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'add_review' product.id %}" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase">
+                                <i class="fa-solid fa-pen-to-square fa-beat-fade mr-1"></i>
+                                Leave Review
+                            </a>
+                            {% else %}
+                            <span class="form-check-label pb-5">
+                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                <a class="text-info" href="{% url 'account_login' %}">login</a> to leave a review
+                            </span>
+                            {% endif %}
+                        </div>
                         <hr class="mb-1">
                         <ul class="list-unstyled">
                             {% for review in reviews %}
@@ -113,10 +126,15 @@
                                     <p class="mb-n1 mt-2 thick-text">{{ review.user_profile }}</p>
                                     <span class="small">{{ review.date }}</span>
                                     <p class="mt-2 font-italic">"{{ review.review_content }}"</p>
-                                    <p><i class="fa-regular fa-star mr-1"></i>{{review.rating}} / <span class="thick-text">100</span></p>
-                                    <button type="button" title="Delete Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" data-toggle="modal" data-target="#deleteModal{{review.id}}" aria-label="Delete Review">
-                                        <i class="fa-solid fa-trash fa-beat"></i>
-                                    </button>
+                                    <p><i class="fa-regular fa-star mr-1"></i>{{review.rating|floatformat:-2}} / <span class="thick-text">100</span></p>
+                                    {% if review.user_profile|stringformat:"s" == request.user|stringformat:"s" %}
+                                        <button type="button" title="Delete Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" data-toggle="modal" data-target="#deleteModal{{review.id}}" aria-label="Delete Review">
+                                            <i class="fa-solid fa-trash fa-beat"></i>
+                                        </button>
+                                        <a href="" title="Update Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" aria-label="Update Review">
+                                            <i class="fa-solid fa-pen-to-square fa-beat"></i>
+                                        </a>
+                                    {% endif %}
                                     <hr class="mb-1">
                                 </li>
                                 <!-- Modal -->
@@ -150,21 +168,6 @@
                     </div>
                 </div>
             {% endif %}
-            <div class="row">
-                <div class="col-lg-8 mt-3 offset-lg-2 pb-5">
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'add_review' product.id %}" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase py-3">
-                        <i class="fa-solid fa-pen-to-square fa-beat-fade mr-1"></i>
-                        Leave Review
-                    </a>
-                    {% else %}
-                    <span class="form-check-label pb-5">
-                        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                        <a class="text-info" href="{% url 'account_login' %}">login</a> to leave a review
-                    </span>
-                    {% endif %}
-                </div>
-            </div>
         </section>
     </div>
     <div class="top-link-container">
