@@ -115,23 +115,24 @@
                 <div class="row">
                     <div class="col-lg-8 mt-3 offset-lg-2">
                         <h2 class="page-title text-lg-left text-sm-center">No Reviews</h2>
-                        <span class="form-check-label pb-5">
-                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                            <a class="text-info" href="{% url 'account_login' %}">login</a> to leave a review
-                        </span>
                     </div>
                 </div>
             {% endif %}
-            {% if user.is_authenticated %}
-                <div class="row">
-                    <div class="col-lg-8 mt-3 offset-lg-2">
-                        <a href="" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase py-3">
-                            <i class="fa-solid fa-pen-to-square fa-beat-fade mr-1"></i>
-                            Leave Review
-                        </a>
-                    </div>
+            <div class="row">
+                <div class="col-lg-8 mt-3 offset-lg-2">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'add_review' product.id %}" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase py-3">
+                        <i class="fa-solid fa-pen-to-square fa-beat-fade mr-1"></i>
+                        Leave Review
+                    </a>
+                    {% else %}
+                    <span class="form-check-label pb-5">
+                        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                        <a class="text-info" href="{% url 'account_login' %}">login</a> to leave a review
+                    </span>
+                    {% endif %}
                 </div>
-            {% endif %}
+            </div>
         </section>
     </div>
     <div class="top-link-container">
