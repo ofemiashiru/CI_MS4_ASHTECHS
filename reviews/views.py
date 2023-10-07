@@ -14,21 +14,10 @@ from reviews.forms import ReviewForm
 
 
 def add_review(request, product_id):
-    profile = get_object_or_404(UserProfile, user=request.user)
-    product = get_object_or_404(Product, id=product_id)
-
-    if request.method == 'POST':
-        review_form = ReviewForm(request.POST, instance=profile)
-
-        if review_form.is_valid():
-            review_form.save()
-
-            messages.success(request, 'Review succesfully added')
-            return HttpResponse('Posted')
-                
 
     if request.user.is_authenticated:
-
+        product = get_object_or_404(Product, id=product_id)
+        user  = get_object_or_404(UserProfile, user=request.user)
         review_form = ReviewForm()
 
         context = {
@@ -36,6 +25,24 @@ def add_review(request, product_id):
             'review_form': review_form,
             'from_review': True
         }
+        if request.method == 'POST':
+            form_data = {
+                'title': request.POST['title'],
+                'review_content': request.POST['review_content'],
+                'rating': request.POST['rating'],
+            }
+            review_form = ReviewForm(form_data)
+
+            if review_form.is_valid():
+                review = review_form.save(commit=False)
+                review.product_id = product_id
+                review.user_profile = user
+                review.save()
+
+                messages.success(request, 'Review succesfully added')
+                return render(request, 'reviews/add_review.html', context)
+
+
         return render(request, 'reviews/add_review.html', context)
 
     messages.info(request, 'You need to be logged in to leave a review')

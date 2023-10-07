@@ -1,4 +1,9 @@
-.review-image{
-    position: fixed;
-    right: 0;
+.review-form-item input:focus,
+.review-form-item textarea:focus{
+    border:1px solid var(--light-blue);
+    box-shadow: none;
+}
+
+.review-form-item textarea::placeholder{
+    color: var(--grey);
 }

@@ -20,8 +20,5 @@ class Review(models.Model):
         max_digits=6, decimal_places=2, null=True, blank=True)
     date = models.DateField(auto_now_add=True)
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return self.title
