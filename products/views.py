@@ -7,10 +7,29 @@ from .models import Product, Category, Brand
 from reviews.models import Review
 
 
+def get_ratings(model):
+    """
+    Get ratings for each product and does average calculations
+    """
+    rating_dict = {}
+    for review in model:
+        if review.product.id not in rating_dict:
+            rating_dict[review.product.id] = [int(review.rating)]
+        else:
+            rating_dict[review.product.id].append(int(review.rating))
+
+    sum_of_rating_dict = {}
+    for key, value in rating_dict.items():
+        sum_of_rating_dict[key] = int(sum(value)/len(rating_dict[key]))
+
+    return sum_of_rating_dict
+
+
 def see_all_products(request):
     """ view returns all the products and handles searching and sorting """
 
     products = Product.objects.all()
+    reviews = Review.objects.all()
     query = None
     categories = None
     brand = None
@@ -21,18 +40,20 @@ def see_all_products(request):
 
         if 'accessory' in request.GET:
             products = products.filter(is_accessory=True)
-        
+
         if 'new_arrival' in request.GET:
             products = products.filter(new_arrival=True)
-        
+
         if 'deals' in request.GET:
             products = products.filter(deal=True)
-        
+
         if 'clearance' in request.GET:
             products = products.filter(clearance=True)
 
         if 'all_specials' in request.GET:
-            products = products.filter(Q(clearance=True) | Q(deal=True) | Q(new_arrival=True))
+            products = products.filter(
+                Q(clearance=True) | Q(deal=True) | Q(new_arrival=True)
+            )
 
         if 'sort' in request.GET:
             sort_key = request.GET['sort']
@@ -79,8 +100,11 @@ def see_all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    ratings = get_ratings(reviews)
+
     context = {
         'products': products,
+        'ratings': ratings,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
@@ -96,9 +120,12 @@ def see_product_details(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     reviews = Review.objects.filter(product=product_id)
 
+    ratings = get_ratings(reviews)
+
     context = {
         'product': product,
-        'reviews': reviews
+        'reviews': reviews,
+        'ratings': ratings
     }
 
     return render(request, 'products/product_details.html', context)

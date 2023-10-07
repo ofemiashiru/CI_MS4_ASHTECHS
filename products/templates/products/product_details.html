@@ -47,12 +47,21 @@
                         </span>
                     {% endif %}
                     <div class="rating-section">
-                        {% if product.rating %}
-                            <small class="text-muted"><i class="fa-regular fa-star mr-1"></i>{{ product.rating }} / 100</small>
-                        {% else %}
-                            <p class="text-muted small">No Rating</p>
-                            <a href="#all-reviews" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase py-3">Reviews ({{ reviews|length }})</a>
-                        {% endif %}
+                        <small class="text-muted">
+                            {% if product.id in ratings %}<i class="fa-regular fa-star mr-1"></i>{% endif %}
+                            {% for key, value in ratings.items %}
+                                {% if key == product.id %}
+                                    {{ value }}
+                                {% else %}
+
+                                {% endif %}
+                            {% endfor %}
+                            {% if product.id in ratings %}
+                                / <span class="thick-text">100</span>
+                            {% else %}
+                                No Rating
+                            {% endif %}
+                        </small>
                     </div>
                     <p class="mt-3">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
