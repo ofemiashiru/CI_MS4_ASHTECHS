@@ -14,6 +14,7 @@ from reviews.forms import ReviewForm
 
 
 def add_review(request, product_id):
+    """ Allow user to add reviews"""
 
     if request.user.is_authenticated:
         product = get_object_or_404(Product, id=product_id)

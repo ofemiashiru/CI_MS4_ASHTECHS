@@ -3,7 +3,8 @@ from reviews.models import Review
 
 
 class ReviewForm(forms.ModelForm):
-    review_content = forms.CharField(label="Content:",widget=forms.Textarea)
+    review_content = forms.CharField(widget=forms.Textarea)
+    rating = forms.IntegerField(widget=forms.TextInput(attrs={'min':0, 'max':100, 'value':0,'type':'number'}))
     class Meta:
         model = Review
         fields = (
