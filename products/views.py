@@ -58,22 +58,28 @@ def see_all_products(request):
         if 'sort' in request.GET:
             sort_key = request.GET['sort']
             sort = sort_key
+            
+            # Create a separate action for rating as it is not stored in DB
+            if sort_key == 'rating':
+                all_ratings = get_ratings(reviews)
+                print("REACHED")
+                print(all_ratings)
+            else:
+                if sort_key == 'name':
+                    sort_key = 'lower_name'
+                    products = products.annotate(lower_name=Lower('name'))
 
-            if sort_key == 'name':
-                sort_key = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
+                if sort_key == 'brand':
+                    sort_key = 'brand__name'
+                elif sort_key == 'category':
+                    sort_key = 'category__name'
 
-            if sort_key == 'brand':
-                sort_key = 'brand__name'
-            elif sort_key == 'category':
-                sort_key = 'category__name'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'desc':
+                        sort_key = f'-{sort_key}'
 
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sort_key = f'-{sort_key}'
-
-            products = products.order_by(sort_key)
+                products = products.order_by(sort_key)
 
         if 'brandName' in request.GET:
             brand = request.GET['brandName'].split(',')
