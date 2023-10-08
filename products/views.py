@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Brand
 from reviews.models import Review
+from .forms import ProductForm
 
 
 def see_all_products(request):
@@ -104,3 +105,20 @@ def see_product_details(request, product_id):
     }
 
     return render(request, 'products/product_details.html', context)
+
+
+def add_product(request):
+    """ Add product to store """
+
+    if request.user.is_superuser:
+
+        if request.method == 'POST':
+            return HttpResponse('Posted')
+
+        product_form = ProductForm()
+
+        context = {
+            'product_form': product_form
+        }
+
+        return render(request, 'products/add_product.html', context)

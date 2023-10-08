@@ -47,10 +47,7 @@
                     <input type="hidden" name="user_profile" value="{{request.user}}" />
                     <input type="hidden" name="product_id" value="{{product.id}}" />
                     <fieldset class="rounded px-3">
-                        <legend class="fieldset-label">Review</legend>
-                        {{ review_form.title | as_crispy_field }}
-                        {{ review_form.review_content | as_crispy_field }}
-                        {{ review_form.rating | as_crispy_field }}
+                        {{ review_form | crispy }}
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-5">
