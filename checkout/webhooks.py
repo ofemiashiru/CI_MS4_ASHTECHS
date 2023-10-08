@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
@@ -14,8 +15,8 @@ if os.path.exists("env.py"):
 @csrf_exempt
 def webhook(request):
 
-    wh_secret = os.environ.get('STRIPE_WH_SECRET')
-    stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
+    wh_secret = settings.STRIPE_WH_SECRET
+    stripe.api_key = settings.STRIPE_SECRET_KEY
 
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']

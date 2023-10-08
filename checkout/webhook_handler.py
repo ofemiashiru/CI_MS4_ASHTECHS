@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 import stripe
 from .models import Order, OrderLineItem
+from profiles.models import UserProfile
 from products.models import Product
 import json
 import time
@@ -29,6 +30,23 @@ class StripeWebhookHandler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
+        profile = None
+        username = intent.metadata.username
+
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+
+            if save_info:
+
+                profile.d_phone_number = shipping_details.phone
+                profile.d_address_line_1 = shipping_details.address.line1
+                profile.d_address_line_2 = shipping_details.address.line2
+                profile.d_city = shipping_details.address.city
+                profile.d_post_code = shipping_details.address.postal_code
+                profile.d_country = shipping_details.address.country
+
+                profile.save()
+
         order_exists = False
         attempt = 1
 
@@ -44,7 +62,7 @@ class StripeWebhookHandler:
                     city__iexact=shipping_details.address.city,
                     post_code__iexact=shipping_details.address.postal_code,
                     country__iexact=shipping_details.address.country,
-                    grand_total=shipping_details.grand_total,
+                    grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
@@ -55,6 +73,7 @@ class StripeWebhookHandler:
             except Order.DoesNotExist():
                 attempt += 1
                 time.sleep(1)
+
         if order_exists:
             return HttpResponse(
                 content=f'Webhook was received: {event["type"]} \
@@ -64,21 +83,21 @@ class StripeWebhookHandler:
         else:
             order = None
             try:
+                order = Order.objects.create(
+                    f_name=shipping_details.name.split()[0],
+                    l_name=shipping_details.name.split()[1],
+                    user_profile=profile,
+                    email=billing_details.email,
+                    phone_number=shipping_details.phone,
+                    address_line_1=shipping_details.address.line1,
+                    address_line_2=shipping_details.address.line2,
+                    city=shipping_details.address.city,
+                    post_code=shipping_details.address.postal_code,
+                    country=shipping_details.address.country,
+                    original_bag=bag,
+                    stripe_pid=pid,
+                )
                 for item_id, quantity in json.loads(bag).items():
-                    order = Order.objects.create(
-                        f_name=shipping_details.name.split()[0],
-                        l_name=shipping_details.name.split()[1],
-                        email=billing_details.email,
-                        phone_number=shipping_details.phone,
-                        address_line_1=shipping_details.address.line1,
-                        address_line_2=shipping_details.address.line2,
-                        city=shipping_details.address.city,
-                        post_code=shipping_details.address.postal_code,
-                        country=shipping_details.address.country,
-                        original_bag=bag,
-                        stripe_pid=pid,
-                    )
-
                     product = Product.objects.get(id=item_id)
 
                     if isinstance(quantity, int):
