@@ -6,6 +6,8 @@ from .models import Review
 
 class ReviewAdmin(admin.ModelAdmin):
 
+    readonly_fields = ('rating',)
+
     fields = (
         'user_profile', 'title', 'review_content', 'product', 'rating',
     )

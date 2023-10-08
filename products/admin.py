@@ -19,6 +19,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
+
+    readonly_fields = ('rating',)
+
     list_display = (
         'name',
         'category',
