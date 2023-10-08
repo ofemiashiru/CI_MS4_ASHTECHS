@@ -7,29 +7,10 @@ from .models import Product, Category, Brand
 from reviews.models import Review
 
 
-def get_ratings(model):
-    """
-    Get ratings for each product and does average calculations
-    """
-    rating_dict = {}
-    for review in model:
-        if review.product.id not in rating_dict:
-            rating_dict[review.product.id] = [int(review.rating)]
-        else:
-            rating_dict[review.product.id].append(int(review.rating))
-
-    sum_of_rating_dict = {}
-    for key, value in rating_dict.items():
-        sum_of_rating_dict[key] = int(sum(value)/len(rating_dict[key]))
-
-    return sum_of_rating_dict
-
-
 def see_all_products(request):
     """ view returns all the products and handles searching and sorting """
 
     products = Product.objects.all()
-    reviews = Review.objects.all()
     query = None
     categories = None
     brand = None
@@ -58,28 +39,22 @@ def see_all_products(request):
         if 'sort' in request.GET:
             sort_key = request.GET['sort']
             sort = sort_key
-            
-            # Create a separate action for rating as it is not stored in DB
-            if sort_key == 'rating':
-                all_ratings = get_ratings(reviews)
-                print("REACHED")
-                print(all_ratings)
-            else:
-                if sort_key == 'name':
-                    sort_key = 'lower_name'
-                    products = products.annotate(lower_name=Lower('name'))
 
-                if sort_key == 'brand':
-                    sort_key = 'brand__name'
-                elif sort_key == 'category':
-                    sort_key = 'category__name'
+            if sort_key == 'name':
+                sort_key = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
 
-                if 'direction' in request.GET:
-                    direction = request.GET['direction']
-                    if direction == 'desc':
-                        sort_key = f'-{sort_key}'
+            if sort_key == 'brand':
+                sort_key = 'brand__name'
+            elif sort_key == 'category':
+                sort_key = 'category__name'
 
-                products = products.order_by(sort_key)
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sort_key = f'-{sort_key}'
+
+            products = products.order_by(sort_key)
 
         if 'brandName' in request.GET:
             brand = request.GET['brandName'].split(',')
@@ -106,11 +81,8 @@ def see_all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
-    ratings = get_ratings(reviews)
-
     context = {
         'products': products,
-        'ratings': ratings,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
@@ -126,12 +98,9 @@ def see_product_details(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     reviews = Review.objects.filter(product=product_id)
 
-    ratings = get_ratings(reviews)
-
     context = {
         'product': product,
         'reviews': reviews,
-        'ratings': ratings
     }
 
     return render(request, 'products/product_details.html', context)

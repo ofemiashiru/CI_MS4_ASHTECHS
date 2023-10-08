@@ -13,6 +13,24 @@ from reviews.forms import ReviewForm
 # Create your views here.
 
 
+def get_ratings(model):
+    """
+    Get ratings for each product and does average calculations
+    """
+    rating_dict = {}
+    for review in model:
+        if review.product.id not in rating_dict:
+            rating_dict[review.product.id] = [int(review.rating)]
+        else:
+            rating_dict[review.product.id].append(int(review.rating))
+
+    sum_of_rating_dict = {}
+    for key, value in rating_dict.items():
+        sum_of_rating_dict[key] = int(sum(value)/len(rating_dict[key]))
+
+    return sum_of_rating_dict
+
+
 def add_review(request, product_id):
     """ Allow user to add reviews"""
 
@@ -40,6 +58,14 @@ def add_review(request, product_id):
                 review.user_profile = user
                 review.save()
 
+                # get the new rating
+                this_review = Review.objects.filter(product=product_id)
+                new_rating = get_ratings(this_review)
+
+                # add rating to product model
+                product.rating = new_rating[int(product_id)]
+                product.save(update_fields=['rating'])
+
                 messages.success(request, 'Review succesfully added.')
                 return render(request, 'reviews/add_review.html', context)
 
@@ -61,6 +87,15 @@ def update_review(request, review_id):
                 form = ReviewForm(request.POST, instance=review)
                 if form.is_valid:
                     form.save()
+
+                    # get the new rating
+                    this_review = Review.objects.filter(product=product.id)
+                    new_rating = get_ratings(this_review)
+
+                    # add rating to product model
+                    product.rating = new_rating[int(product.id)]
+                    product.save(update_fields=['rating'])
+
                     messages.success(request, 'Review succesfully updated.')
             else:
                 messages.warning(
@@ -85,9 +120,19 @@ def delete_review(request, review_id):
 
     if request.user.is_authenticated:
         review = get_object_or_404(Review, id=review_id)
+        product = get_object_or_404(Product, id=review.product.id)
 
         if str(review.user_profile) == str(request.user):
             review.delete()
+
+            # get the new rating
+            this_review = Review.objects.filter(product=product.id)
+            new_rating = get_ratings(this_review)
+
+            # add rating to product model
+            product.rating = new_rating[int(product.id)]
+            product.save(update_fields=['rating'])
+
             messages.success(request, 'Review successfully deleted.')
             return redirect('products')
         else:
