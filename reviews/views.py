@@ -126,8 +126,8 @@ def delete_review(request, review_id):
             review.delete()
 
             # get the new rating
-            this_review = Review.objects.filter(product=product.id)
-            new_rating = get_ratings(this_review)
+            all_reviews = Review.objects.filter(product=product.id)
+            new_rating = get_ratings(all_reviews)
 
             # add rating to product model
             product.rating = new_rating[int(product.id)]
