@@ -115,10 +115,10 @@ def add_product(request):
         if request.method == 'POST':
             product_form = ProductForm(request.POST, request.FILES)
             if product_form.is_valid():
-                product_form.save()
-                messages.success(request, 'New product added.')
+                product = product_form.save()
+                messages.success(request, 'Product added successfully.')
 
-                return redirect(reverse('add_product'))
+                return redirect(reverse('product_details', args=[product.id]))
             else:
                 messages.error(
                     request, 'Product could not be added, try again.'
@@ -131,3 +131,59 @@ def add_product(request):
         }
 
         return render(request, 'products/add_product.html', context)
+    else:
+        messages.info(request, 'You are not able to access this page.')
+        return redirect(reverse('home'))
+
+
+def edit_product(request, product_id):
+    """ Edit product in store """
+
+    if request.user.is_superuser:
+
+        product = get_object_or_404(Product, id=product_id)
+
+        if request.method == 'POST':
+
+            product_form = ProductForm(
+                request.POST, request.FILES, instance=product
+            )
+
+            if product_form.is_valid():
+                product_form.save()
+
+                messages.success(request, 'Product update successfully.')
+                return redirect(reverse('product_details', args=[product_id]))
+            else:
+                messages.error(
+                    request, 'Product not updated. Please try again.'
+                )
+
+        else:
+            product_form = ProductForm(instance=product)
+
+        context = {
+            'product_form': product_form,
+            'product': product
+        }
+
+        return render(request, 'products/edit_product.html', context)
+
+    else:
+        messages.info(request, 'You are not able to access this page.')
+        return redirect(reverse('home'))
+
+
+def delete_product(request, product_id):
+    """ delete product from store"""
+    if request.user.is_superuser:
+
+        product = get_object_or_404(Product, id=product_id)
+
+        product.delete()
+        messages.success(request, 'Product deleted successfully.')
+
+    else:
+        messages.info(request, 'You are not able to access this page.')
+        
+    return redirect(reverse('products'))

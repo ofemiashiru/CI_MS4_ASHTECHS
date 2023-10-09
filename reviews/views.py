@@ -67,7 +67,7 @@ def add_review(request, product_id):
                 product.save(update_fields=['rating'])
 
                 messages.success(request, 'Review succesfully added.')
-                return render(request, 'reviews/add_review.html', context)
+                return redirect(reverse('product_details', args=[product_id]))
 
         return render(request, 'reviews/add_review.html', context)
     else:
@@ -97,6 +97,7 @@ def update_review(request, review_id):
                     product.save(update_fields=['rating'])
 
                     messages.success(request, 'Review succesfully updated.')
+                    return redirect(reverse('product_details', args=[product.id]))
             else:
                 messages.warning(
                     request, 'You can only update your own reviews.'
@@ -134,7 +135,7 @@ def delete_review(request, review_id):
             product.save(update_fields=['rating'])
 
             messages.success(request, 'Review successfully deleted.')
-            return redirect('products')
+            return redirect(reverse('product_details', args=[product.id]))
         else:
             messages.warning(request, 'You can only delete your own reviews.')
     else:
