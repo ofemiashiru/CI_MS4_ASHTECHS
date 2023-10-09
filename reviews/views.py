@@ -3,6 +3,7 @@ from django.shortcuts import (
     redirect
 )
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from products.models import Product
 from profiles.models import UserProfile
@@ -31,6 +32,7 @@ def get_ratings(model):
     return sum_of_rating_dict
 
 
+@login_required
 def add_review(request, product_id):
     """ Allow user to add reviews"""
 
@@ -75,6 +77,7 @@ def add_review(request, product_id):
         return redirect('products')
 
 
+@login_required
 def update_review(request, review_id):
     """ Allow users to update their review"""
 
@@ -116,6 +119,7 @@ def update_review(request, review_id):
         return redirect('products')
 
 
+@login_required
 def delete_review(request, review_id):
     """ Allow users to delete their review """
 
