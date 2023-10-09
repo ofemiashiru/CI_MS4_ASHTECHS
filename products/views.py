@@ -185,5 +185,5 @@ def delete_product(request, product_id):
 
     else:
         messages.info(request, 'You are not able to access this page.')
-        
+
     return redirect(reverse('products'))
