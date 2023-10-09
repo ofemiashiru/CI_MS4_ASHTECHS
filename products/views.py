@@ -113,9 +113,18 @@ def add_product(request):
     if request.user.is_superuser:
 
         if request.method == 'POST':
-            return HttpResponse('Posted')
+            product_form = ProductForm(request.POST, request.FILES)
+            if product_form.is_valid():
+                product_form.save()
+                messages.success(request, 'New product added.')
 
-        product_form = ProductForm()
+                return redirect(reverse('add_product'))
+            else:
+                messages.error(
+                    request, 'Product could not be added, try again.'
+                )
+        else:
+            product_form = ProductForm()
 
         context = {
             'product_form': product_form
