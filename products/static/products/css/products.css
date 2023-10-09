@@ -1,10 +1,6 @@
 .product-form input:focus,
-.product-form textarea:focus{
+.product-form textarea:focus,
+.product-form select:focus{
     border:1px solid var(--light-blue);
     box-shadow: none;
-}
-
-
-#product-form select {
-    background-color: red !important;
 }

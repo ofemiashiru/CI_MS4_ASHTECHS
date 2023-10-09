@@ -56,6 +56,40 @@
                         </small>
                     </div>
                     {% if reviews %}<a href="#all-reviews">See Reviews ({{reviews|length}})</a>{% else %}<span class="warning" >No Reviews</span>{% endif %}
+                    {% if request.user.is_superuser %}
+                        <div class="mt-2">
+                        
+                            <a href="{% url 'edit_product' product.id %}" class="btn bg-info text-white rounded-0" title="Edit {{ product.name }}" aria-label="Edit {{ product.name }}">
+                                Edit<i class="fa-solid fa-pen-to-square ml-1"></i>
+                            </a>
+                            <button type="button" class="btn bg-danger text-white rounded-0" data-toggle="modal" data-target="#deleteModal-{{ product.id }}">
+                                Delete<i class="fa-solid fa-trash ml-1"></i>
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="deleteModal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                <div class="modal-content rounded-0">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete {{ product.name }}?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><span class="text-white bg-danger p-2">Warning</span> Deleting this product will remove all related reviews!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary text-white black-back-g rounded-0 thick-text border" data-dismiss="modal">No</button>
+                                    <a href="{% url 'delete_product' product.id %}" class="btn btn-primary rounded-0 text-black white-back-g thick-text border" title="Delete {{ product.name }}" aria-label="Delete {{ product.name }}">
+                                        Yes
+                                    </a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
                     <p class="mt-3">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
@@ -122,12 +156,12 @@
                                     <p class="mt-2 font-italic">"{{ review.review_content }}"</p>
                                     <p><i class="fa-regular fa-star mr-1"></i>{{review.rating|floatformat:-2}} / <span class="thick-text">100</span></p>
                                     {% if review.user_profile|stringformat:"s" == request.user|stringformat:"s" %}
+                                        <a href="{% url 'update_review' review.id %}" title="Edit Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" aria-label="Edit Review">
+                                            <i class="fa-solid fa-pen-to-square fa-beat"></i>
+                                        </a>
                                         <button type="button" title="Delete Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" data-toggle="modal" data-target="#deleteModal{{review.id}}" aria-label="Delete Review">
                                             <i class="fa-solid fa-trash fa-beat"></i>
                                         </button>
-                                        <a href="{% url 'update_review' review.id %}" title="Update Review" class="btn black-back-g thick-text border text-white rounded-0 text-uppercase" aria-label="Update Review">
-                                            <i class="fa-solid fa-pen-to-square fa-beat"></i>
-                                        </a>
                                     {% endif %}
                                     <hr class="mb-1">
                                 </li>
