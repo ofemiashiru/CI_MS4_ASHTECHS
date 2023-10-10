@@ -1,0 +1,1 @@
+web: gunicorn ash-techs.wsgi:application
