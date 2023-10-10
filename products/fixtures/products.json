@@ -1,0 +1,92 @@
+[
+    {
+       "model":"products.product",
+       "pk":1,
+       "fields":{
+          "brand":1,
+          "category":2,
+          "is_accessory":false,
+          "name":"MacBook Air 13-inch with M1 chip",
+          "description":"Apple M1 chip delivers powerful CPU, GPU and machine learning performance\r\nUp to 18 hours of battery life so you can go longer than everFootnote1\r\nRetina display with vibrant colours and incredible detail\r\nSuperfast SSD storage opens apps and files in an instant\r\nFanless design for silent operation",
+          "price":"899.99",
+          "rating":null,
+          "image_url":null,
+          "image":"macbook-air-13inch.png",
+          "new_arrival":false,
+          "deal":false,
+          "clearance":true
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":2,
+       "fields":{
+          "brand":3,
+          "category":4,
+          "is_accessory":false,
+          "name":"SIM Free Samsung Galaxy A04s 32GB Mobile Phone - Black",
+          "description":"Network:\r\n\r\nNetwork provider: Sim free.\r\n4G network capability.\r\nDual SIM card phone: supports 2 SIM cards simultaneously.\r\nSIM card type: nano SIM and nano SIM.\r\nDisplay and Design:\r\n\r\n6.5 inch TFT display.\r\nResolution 720 x 1600 pixels.\r\nWith a density of 269 pixels per inch.\r\nTouch screen.\r\nDimensions:\r\n\r\nSize H164.7, W76.9, D9.1mm.\r\nWeight 195g.\r\nCamera and Video:\r\n\r\nDual camera.\r\nFront camera 5MP.\r\nRear camera 50MP.\r\nSecond rear camera 2MP.\r\nThird rear camera 2MP.\r\nLED flash.\r\nCamera features: Portrait, Food, Macro, Panorama, Photo, Portrait, Pro.\r\nVideo capture in FHD quality.\r\nStorage:\r\n\r\nInternal memory 32GB.\r\nExpandable memory up to 1024GB when using microSD card slot. Boost your storage to hold more tunes, holiday snaps and extra apps.\r\nTechnical specifications:\r\n\r\n2GHz octa core Exynos 850 processor.\r\n3GB RAM.\r\nOperating system: Android 12.\r\nApp store compatibility: Google play store.\r\nBattery:\r\n\r\n5000mAh battery capacity.\r\nProduct features:\r\n\r\nMP3 and MP4 player.\r\nHeadphone port.\r\nThis phone features fast charge technology - faster than standard charging, for when time is of the essence.\r\nContactless payment Link up your card to your phone for easy buying.\r\nFingerprint scanner For simple, safe and speedy unlocking and better security.\r\nConnectivity:\r\n\r\nWi-Fi.\r\nBluetooth.\r\nNFC.\r\nGPS.\r\nGeneral information:\r\n\r\nEAN: 8806094581874.\r\nManufacturer's 2 year guarantee.",
+          "price":"109.00",
+          "rating":"78.00",
+          "image_url":null,
+          "image":"samsung-phone-a23_jAT4Zci.webp",
+          "new_arrival":true,
+          "deal":false,
+          "clearance":false
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":3,
+       "fields":{
+          "brand":1,
+          "category":2,
+          "is_accessory":true,
+          "name":"35W Dual USB-C Port Apple Power Adapter",
+          "description":"The 35W Dual USB‑C Port Power Adapter allows you to charge two devices at the same time, whether you’re at home, in the office or on the go. Apple recommends using it with MacBook Air. You can also use it with iPhone, iPad, Apple Watch and AirPods.\r\n\r\nPair this power adapter with the World Travel Adapter Kit to charge in other regions around the world.\r\n\r\nCharging cable sold separately.",
+          "price":"45.00",
+          "rating":"76.00",
+          "image_url":null,
+          "image":"MNWP3_GEO_GB.jpeg",
+          "new_arrival":false,
+          "deal":false,
+          "clearance":true
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":4,
+       "fields":{
+          "brand":4,
+          "category":4,
+          "is_accessory":true,
+          "name":"Joby TelePod Selfie Stick Mobile Tripod - Black",
+          "description":"This selfie stick tripod is designed for mobile! Perfect for vlogging, selfies and more! Securely holds phones, small 360 cams, and phones with 360 camera attachment. Capture shots from a distance with included Bluetooth Impulse remote shutter. Works with multiple JOBY mounts including GripTight ONE (included), GoPro Mount, Flash mount or any ¼ - 20 device under 325g.\r\n\r\nPro-level vlogging tripod with included BallHead 1K works in 4 modes for maximum versatility, use as a handgrip, monopod, elevated stand or telescoping tripod. Includes Bluetooth Impulse remote shutter.\r\n\r\nAdjustable centre column.\r\nNon-slip .\r\nSuitable for Large Phone; Point & Shoot Camera; Small Phone.\r\nHolds up to 0.32kg.\r\nExtended height: 56cm.\r\nFolded height: 19.05cm.\r\nManufacturer's 1 year guarantee.\r\nEAN: 817024015503.",
+          "price":"50.00",
+          "rating":"55.00",
+          "image_url":null,
+          "image":"1147340_R_Z001A.webp",
+          "new_arrival":false,
+          "deal":true,
+          "clearance":false
+       }
+    },
+    {
+       "model":"products.product",
+       "pk":5,
+       "fields":{
+          "brand":1,
+          "category":4,
+          "is_accessory":false,
+          "name":"iPhone 15 Pro - 128 GB, Natural Titanium",
+          "description":"Top-of-the-line specs in a titanium body – that's Apple iPhone 15 Pro. Its A17 Pro chip will power through all your browser tabs, apps and games. Doesn't matter if you need to be productive or want to kick back with some Apple TV. The 6.1\" Super Retina XDR display will make everything look stunning. As if you'd expect anything less from iPhone. Making memories? Capture them on the 48 MP Pro camera system – it takes images that are full of detail and life. And you can transfer your snaps in no time thanks to the new USB Type-C port,which supports fast charging too. Plus the titanium frame makes this iPhone lighter and more durable than ever.",
+          "price":"999.00",
+          "rating":null,
+          "image_url":null,
+          "image":"iphone-15-pro-model-titanium.jpeg",
+          "new_arrival":false,
+          "deal":false,
+          "clearance":false
+       }
+    }
+ ]

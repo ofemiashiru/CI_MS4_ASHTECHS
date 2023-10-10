@@ -1,0 +1,33 @@
+[
+{
+    "model":"products.category",
+    "pk":1,
+    "fields":{
+        "name":"desktop_computer",
+        "friendly_name":"Desktop"
+    }
+},
+{
+    "model":"products.category",
+    "pk":2,
+    "fields":{
+        "name":"laptop_computer",
+        "friendly_name":"Laptop"
+    }
+},
+{
+    "model":"products.category",
+    "pk":3,
+    "fields":{
+        "name":"tablet",
+        "friendly_name":"Tablet"
+    }
+},
+{
+    "model":"products.category",
+    "pk":4,
+    "fields":{
+        "name":"mobile_phone",
+        "friendly_name":"Mobile Phone"
+    }
+}]
