@@ -1,1 +1,1 @@
-web: gunicorn ash-techs.wsgi:application
+web: gunicorn ash_techs.wsgi:app
