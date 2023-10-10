@@ -81,6 +81,30 @@
                         </tbody>
                     </table>
                 </div>
+                <p class="text-muted">Wishlist</p>
+                <div class="wishlist table-responsive">
+                    <table class="table table-sm table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Date added</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in wishlist_items %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'product_details' item.product.id %}" class="small">{{item.product}}</a>
+                                    </td>
+                                    <td>
+                                        <p class="small">{{item.date}}</p>
+                                    </td>
+                                </tr>
+                                
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

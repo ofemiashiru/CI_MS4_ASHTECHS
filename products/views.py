@@ -6,11 +6,23 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, Brand
 from reviews.models import Review
+from wishlist.models import Wishlist
+from profiles.models import UserProfile
 from .forms import ProductForm
 
 
 def see_all_products(request):
     """ view returns all the products and handles searching and sorting """
+
+    # Brings back all the wishlist items for user
+    wishlist_product_ids = []
+    if str(request.user) != 'AnonymousUser':
+        user = get_object_or_404(UserProfile, user=request.user)
+        all_wishlist_items = Wishlist.objects.filter(user_profile=user)
+
+        for item in all_wishlist_items.values():
+            if item['product_id']:
+                wishlist_product_ids.append(item['product_id'])
 
     products = Product.objects.all()
     query = None
@@ -85,6 +97,7 @@ def see_all_products(request):
 
     context = {
         'products': products,
+        'wishlist_product_ids': wishlist_product_ids,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,

@@ -85,6 +85,17 @@
 
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
+
+                                    <p class="wishlist">
+                                        <a href="{% url 'toggle_wishlist' product.id %}" class="p-0">
+                                            {% if product.id in wishlist_product_ids %}
+                                                <i class="fa-solid fa-heart text-danger" title="Remove from Wishlist"></i>
+                                            {% else %}
+                                                <i class="fa-regular fa-heart text-secondary" title="Add to Wishlist"></i>
+                                            {% endif %}
+                                        </a>
+                                    </p>
+
                                 </div>
                                 <div class="card-footer white-back-g pt-0 border-0">
                                     <div class="row">

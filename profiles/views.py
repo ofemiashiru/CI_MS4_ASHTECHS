@@ -6,13 +6,16 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 from checkout.models import Order, OrderLineItem
+from products.models import Product
+from wishlist.models import Wishlist
 
 
 @login_required
 def profile(request):
     """ Show Users profile """
     profile = get_object_or_404(UserProfile, user=request.user)
-
+    wishlist_items = Wishlist.objects.filter(user_profile=profile)
+    
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid:
@@ -30,6 +33,7 @@ def profile(request):
         'profile': profile,
         'form': form,
         'orders': orders,
+        'wishlist_items': wishlist_items,
         'on_profile': True
     }
     return render(request, 'profiles/profile.html', context)
