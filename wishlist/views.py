@@ -1,6 +1,7 @@
 from django.shortcuts import (
-    render, redirect, reverse, HttpResponse, get_object_or_404
+    render, redirect, reverse, HttpResponse, get_object_or_404,
 )
+from django.http import HttpResponseRedirect
 from products.models import Product
 from wishlist.models import Wishlist
 from profiles.models import UserProfile
@@ -32,4 +33,4 @@ def toggle_wishlist(request, product_id):
             new_wishlist_item.save()
             messages.success(request, f'{product.name} added to Wishlist')
 
-        return redirect(reverse('products'))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

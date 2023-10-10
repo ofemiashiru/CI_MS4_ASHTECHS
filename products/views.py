@@ -110,12 +110,23 @@ def see_all_products(request):
 def see_product_details(request, product_id):
     """ view each product and its details """
 
+    # Brings back all the wishlist items for user
+    wishlist_product_ids = []
+    if str(request.user) != 'AnonymousUser':
+        user = get_object_or_404(UserProfile, user=request.user)
+        all_wishlist_items = Wishlist.objects.filter(user_profile=user)
+
+        for item in all_wishlist_items.values():
+            if item['product_id']:
+                wishlist_product_ids.append(item['product_id'])
+
     product = get_object_or_404(Product, id=product_id)
     reviews = Review.objects.filter(product=product_id)
 
     context = {
         'product': product,
         'reviews': reviews,
+        'wishlist_product_ids': wishlist_product_ids,
     }
 
     return render(request, 'products/product_details.html', context)
