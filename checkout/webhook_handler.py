@@ -84,8 +84,8 @@ class StripeWebhookHandler:
             order = None
             try:
                 order = Order.objects.create(
-                    f_name=shipping_details.name.split()[0],
-                    l_name=shipping_details.name.split()[1],
+                    f_name=shipping_details.name.split()[0].strip(),
+                    l_name=shipping_details.name.split()[1].strip(),
                     user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
