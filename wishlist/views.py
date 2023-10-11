@@ -8,12 +8,9 @@ from profiles.models import UserProfile
 
 from django.contrib import messages
 
-from django.contrib.auth.decorators import login_required
-
 # Create your views here.
 
 
-@login_required
 def toggle_wishlist(request, product_id):
     """ Add and remove item from wishlist """
 
@@ -33,4 +30,9 @@ def toggle_wishlist(request, product_id):
             new_wishlist_item.save()
             messages.success(request, f'{product.name} added to Wishlist')
 
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        messages.error(
+            request, 'You need to be logged in to complete this action.'
+        )
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
