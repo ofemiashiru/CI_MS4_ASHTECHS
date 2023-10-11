@@ -1,0 +1,28 @@
+Hi {{ order.f_name }},
+
+Thank you for placing your order with ASH|TECHS.
+
+Order Summary:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.order_total }}
+Delivery: £{{ order.shipping_costs }}
+Grand Total: £{{ order.grand_total }}
+
+Your order will be shipped to: 
+
+{{ order.address_line_1 }}
+{{ order.address_line_2 }} 
+{{ order.city }} 
+{{ order.post_code }} 
+{{ order.country }}
+
+We will send updates of your order using your phone number {{ order.phone_number }} and email {{ order.email }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+ASH|TECHS
