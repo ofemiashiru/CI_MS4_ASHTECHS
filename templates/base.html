@@ -133,8 +133,14 @@
         {% endblock %}
     
         {% block content %}
+    
         {% endblock %}
-        {% include 'includes/footer.html' %}
+        
+        <!-- Conditionally render the footer -->
+        {% if request.META.PATH_INFO != '/'  %}
+            {% include 'includes/footer.html' %}
+        {% endif %}
+        
         {% block postloadjs %}
             <script type="text/javascript">
                 $('.toast').toast('show');
