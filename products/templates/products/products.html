@@ -130,15 +130,15 @@
                                                     <a href="{% url 'edit_product' product.id %}" class="btn bg-info text-white rounded-0" title="Edit {{ product.name }}" aria-label="Edit {{ product.name }}">
                                                         Edit<i class="fa-solid fa-pen-to-square ml-1"></i>
                                                     </a>
-                                                    <button type="button" class="btn bg-danger text-white rounded-0" data-toggle="modal" data-target="#deleteModal-{{ product.id }}">
+                                                    <button type="button" class="btn bg-danger text-white rounded-0" data-toggle="modal" data-target="#deleteProductModal{{ product.id }}">
                                                         Delete<i class="fa-solid fa-trash ml-1"></i>
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="deleteModal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="deleteProductModal{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteProductModalLabel{{ product.id }}" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content rounded-0">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete {{ product.name }}?</h5>
+                                                                    <h5 class="modal-title" id="deleteProductModalLabel{{ product.id }}">Are you sure you want to delete {{ product.name }}?</h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

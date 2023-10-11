@@ -122,11 +122,12 @@ def update_review(request, review_id):
 @login_required
 def delete_review(request, review_id):
     """ Allow users to delete their review """
-
+    
     if request.user.is_authenticated:
         review = get_object_or_404(Review, id=review_id)
         product = get_object_or_404(Product, id=review.product.id)
-
+        
+        
         if str(review.user_profile) == str(request.user):
             review.delete()
 
@@ -135,13 +136,15 @@ def delete_review(request, review_id):
             new_rating = get_ratings(all_reviews)
 
             # add rating to product model
-            product.rating = new_rating[int(product.id)]
+            product.rating = new_rating.get(int(product.id), 0)
             product.save(update_fields=['rating'])
 
             messages.success(request, 'Review successfully deleted.')
-            return redirect(reverse('product_details', args=[product.id]))
+            
         else:
             messages.warning(request, 'You can only delete your own reviews.')
     else:
         messages.info(request, 'You need to be logged in to delete a review.')
-        return redirect('products')
+
+    
+    return redirect(reverse('product_details', args=[product.id]))
