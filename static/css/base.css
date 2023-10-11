@@ -159,7 +159,7 @@ input::placeholder{
 /* Go to top */
 .top-link-container{
     position: fixed;
-    bottom: 95px;
+    bottom: 75px;
     right: 10px;
     z-index: 10;
 }
