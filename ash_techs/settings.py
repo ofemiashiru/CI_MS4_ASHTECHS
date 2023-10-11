@@ -30,7 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS'), 'ash-techs-a3f0a77bec88.herokuapp.com']
+ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOSTS'),
+    'ash-techs-a3f0a77bec88.herokuapp.com'
+]
 
 
 # Application definition
@@ -141,7 +144,6 @@ else:
     }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -188,6 +190,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
+
+    # Caching
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Tues, 11 Oct 2033 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
     AWS_STORAGE_BUCKET_NAME = 'ash-techs'
     AWS_S3_REGION_NAME = 'eu-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
