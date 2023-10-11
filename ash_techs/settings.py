@@ -194,7 +194,7 @@ if 'USE_AWS' in os.environ:
 
     # Caching
     AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': datetime.datetime(2023, 10, 11),
+        'Expires': datetime.datetime(2033, 10, 11),
         'CacheControl': 'max-age=94608000',
     }
 
