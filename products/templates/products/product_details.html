@@ -34,9 +34,9 @@
                     <p class="wishlist">
                         <a href="{% url 'toggle_wishlist' product.id %}" class="p-0">
                             {% if product.id in wishlist_product_ids %}
-                                <i class="fa-solid fa-heart text-danger" title="Remove from Wishlist"></i>
+                                <i class="fa-solid fa-heart text-danger fa-xl" title="Remove from Wishlist"></i>
                             {% else %}
-                                <i class="fa-regular fa-heart text-secondary" title="Add to Wishlist"></i>
+                                <i class="fa-regular fa-heart text-secondary fa-xl" title="Add to Wishlist"></i>
                             {% endif %}
                         </a>
                     </p>
