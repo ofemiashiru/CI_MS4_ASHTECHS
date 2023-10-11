@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import datetime
 import dj_database_url
 
 if os.path.exists("env.py"):
@@ -193,7 +194,7 @@ if 'USE_AWS' in os.environ:
 
     # Caching
     AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Tues, 11 Oct 2033 20:00:00 GMT',
+        'Expires': datetime.datetime(2023, 10, 11),
         'CacheControl': 'max-age=94608000',
     }
 
