@@ -1,24 +1,15 @@
 <div class="container-fluid fixed">
     <footer class="py-3 my-4 border-top">
-        <div class="row">
-            <div class="col-sm-12 col-lg-4">
-                <p class="text-muted text-uppercase small text-lg-left text-sm-center">© 2023 AshTechs Ltd.</p>
-            </div>
-            <div class="col-sm-12 col-lg-4">
-                <a href="/" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                    <i class="fa-solid fa-robot fa-xl text-navy-blue"></i>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-4 text-lg-left text-sm-center">
-                <ul class="nav justify-content-end text-uppercase small">
-                    <li class="nav-item"><a href="{% url 'products' %}" class="nav-link px-2 text-muted">Products</a></li>
-                    <li class="nav-item"><a href="{% url 'products' %}?accessory=true" class="nav-link px-2 text-muted">Accessories</a></li>
-                    <li class="nav-item"><a href="{% url 'products' %}?all_specials=true" class="nav-link px-2 text-muted">Specials</a></li>
-                    <li class="nav-item"><a href="mailto:info@ashtechs.com" class="nav-link px-2 text-muted">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-        
-
+        <a href="/" class="d-flex align-items-center justify-content-center mb-3 mt-2 me-md-auto link-dark text-decoration-none">
+            <img src="{{ MEDIA_URL }}favicon/favicon-32x32.png" alt="ASHTECHS Logo" >
+        </a>
+        <ul class="nav justify-content-center pb-3 mb-3 text-uppercase small">
+            <li class="nav-item"><a href="{% url 'products' %}" class="nav-link px-2 text-muted">Products</a></li>
+            <li class="nav-item"><a href="{% url 'products' %}?accessory=true" class="nav-link px-2 text-muted">Accessories</a></li>
+            <li class="nav-item"><a href="{% url 'products' %}?all_specials=true" class="nav-link px-2 text-muted">Specials</a></li>
+            <li class="nav-item"><a href="mailto:info@ashtechs.com" class="nav-link px-2 text-muted">Contact Us</a></li>
+        </ul>
+        <p class="text-center text-muted text-uppercase small">Developed by Femi Ashiru for Code Institute's Milestone Project 4 2023</p>
+        <p class="text-center text-muted text-uppercase small">© 2023 AshTechs Ltd.</p>
     </footer>
 </div>
