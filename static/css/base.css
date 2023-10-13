@@ -219,6 +219,10 @@ input::placeholder{
         text-align: center;
     }
 
+    .tag-line{
+        font-size: 3rem;
+    }
+
 }
 
 /* Tablet */
@@ -235,10 +239,19 @@ input::placeholder{
     .text-sm-center{
         text-align: center;
     }
+
+    .tag-line{
+        font-size: 3rem;
+    }
 }
 
 /* Desktop */
 @media (min-width: 1024px){
+
+
+    .tag-line{
+        font-size: 4rem;
+    }
 
 
 }
@@ -254,4 +267,5 @@ input::placeholder{
     .search-lg, .account-lg, .logo-lg{
         display: block;
     }
+    
 }
