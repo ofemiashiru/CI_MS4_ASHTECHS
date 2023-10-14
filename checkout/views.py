@@ -12,6 +12,9 @@ from checkout.models import Order, OrderLineItem
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+
 
 import stripe
 import json
@@ -23,6 +26,28 @@ if os.path.exists("env.py"):
 
 
 # Create your views here.
+
+def send_confirmation_email(order):
+    """ Sends confirmation email to user """
+    customer_email = order.email
+
+    subject = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_subject.txt',
+        {'order': order}
+    )
+
+    message = render_to_string(
+        'checkout/confirmation_emails/confirmation_email_body.txt',
+        {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+    )
+
+    send_mail(
+        subject,
+        message,
+        settings.DEFAULT_FROM_EMAIL,
+        [customer_email]
+    )
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -126,7 +151,6 @@ def checkout(request):
                     'country': profile.d_country,
                 })
 
-
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
         else:
@@ -175,6 +199,8 @@ def checkout_success(request, order_number):
         number is {order_number}. Confirmation of your  \
         order will be sent to {order.email}'
     )
+
+    send_confirmation_email(order)
 
     if 'bag' in request.session:
         del request.session['bag']
