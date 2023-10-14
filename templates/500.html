@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block extra_title %} 500 - Internal Server Error{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-sm-12 col-lg-6 py-5 text-lg-left text-sm-center">
+                <h1 class="display-4 text-uppercase font-weight-bold text-white tag-line">500</h1>
+                <h2 class="display-4 text-uppercase font-weight-bold text-white tag-line">There seems to be an internal issue. Sorry.</h2>
+                <div class="my-5">
+                    <h4>
+                    <a href="{% url 'home' %}" class="pb-btn btn btn-lg rounded-0 text-uppercase py-3 black-back-g thick-text border">
+                        Back Home
+                    </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
