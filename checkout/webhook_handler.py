@@ -80,17 +80,17 @@ class StripeWebhookHandler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    f_name__iexact=shipping_details.name.split()[0].strip(),
-                    l_name__iexact=shipping_details.name.split()[1].strip(),
-                    email__iexact=billing_details.email,
-                    phone_number__iexact=shipping_details.phone,
-                    address_line_1__iexact=shipping_details.address.line1,
-                    address_line_2__iexact=shipping_details.address.line2,
-                    city__iexact=shipping_details.address.city,
-                    post_code__iexact=shipping_details.address.postal_code,
-                    country__iexact=shipping_details.address.country,
-                    grand_total=grand_total,
-                    original_bag=bag,
+                    # f_name__iexact=shipping_details.name.split()[0].strip(),
+                    # l_name__iexact=shipping_details.name.split()[1].strip(),
+                    # email__iexact=billing_details.email,
+                    # phone_number__iexact=shipping_details.phone,
+                    # address_line_1__iexact=shipping_details.address.line1,
+                    # address_line_2__iexact=shipping_details.address.line2,
+                    # city__iexact=shipping_details.address.city,
+                    # post_code__iexact=shipping_details.address.postal_code,
+                    # country__iexact=shipping_details.address.country,
+                    # grand_total=grand_total,
+                    # original_bag=bag,
                     stripe_pid=pid,
                 )
 
