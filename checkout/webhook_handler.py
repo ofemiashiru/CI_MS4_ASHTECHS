@@ -49,9 +49,9 @@ class StripeWebhookHandler:
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
-        billing_details = intent.charges.data[0].billing_details
+        billing_details = intent.billing_details
         shipping_details = intent.shipping
-        grand_total = round(intent.charges.data[0].amount / 100, 2)
+        grand_total = round(intent.amount / 100, 2)
 
         for field, value in shipping_details.address.items():
             if value == "":
@@ -80,17 +80,17 @@ class StripeWebhookHandler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    # f_name__iexact=shipping_details.name.split()[0].strip(),
-                    # l_name__iexact=shipping_details.name.split()[1].strip(),
-                    # email__iexact=billing_details.email,
-                    # phone_number__iexact=shipping_details.phone,
-                    # address_line_1__iexact=shipping_details.address.line1,
-                    # address_line_2__iexact=shipping_details.address.line2,
-                    # city__iexact=shipping_details.address.city,
-                    # post_code__iexact=shipping_details.address.postal_code,
-                    # country__iexact=shipping_details.address.country,
-                    # grand_total=grand_total,
-                    # original_bag=bag,
+                    f_name__iexact=shipping_details.name.split()[0].strip(),
+                    l_name__iexact=shipping_details.name.split()[1].strip(),
+                    email__iexact=billing_details.email,
+                    phone_number__iexact=shipping_details.phone,
+                    address_line_1__iexact=shipping_details.address.line1,
+                    address_line_2__iexact=shipping_details.address.line2,
+                    city__iexact=shipping_details.address.city,
+                    post_code__iexact=shipping_details.address.postal_code,
+                    country__iexact=shipping_details.address.country,
+                    grand_total=grand_total,
+                    original_bag=bag,
                     stripe_pid=pid,
                 )
 
