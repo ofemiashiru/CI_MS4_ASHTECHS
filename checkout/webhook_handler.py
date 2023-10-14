@@ -143,7 +143,7 @@ class StripeWebhookHandler:
         #             status=500
         #         )
 
-        self._send_confirmation_email(order)
+        # self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook was received: {event["type"]}|Success',
             status=200
