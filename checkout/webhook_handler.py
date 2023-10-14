@@ -44,13 +44,13 @@ class StripeWebhookHandler:
 
     def handle_payment_intent_succeeded(self, event):
         """ Handle payamnet intent succeeded webhook """
-        # intent = event.data.object
-        # pid = intent.id
-        # bag = intent.metadata.bag
+        intent = event.data.object
+        pid = intent.id
+        bag = intent.metadata.bag
         # save_info = intent.metadata.save_info
 
-        # billing_details = intent.charges.data[0].billing_details
-        # shipping_details = intent.shipping
+        billing_details = intent.charges.data[0].billing_details
+        shipping_details = intent.shipping
         # grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # for field, value in shipping_details.address.items():
@@ -145,7 +145,7 @@ class StripeWebhookHandler:
 
         # self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook was received: {event["type"]}|Success',
+            content=f'Webhook was received: {event["type"]}|Success \n {billing_details}\n{shipping_details}\n{pid}\n{bag}',
             status=200
         )
 
