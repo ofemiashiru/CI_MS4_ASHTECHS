@@ -44,8 +44,8 @@ class StripeWebhookHandler:
 
     def handle_payment_intent_succeeded(self, event):
         """ Handle payamnet intent succeeded webhook """
-        # intent = event.data
-        # pid = intent.id
+        intent = event.data
+        pid = intent.id
         # bag = intent.object.metadata.bag
         # save_info = intent.object.metadata.save_info
 
@@ -145,7 +145,7 @@ class StripeWebhookHandler:
 
         # self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook was received: {event["type"]}|Success\n {event}',
+            content=f'Webhook was received: {event["type"]}|Success\n {pid}',
             status=200
         )
 
