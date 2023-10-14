@@ -53,6 +53,10 @@ class StripeWebhookHandler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
+        for field, value in shipping_details.address.items():
+            if value == "":
+                shipping_details.address[field] = None
+
         profile = None
         username = intent.metadata.username
 
@@ -123,7 +127,7 @@ class StripeWebhookHandler:
                 )
                 for item_id, quantity in json.loads(bag).items():
                     product = Product.objects.get(id=item_id)
-
+                    
                     if isinstance(quantity, int):
                         order_line_item = OrderLineItem(
                             order=order,
