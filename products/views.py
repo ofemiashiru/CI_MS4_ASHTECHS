@@ -107,6 +107,7 @@ def see_all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'current_sorting_arr': current_sorting.split('_'),
         'current_brand': brand
     }
 
