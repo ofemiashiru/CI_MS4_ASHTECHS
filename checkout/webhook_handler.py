@@ -53,12 +53,13 @@ class StripeWebhookHandler:
                 self._send_confirmation_email(order)
                 return HttpResponse(
                     content=(
-                        f'Webhook was received: {event["type"]}|Success\n {pid}'
+                        f'Webhook was received: \
+                        {event["type"]}|Success\n {pid}'
                     ),
                     status=200
                 )
         except order.DoesNotExist as e:
-            
+
             return HttpResponse(
                 content=f'Webhook was received: {event["type"]}|Error {e}',
                 status=500
