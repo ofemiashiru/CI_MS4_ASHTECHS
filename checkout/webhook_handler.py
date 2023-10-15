@@ -48,8 +48,21 @@ class StripeWebhookHandler:
         pid = intent.id
 
         order = Order.objects.get(stripe_pid__iexact=pid)
-        # bag = intent.object.metadata.bag
-        # save_info = intent.object.metadata.save_info
+
+        if order:
+            self._send_confirmation_email(order)
+            return HttpResponse(
+                content=f'Webhook was received: {event["type"]}|Success\n {pid}',
+                status=200
+            )
+        else:
+            return HttpResponse(
+                content=f'Webhook was received: {event["type"]}|Error',
+                status=500
+            )
+
+        # bag = intent.metadata.bag
+        # save_info = intent.metadata.save_info
 
         # billing_details = intent.charges.data[0].billing_details
         # shipping_details = intent.shipping
@@ -145,11 +158,7 @@ class StripeWebhookHandler:
         #             status=500
         #         )
 
-        self._send_confirmation_email(order)
-        return HttpResponse(
-            content=f'Webhook was received: {event["type"]}|Success\n {pid}',
-            status=200
-        )
+
 
     def handle_payment_intent_payment_failed(self, event):
         """ Handle payamnet intent failed webhook """
