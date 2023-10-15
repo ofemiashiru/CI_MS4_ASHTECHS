@@ -44,7 +44,6 @@ class Product(models.Model):
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True
     )
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     new_arrival = models.BooleanField(null=False, blank=False, default=False)
     deal = models.BooleanField(null=False, blank=False, default=False)
