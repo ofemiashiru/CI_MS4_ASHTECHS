@@ -12,9 +12,6 @@ from checkout.models import Order, OrderLineItem
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
-
 
 import stripe
 import json

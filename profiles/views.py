@@ -5,8 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 
-from checkout.models import Order, OrderLineItem
-from products.models import Product
+from checkout.models import Order
 from wishlist.models import Wishlist
 
 
