@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.contrib import messages
 import stripe
 from .models import Order, OrderLineItem
 from profiles.models import UserProfile
@@ -157,7 +158,6 @@ class StripeWebhookHandler:
         #             content=f'Webhook was received: {event["type"]}|Error {e}',
         #             status=500
         #         )
-
 
 
     def handle_payment_intent_payment_failed(self, event):
