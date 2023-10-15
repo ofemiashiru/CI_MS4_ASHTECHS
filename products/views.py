@@ -176,6 +176,7 @@ def edit_product(request, product_id):
     if request.user.is_superuser:
 
         product = get_object_or_404(Product, id=product_id)
+        current_rating = product.rating
 
         if request.method == 'POST':
 
@@ -185,6 +186,9 @@ def edit_product(request, product_id):
 
             if product_form.is_valid():
                 product_form.save()
+
+                product.rating = current_rating
+                product.save(update_fields=['rating'])
 
                 messages.success(request, 'Product update successfully.')
                 return redirect(reverse('product_details', args=[product_id]))
