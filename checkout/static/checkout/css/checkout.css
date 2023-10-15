@@ -1,9 +1,3 @@
-
-.order-summary{
-    position: fixed;
-    right: 0;
-}
-
 .StripeElement,
 .stripe-style-input{
     border: 1px solid var(--grey);

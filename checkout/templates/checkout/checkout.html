@@ -29,7 +29,7 @@
             <div class="col-12 col-lg-6 order-lg-last order-summary">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
                 <div class="row">
-                    <div class="col-6 offset-2">
+                    <div class="col-6 offset-lg-2">
                         <p class="mb-1 mt-0 small text-muted"><strong>Item</strong></p>
                     </div>
                     <div class="col-3 text-right">
@@ -38,7 +38,7 @@
                 </div>
                 {% for item in bag_items %}
                     <div class="row mb-4">
-                        <div class="col-2 border p-2">
+                        <div class="d-none d-lg-flex col-2 border p-2">
                             <a href="{% url 'product_details' item.product.id %}">
                                 {% if item.product.image %}
                                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
@@ -48,7 +48,9 @@
                             </a>
                         </div>
                         <div class="col-6">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <a href="{% url 'product_details' item.product.id %}">
+                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            </a>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
