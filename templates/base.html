@@ -79,7 +79,7 @@
                         <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             <div class="text-center">
-                                <div><i class="fa-solid fa-user fa-lg"></i></div>
+                                <div><i class="fa-solid fa-user fa-lg text-navy-blue"></i></div>
                                 <p class="my-0 under-icon-nav text-uppercase">My Account</p>
                             </div>
                         </a>
@@ -96,7 +96,7 @@
                         <li class="list-inline-item">
                             <a href="{% url 'shopping_bag' %}" class="nav-link text-black" aria-label="You have {{ product_count }} product in your bag">
                                 <div class="text-center">
-                                    <div><i class="fa-solid fa-bag-shopping fa-lg {% if product_count > 0 %}fa-beat{% endif %}"></i>{% if product_count > 0 %}<span class="text-danger bag-amount-display">{{ product_count }}</span>{% endif %}</div>
+                                    <div><i class="fa-solid fa-bag-shopping fa-lg text-navy-blue {% if product_count > 0 %}fa-beat{% endif %}"></i>{% if product_count > 0 %}<span class="text-danger bag-amount-display">{{ product_count }}</span>{% endif %}</div>
                                     <p class="my-0 under-icon-nav text-uppercase">Bag</p>
                                 </div>
                             </a>
