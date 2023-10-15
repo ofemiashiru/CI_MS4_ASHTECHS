@@ -57,10 +57,10 @@ class StripeWebhookHandler:
                     ),
                     status=200
                 )
-        except order.DoesNotExist:
+        except order.DoesNotExist as e:
             
             return HttpResponse(
-                content=f'Webhook was received: {event["type"]}|Error',
+                content=f'Webhook was received: {event["type"]}|Error {e}',
                 status=500
             )
 
