@@ -32,6 +32,9 @@ input::placeholder{
     width: fit-content;
 }
 
+.image-logo{
+    margin-top: -10px;
+}
 
 .header-container {
     padding-top: 164px;
