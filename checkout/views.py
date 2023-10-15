@@ -43,6 +43,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ Store checkout information from form """
 
     stripe_public_key = os.environ.get('STRIPE_PUBLIC_KEY')
     stripe_secret_key = os.environ.get('STRIPE_SECRET_KEY')

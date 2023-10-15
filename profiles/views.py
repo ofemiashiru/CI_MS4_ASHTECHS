@@ -15,7 +15,7 @@ def profile(request):
     """ Show Users profile """
     profile = get_object_or_404(UserProfile, user=request.user)
     wishlist_items = Wishlist.objects.filter(user_profile=profile)
-    
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid:

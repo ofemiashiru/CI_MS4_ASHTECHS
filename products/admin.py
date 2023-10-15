@@ -1,8 +1,6 @@
 from django.contrib import admin
 from products.models import Brand, Category, Product
 
-# Register your models here.
-
 
 class BrandAdmin(admin.ModelAdmin):
     list_display = (

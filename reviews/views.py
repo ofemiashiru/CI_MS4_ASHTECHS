@@ -11,8 +11,6 @@ from reviews.models import Review
 
 from reviews.forms import ReviewForm
 
-# Create your views here.
-
 
 def get_ratings(model):
     """

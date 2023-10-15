@@ -1,8 +1,6 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
-# Register your models here.
-
 
 class OrderLineItemAdminInLine(admin.TabularInline):
     """ class to add and edit line items in the admin from the order model """
@@ -15,7 +13,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     readonly_fields = (
         'order_number',
-        'date', 'shipping_costs', 'order_total', 'grand_total', 'original_bag', 
+        'date', 'shipping_costs', 'order_total', 'grand_total', 'original_bag',
         'stripe_pid'
     )
 

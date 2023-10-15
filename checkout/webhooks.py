@@ -14,7 +14,7 @@ if os.path.exists("env.py"):
 @require_POST
 @csrf_exempt
 def webhook(request):
-
+    """ Sends response back to Stripe """
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -50,5 +50,5 @@ def webhook(request):
     event_handler = event_map.get(event_type, handler.handle_event)
 
     response = event_handler(event)
-    
+
     return response
