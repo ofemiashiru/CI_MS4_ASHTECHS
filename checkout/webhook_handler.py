@@ -47,8 +47,8 @@ class StripeWebhookHandler:
         intent = event.data.object
         pid = intent.id
 
-        order = Order.objects.get(stripe_pid__iexact=pid)
         try:
+            order = Order.objects.get(stripe_pid__iexact=pid)
             if order:
                 self._send_confirmation_email(order)
                 return HttpResponse(
