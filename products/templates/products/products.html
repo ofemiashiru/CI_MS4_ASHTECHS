@@ -184,6 +184,32 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                <div class="row">
+                    <div class="col-4">
+                        {% if products.has_previous %}
+                            <a href="?page=1" class="btn text-white navy-blue-back-g rounded-0" aria-label="Go to first page">
+                                <i class="fa-solid fa-backward-fast"></i>
+                            </a>
+                            <a href="?page={{ products.previous_page_number }}" class="btn text-white black-back-g rounded-0" aria-label="Previous page">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="col-4 text-center">
+                        Page {{ products.number }} of {{ products.paginator.num_pages }}
+                    </div>
+                    <div class="col-4 text-right">
+                        {% if products.has_next %}
+                            <a href="?page={{ products.next_page_number }}" class="btn text-white black-back-g rounded-0" aria-label="Next page">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </a>
+                            <a href="?page={{ products.paginator.num_pages }}" class="btn text-white navy-blue-back-g rounded-0" aria-label="Go to last page">
+                                <i class="fa-solid fa-forward-fast"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+
+                </div>
             </div>  
         </div>     
     </div>
