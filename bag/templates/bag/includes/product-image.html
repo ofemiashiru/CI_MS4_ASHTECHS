@@ -1,0 +1,7 @@
+<a href="/products/{{item.product.id }}">
+    {% if item.product.image %}
+        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+    {% else %}
+        <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="No image for {{ product.name }}">
+    {% endif %}
+</a>
