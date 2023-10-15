@@ -8,8 +8,6 @@ from profiles.models import UserProfile
 
 from django.contrib import messages
 
-# Create your views here.
-
 
 def toggle_wishlist(request, product_id):
     """ Add and remove item from wishlist """
