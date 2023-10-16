@@ -23,6 +23,7 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessory-products-link">
+                <a href="{% url 'products' %}?accessory=true&category=console" class="dropdown-item ">Console</a>
                 <a href="{% url 'products' %}?accessory=true&category=desktop_computer" class="dropdown-item ">Desktop</a>
                 <a href="{% url 'products' %}?accessory=true&category=laptop_computer" class="dropdown-item ">Laptop</a>
                 <a href="{% url 'products' %}?accessory=true&category=mobile_phone" class="dropdown-item">Phone</a>
