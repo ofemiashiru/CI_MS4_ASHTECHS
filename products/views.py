@@ -31,25 +31,31 @@ def see_all_products(request):
     brand = None
     sort = None
     direction = None
+    other_filter = None
 
     if request.GET:
 
         if 'accessory' in request.GET:
             products = products.filter(is_accessory=True)
+            other_filter = 'accessory'
 
         if 'new_arrival' in request.GET:
             products = products.filter(new_arrival=True)
+            other_filter = 'new_arrival'
 
         if 'deals' in request.GET:
             products = products.filter(deal=True)
+            other_filter = 'deals'
 
         if 'clearance' in request.GET:
             products = products.filter(clearance=True)
+            other_filter = 'clearance'
 
         if 'all_specials' in request.GET:
             products = products.filter(
                 Q(clearance=True) | Q(deal=True) | Q(new_arrival=True)
             )
+            other_filter = 'all_specials'            
 
         if 'sort' in request.GET:
             sort_key = request.GET['sort']
@@ -107,8 +113,9 @@ def see_all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
-        'current_sorting_arr': current_sorting.split('_'),
-        'current_brand': brand
+        'current_brand': brand,
+        'other_filter_url': f'&{other_filter}=true' if other_filter else '',
+        'current_sort_url': f'&sort={sort}&direction={direction}' if sort else ''
     }
 
     return render(request, 'products/products.html', context)
