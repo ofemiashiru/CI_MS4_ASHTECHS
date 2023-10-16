@@ -50,8 +50,8 @@
                             <tr>
                                 <th>Order Number</th>
                                 <th>Date</th>
-                                <th>Items</th>
-                                <th>Qty</th>
+                                <th><span class="d-none d-sm-none d-md-block">Items</span></th>
+                                <th><span class="d-none d-sm-none d-md-block">Qty</span></th>
                                 <th>Total</th>
                             </tr>
                         </thead>
@@ -65,7 +65,7 @@
                                     </td>
                                     <td><p class="small">{{order.date}}</p></td>
                                     <td>
-                                        <ul class="list-unstyled">
+                                        <ul class="list-unstyled d-none d-sm-none d-md-block">
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
                                                     {{ item.product.name }}
@@ -74,7 +74,7 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <ul class="list-unstyled">
+                                        <ul class="list-unstyled d-none d-sm-none d-md-block">
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
                                                     {{ item.quantity }}
@@ -98,7 +98,7 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>Date added</th>
+                                <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
