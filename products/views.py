@@ -55,7 +55,7 @@ def see_all_products(request):
             products = products.filter(
                 Q(clearance=True) | Q(deal=True) | Q(new_arrival=True)
             )
-            other_filter = 'all_specials'            
+            other_filter = 'all_specials'
 
         if 'sort' in request.GET:
             sort_key = request.GET['sort']
@@ -115,7 +115,9 @@ def see_all_products(request):
         'current_sorting': current_sorting,
         'current_brand': brand,
         'other_filter_url': f'&{other_filter}=true' if other_filter else '',
-        'current_sort_url': f'&sort={sort}&direction={direction}' if sort else ''
+        'current_sort_url': (
+            f'&sort={sort}&direction={direction}' if sort else ''
+        )
     }
 
     return render(request, 'products/products.html', context)
