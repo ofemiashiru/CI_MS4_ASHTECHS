@@ -108,11 +108,12 @@ input::placeholder{
 /* Homepage images */
 
 .home-page-image-1, .home-page-image-2{
-    border: 5px solid #2C4D90;
+    border: 5px solid var(--navy-blue);
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     width: 220px;
-    height: 220px
+    height: 220px;
+    background-color: var(--white);
 }
 
 .home-page-image-2{

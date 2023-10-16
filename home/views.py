@@ -9,8 +9,15 @@ def index(request):
 
     products = Product.objects.all()
     number_of_products = len(products)
-    product_one = products[random.randrange(number_of_products)]
-    product_two = products[random.randrange(number_of_products)]
+    num_arr = []
+
+    while len(num_arr) < 2:
+        num = random.randrange(number_of_products)
+        if num not in num_arr:
+            num_arr.append(num)
+
+    product_one = products[num_arr[0]]
+    product_two = products[num_arr[1]]
 
     context = {
         'product_one': product_one,

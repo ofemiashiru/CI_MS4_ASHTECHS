@@ -145,6 +145,7 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 @login_required
 def checkout_success(request, order_number):
     """ Feedback to user if their order has been successful """
