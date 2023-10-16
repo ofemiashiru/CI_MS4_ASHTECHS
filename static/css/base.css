@@ -105,6 +105,21 @@ input::placeholder{
     box-shadow: none;
 }
 
+/* Homepage images */
+
+.home-page-image-1, .home-page-image-2{
+    border: 5px solid #2C4D90;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 220px;
+    height: 220px
+}
+
+.home-page-image-2{
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+}
 
 /* All pages except home */
 

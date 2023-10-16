@@ -24,9 +24,13 @@
                     </h4>
                 </div>
             </div>
-            <div class="col-sm-12 col-lg-6">
-                <img class="mt-4 d-none d-lg-block d-xl-block" style="border:5px solid #2C4D90;width:100%;border-radius:50%;object-fit:contain;width: 220px;" src="{{ product_one.image.url }}" >
-                <img class="d-none d-lg-block d-xl-block" style="border:5px solid #2C4D90;width:100%;border-radius:50%;object-fit:contain;width: 220px;position:absolute;bottom:50px;right:0" src="{{ product_two.image.url }}" >
+            <div class="col-sm-12 col-lg-6 d-none d-lg-block d-xl-block">
+                <a href="/products/{{product_one.id }}" title="{{ product_one.name }}">
+                    <img class="home-page-image-1 mt-4" src="{{ product_one.image.url }}" alt="{{ product_one.name }}" >
+                </a>
+                <a href="/products/{{product_two.id }}" title="{{ product_two.name }}">
+                    <img class="home-page-image-2" src="{{ product_two.image.url }}" alt="{{ product_two.name }}" >
+                </a>
             </div>
         </div>
     </div>
