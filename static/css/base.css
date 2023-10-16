@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background: url('/media/images/pexels-christina-morillo-1181317.jpg') no-repeat center 100px fixed;
+    background: url('/media/images/pexels-christina-morillo-1181317.webp') no-repeat center 100px fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: var(--black);
