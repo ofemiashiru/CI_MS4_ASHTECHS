@@ -103,14 +103,14 @@
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                                             {% if product.brand %}
                                                 <span class="small mt-1 mb-0 mr-2">
-                                                    <a class="text-muted" href="{% url 'products' %}?brandName={{ product.brand.name }}{{ other_filter_url }}{{ current_sort_url }}">
+                                                    <a class="text-muted" href="{% url 'products' %}?brandName={{ product.brand.name }}{{ other_filter_url }}{{ current_sort_url }}{{ current_cat_url }}">
                                                         <i class="fa-solid fa-tag mr-1"></i>{{ product.brand.friendly_name }}
                                                     </a>
                                                 </span>
                                             {% endif %}
                                             {% if product.category %}
                                                 <span class="small mt-1 mb-0">
-                                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}{{ other_filter_url }}{{ current_sort_url }}">
+                                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}">
                                                         <i class="fa-solid fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                     </a>
                                                 </span>
@@ -187,10 +187,10 @@
                 <div class="row">
                     <div class="col-4">
                         {% if products.has_previous %}
-                            <a href="?page=1{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}" class="btn text-white navy-blue-back-g rounded-0" aria-label="Go to first page">
+                            <a href="?page=1{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}{{ current_cat_url }}" class="btn text-white navy-blue-back-g rounded-0" aria-label="Go to first page">
                                 <i class="fa-solid fa-backward-fast"></i>
                             </a>
-                            <a href="?page={{ products.previous_page_number }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}" class="btn text-white black-back-g rounded-0" aria-label="Previous page">
+                            <a href="?page={{ products.previous_page_number }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}{{ current_cat_url }}" class="btn text-white black-back-g rounded-0" aria-label="Previous page">
                                 <i class="fa-solid fa-backward-step"></i>
                             </a>
                         {% endif %}
@@ -200,10 +200,10 @@
                     </div>
                     <div class="col-4 text-right">
                         {% if products.has_next %}
-                            <a href="?page={{ products.next_page_number }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}" class="btn text-white black-back-g rounded-0" aria-label="Next page">
+                            <a href="?page={{ products.next_page_number }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}{{ current_cat_url }}" class="btn text-white black-back-g rounded-0" aria-label="Next page">
                                 <i class="fa-solid fa-forward-step"></i>
                             </a>
-                            <a href="?page={{ products.paginator.num_pages }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}" class="btn text-white navy-blue-back-g rounded-0" aria-label="Go to last page">
+                            <a href="?page={{ products.paginator.num_pages }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}{{ current_cat_url }}" class="btn text-white navy-blue-back-g rounded-0" aria-label="Go to last page">
                                 <i class="fa-solid fa-forward-fast"></i>
                             </a>
                         {% endif %}
