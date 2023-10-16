@@ -3,7 +3,6 @@ const clientSecret = document.querySelector('#client_secret').innerHTML.slice(1,
 
 const spinner = document.querySelector('.fa-spinner');
 const lock = document.querySelector('.fa-lock');
-spinner.classList.add('d-none');
 lock.classList.remove('d-none');
 
 const stripe = Stripe(stripePublicKey);
@@ -37,6 +36,9 @@ card.addEventListener('change', function(event){
 const paymentForm = document.getElementById('payment-form');
 
 paymentForm.addEventListener('submit', function(event){
+    spinner.classList.remove('d-none');
+    lock.classList.add('d-none');
+    
     event.preventDefault();
     card.update({ 'disabled': true });
 
@@ -80,8 +82,6 @@ paymentForm.addEventListener('submit', function(event){
             }
         })
         .then(function(result){
-            spinner.classList.remove('d-none');
-            lock.classList.add('d-none');
 
             if(result.error){
                 const errorOutput = document.getElementById('card-errors');
