@@ -1,6 +1,11 @@
 const stripePublicKey = document.querySelector('#stripe_public_key').innerHTML.slice(1,-1);
 const clientSecret = document.querySelector('#client_secret').innerHTML.slice(1,-1);
 
+const spinner = document.querySelector('.fa-spinner');
+const lock = document.querySelector('.fa-lock');
+spinner.classList.add('d-none');
+lock.classList.remove('d-none');
+
 const stripe = Stripe(stripePublicKey);
 const elements = stripe.elements();
 const style = {
@@ -75,12 +80,15 @@ paymentForm.addEventListener('submit', function(event){
             }
         })
         .then(function(result){
+            spinner.classList.remove('d-none');
+            lock.classList.add('d-none');
+
             if(result.error){
                 const errorOutput = document.getElementById('card-errors');
                 errorOutput.innerHTML = `${result.error.message}`;
-    
                 card.update({ 'disabled': false });
-    
+                spinner.classList.add('d-none');
+                lock.classList.remove('d-none');
             } else {
 
                 if (result.paymentIntent.status === 'succeeded') {
