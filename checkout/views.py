@@ -12,6 +12,7 @@ from checkout.models import Order, OrderLineItem
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
+from django.contrib.auth.decorators import login_required
 
 import stripe
 import json
@@ -39,6 +40,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+@login_required
 def checkout(request):
     """ Store checkout information from form """
 
@@ -143,7 +145,7 @@ def checkout(request):
 
     return render(request, template, context)
 
-
+@login_required
 def checkout_success(request, order_number):
     """ Feedback to user if their order has been successful """
     save_info = request.session.get('save_info')
