@@ -310,9 +310,10 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 - Python
 
 ### Frameworks and Tools
-- Flask
-- Materialize
-- MongoDB
+- Django
+- AWS
+- Bootstrap
+- ElephantSQL
 - Git
 - GitHub
 - CodeAnywhere
@@ -321,9 +322,6 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 - Adobe Color
 - Font Awesome
 - Favicon<span>.</span>io
-- Lucid
-- Figma
-- OMDb API
 
 ## Features
 
