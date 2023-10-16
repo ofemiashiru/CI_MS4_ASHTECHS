@@ -115,6 +115,7 @@ def see_all_products(request):
         'current_sorting': current_sorting,
         'current_brand': brand,
         'other_filter_url': f'&{other_filter}=true' if other_filter else '',
+        'current_brand_url': f'&brandName={brand[0]}' if brand else '',
         'current_sort_url': (
             f'&sort={sort}&direction={direction}' if sort else ''
         )
