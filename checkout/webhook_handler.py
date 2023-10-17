@@ -77,9 +77,9 @@ class StripeWebhookHandler:
                     status=200
                 )
         except Order.DoesNotExist as e:
-
+            profile = UserProfile.objects.get(user=intent.metadata.username)
             return HttpResponse(
-                content=f'Webhook was received: {event["type"]}|Error {e}\n {intent.metadata.username} {e}',
+                content=f'Webhook was received: {event["type"]}|Error {e}\n {intent.metadata.username} {profile}',
                 status=500
             )
 
