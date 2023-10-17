@@ -3,7 +3,6 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from .models import Order
-from profiles.models import UserProfile
 
 
 class StripeWebhookHandler:
@@ -31,28 +30,6 @@ class StripeWebhookHandler:
             [customer_email]
         )
 
-    def _send_unsuccessful_email(self, profile):
-        """ Sends unsiccessful email to user """
-
-        customer_email = profile.email
-
-        subject = render_to_string(
-            'checkout/unsuccessful_emails/unsuccessful_email_subject.txt',
-            {'username': profile.user}
-        )
-        message = render_to_string(
-            'checkout/unsuccessful_emails/unsuccessful_email_body.txt',
-            {'contact_email': settings.DEFAULT_FROM_EMAIL}
-        )
-
-        send_mail(
-            subject,
-            message,
-            settings.DEFAULT_FROM_EMAIL,
-            [customer_email]
-        )
-
-
     def handle_event(self, event):
         """ Handle general, unknown or unexpected webhook """
         return HttpResponse(
@@ -77,9 +54,9 @@ class StripeWebhookHandler:
                     status=200
                 )
         except Order.DoesNotExist as e:
-            profile = UserProfile.objects.get(user=intent.metadata.username)
+
             return HttpResponse(
-                content=f'Webhook was received: {event["type"]}|Error {e}\n {intent.metadata.username} {profile}',
+                content=f'Webhook was received: {event["type"]}|Error {e}',
                 status=500
             )
 
