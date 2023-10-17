@@ -31,17 +31,14 @@ class StripeWebhookHandler:
             [customer_email]
         )
 
-    def _send_unsuccessful_email(self, intent):
+    def _send_unsuccessful_email(self, profile):
         """ Sends unsiccessful email to user """
-        username = intent.metadata.username
-
-        profile = UserProfile.objects.get(user=username)
 
         customer_email = profile.email
 
         subject = render_to_string(
             'checkout/unsuccessful_emails/unsuccessful_email_subject.txt',
-            {'username': username}
+            {'username': profile.user}
         )
         message = render_to_string(
             'checkout/unsuccessful_emails/unsuccessful_email_body.txt',
@@ -81,8 +78,11 @@ class StripeWebhookHandler:
                 )
         except Order.DoesNotExist as e:
 
+            profile = UserProfile.objects.get(user=intent.metadata.username)
+            self._send_unsuccessful_email(profile)
+
             return HttpResponse(
-                content=f'Webhook was received: {event["type"]}|Error {e}',
+                content=f'Webhook was received: {event["type"]}|Error {e}\n {intent.metadata.username} {profile.email}',
                 status=500
             )
 
