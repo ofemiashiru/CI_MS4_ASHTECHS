@@ -101,7 +101,7 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    {% include "products/includes/handle_quantity_script.html" %}
-    {% include "bag/includes/handle_update_delete_script.html" %}
+    <script src="{% static 'products/js/handle_quantity_script.js' %}"></script>
+    <script src="{% static 'bag/js/handle_update_delete_script.js' %}"></script>
 
 {% endblock %}
