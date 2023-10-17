@@ -1,0 +1,13 @@
+Hi {{ username }},
+
+There appears to be something wrong with your recent order at ASH|TECHS.
+
+As a result we have cancelled this order and you will be refunded the full amount.
+
+Sometimes things go wrong within our systems so we apologise that this has happened.
+
+Please feel free to attempt your order again and if you have any questions, contact us at {{ contact_email }}.
+
+Once again we apologise!
+
+ASH|TECHS
