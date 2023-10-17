@@ -34,7 +34,7 @@
                 <form action="{% url 'profile' %}" method="POST" class="default-info-form mt-3">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn text-white black-back-g py-3 thick-text border rounded-0 text-uppercase float-right" type="submit">
+                    <button class="btn text-white black-back-g py-3 thick-text border rounded-0 text-uppercase float-right" type="submit" aria-label="Update information">
                         Update Information
                     </button>
                 </form>
@@ -59,7 +59,7 @@
                             {% for order in orders %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}" class="small mx-0">
+                                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}" aria-label="Go to order {{ order.order_number }}" class="small mx-0">
                                             {{order.order_number|truncatechars:15}}
                                         </a>
                                     </td>
@@ -105,7 +105,7 @@
                             {% for item in wishlist_items %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'product_details' item.product.id %}" class="small">{{item.product}}</a>
+                                        <a href="{% url 'product_details' item.product.id %}" aria-label="Go to {{ item.product.name }}" class="small">{{item.product.name}}</a>
                                     </td>
                                     <td>
                                         <p class="small">{{item.date}}</p>

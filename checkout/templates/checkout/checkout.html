@@ -98,8 +98,8 @@
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
                             {% else %}
                                 <span class="form-check-label">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                                    <a class="text-info" href="{% url 'account_signup' %}" aria-label="Create an account">Create an account</a> or 
+                                    <a class="text-info" href="{% url 'account_login' %}" aria-label="Login">login</a> to save this information
                                 </span>
                             {% endif %} 
                         </div>
@@ -114,11 +114,11 @@
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-5">
-                        <a href="{% url 'shopping_bag' %}" class="btn black-back-g py-3 text-white border rounded-0">
+                        <a href="{% url 'shopping_bag' %}" class="btn black-back-g py-3 text-white border rounded-0" aria-label="Adjust Bag">
                             <i class="fas fa-chevron-left fa-beat"></i> 
                             <span class="text-uppercase thick-text">Adjust Bag</span>
                         </a>
-                        <button id="submit-button" class="btn white-back-g py-3 thick-text text-black border rounded-0"> 
+                        <button id="submit-button" class="btn white-back-g py-3 thick-text text-black border rounded-0" aria-label="Complete Order"> 
                             <span class="text-uppercase">Complete Order</span> 
                             <i class="fas fa-lock fa-beat ml-2"></i> 
                             <i class="fa-solid fa-spinner fa-spin d-none"></i>

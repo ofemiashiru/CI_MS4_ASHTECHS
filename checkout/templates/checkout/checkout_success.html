@@ -115,12 +115,12 @@
         <div class="row mt-3">
 			<div class="col-12 text-center">
                 {% if from_profile %}
-                    <a href="{% url 'profile' %}" class="btn black-back-g py-3 text-white border rounded-0 my-2">
+                    <a href="{% url 'profile' %}" class="btn black-back-g py-3 text-white border rounded-0 my-2" aria-label="Back to your profile">
                         <i class="fa-solid fa-user fa-beat mr-1"></i>
                         <span class="text-uppercase">Back to your Profile</span>
                     </a>
                 {% else %}
-                    <a href="{% url 'products' %}" class="btn black-back-g py-3 text-white border rounded-0 my-2">
+                    <a href="{% url 'products' %}" class="btn black-back-g py-3 text-white border rounded-0 my-2" aria-label="Want to do more shopping">
                         <i class="fas fa-gifts fa-beat mr-1"></i>
                         <span class="text-uppercase">Want to do more shopping</span>
                     </a>

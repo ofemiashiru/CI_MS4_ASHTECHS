@@ -103,14 +103,14 @@
                                             <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                                             {% if product.brand %}
                                                 <span class="small mt-1 mb-0 mr-2">
-                                                    <a class="text-muted" href="{% url 'products' %}?brandName={{ product.brand.name }}{{ other_filter_url }}{{ current_sort_url }}{{ current_cat_url }}">
+                                                    <a class="text-muted" aria-label="{{ product.brand.friendly_name }}" href="{% url 'products' %}?brandName={{ product.brand.name }}{{ other_filter_url }}{{ current_sort_url }}{{ current_cat_url }}">
                                                         <i class="fa-solid fa-tag mr-1"></i>{{ product.brand.friendly_name }}
                                                     </a>
                                                 </span>
                                             {% endif %}
                                             {% if product.category %}
                                                 <span class="small mt-1 mb-0">
-                                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}">
+                                                    <a class="text-muted" aria-label="{{ product.category.friendly_name }}" href="{% url 'products' %}?category={{ product.category.name }}{{ other_filter_url }}{{ current_sort_url }}{{ current_brand_url }}">
                                                         <i class="fa-solid fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                     </a>
                                                 </span>
@@ -130,7 +130,7 @@
                                                     <a href="{% url 'edit_product' product.id %}" class="btn bg-info text-white rounded-0" title="Edit {{ product.name }}" aria-label="Edit {{ product.name }}">
                                                         Edit<i class="fa-solid fa-pen-to-square ml-1"></i>
                                                     </a>
-                                                    <button type="button" class="btn bg-danger text-white rounded-0" data-toggle="modal" data-target="#deleteProductModal{{ product.id }}">
+                                                    <button type="button" class="btn bg-danger text-white rounded-0" aria-label="Delete {{ product.name }}" data-toggle="modal" data-target="#deleteProductModal{{ product.id }}">
                                                         Delete<i class="fa-solid fa-trash ml-1"></i>
                                                     </button>
                                                     <!-- Modal -->
@@ -215,7 +215,7 @@
     <div class="top-link-container">
         <div class="row">
             <div class="col-12">
-                <a class="btn navy-blue-back-g text-white back-to-top" href="#top">
+                <a class="btn navy-blue-back-g text-white back-to-top" href="#top" aria-label="Go to top">
                     <i class="fa-solid fa-arrow-up"></i>
                 </a>
             </div>
@@ -227,27 +227,6 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
-        const sortSelector = document.querySelector('#sort-selector');
+    <script src="{% static 'products/js/handle_sort_selector.js' %}"></script>
 
-        sortSelector.addEventListener('change', function(){
-            const selected = this.value;
-            const currentURL = new URL(window.location);
-            
-            if(selected !== 'reset'){
-                const sort = selected.split('_')[0];
-                const direction = selected.split('_')[1];
-                
-                currentURL.searchParams.set('sort', sort);
-                currentURL.searchParams.set('direction', direction);
-                
-                window.location.replace(currentURL);
-            } else {
-                currentURL.searchParams.delete('sort');
-                currentURL.searchParams.delete('direction');
-                
-                window.location.replace(currentURL);
-            }
-        });
-    </script>
 {% endblock %}

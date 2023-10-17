@@ -43,11 +43,12 @@
                             Spend <strong>£{{ free_shipping_difference }}</strong> more to get free shipping!
                         </p>
                     {% endif %}
-                    <a href="{% url 'checkout' %}" class="btn black-back-g border text-white btn-block rounded-0">
+                    <a href="{% url 'checkout' %}" class="btn black-back-g border text-white btn-block rounded-0" aria-label="Secure Checkout">
                         <span class="text-uppercase">Secure Checkout</span>
                         <i class="fa-solid fa-lock fa-beat ml-2"></i>
                     </a>
                 </div>
+                <img class="img-fluid mt-2" src="{{ MEDIA_URL }}images/mock-payment-types.png" alt="Payments we accept">
             </div>
         {% endif %}
     </div>

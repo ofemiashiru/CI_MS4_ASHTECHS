@@ -1,3 +1,4 @@
+{% load static %}
 <div class="container-fluid">
     <footer class="py-3 my-4 border-top">
         <a href="/" class="d-flex align-items-center justify-content-center mb-3 mt-2 me-md-auto link-dark text-decoration-none">
@@ -13,3 +14,7 @@
         <p class="text-center text-black text-uppercase small">© <span class="footer-year">2023</span> AshTechs Ltd.</p>
     </footer>
 </div>
+
+{% block postloadjs %}
+    <script src="{% static 'js/base.js' %}"></script>
+{% endblock %}
