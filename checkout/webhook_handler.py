@@ -78,11 +78,8 @@ class StripeWebhookHandler:
                 )
         except Order.DoesNotExist as e:
 
-            profile = UserProfile.objects.get(user=intent.metadata.username)
-            self._send_unsuccessful_email(profile)
-
             return HttpResponse(
-                content=f'Webhook was received: {event["type"]}|Error {e}\n {intent.metadata.username} {profile.email}',
+                content=f'Webhook was received: {event["type"]}|Error {e}\n {intent.metadata.username} {e}',
                 status=500
             )
 
