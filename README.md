@@ -257,10 +257,49 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ### Wireframes
 
-<details><summary>movies</summary>
-<img src="docs/wireframes/movies.png" alt="movies wireframe">
+<details><summary>Home</summary>
+<img src="docs/wireframes/home.png" alt="Home wireframe">
 </details>
 
+<details><summary>Products</summary>
+<img src="docs/wireframes/product.png" alt="Product wireframe">
+</details>
+
+<details><summary>Products Admin (Add and Edit)</summary>
+<img src="docs/wireframes/product_admin_add_edit.png" alt="Product Admin wireframe">
+</details>
+
+<details><summary>Product Details</summary>
+<img src="docs/wireframes/product_details.png" alt="Product Details wireframe">
+</details>
+
+<details><summary>Reviews (Add and Update)</summary>
+<img src="docs/wireframes/reviews_add_update.png" alt="Reviews wireframe">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/wireframes/profile.png" alt="Profile wireframe">
+</details>
+
+<details><summary>Sign In</summary>
+<img src="docs/wireframes/sign_in.png" alt="Sign In wireframe">
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/wireframes/register.png" alt="Register wireframe">
+</details>
+
+<details><summary>Bag</summary>
+<img src="docs/wireframes/bag.png" alt="Bag wireframe">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/wireframes/checkout.png" alt="Checkout wireframe">
+</details>
+
+<details><summary>Checkout Success</summary>
+<img src="docs/wireframes/checkout_success.png" alt="Checkout Success wireframe">
+</details>
 
 ## Technologies Used
 
