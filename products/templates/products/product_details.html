@@ -190,7 +190,7 @@
                                         <div class="modal-dialog" role="document">
                                         <div class="modal-content rounded-0">
                                             <div class="modal-header">
-                                            <h5 class="modal-title" id="deleteReviewModalLabe{{review.id}}l">Are you sure you want to delete this review?</h5>
+                                            <h5 class="modal-title" id="deleteReviewModalLabel{{review.id}}">Are you sure you want to delete this review?</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -200,7 +200,7 @@
                                             </div>
                                             <div class="modal-footer">
                                             <button type="button" aria-label="No" class="btn-secondary btn black-back-g thick-text border text-white rounded-0 text-uppercase" data-dismiss="modal">No</button>
-                                            <a href="{% url 'delete_review' review.id %}" type="button" aria-label="Yes" class="btn-primary btn white-back-g thick-text border text-black rounded-0 text-uppercase">Yes</a>
+                                            <a href="{% url 'delete_review' review.id %}" aria-label="Yes" class="btn-primary btn white-back-g thick-text border text-black rounded-0 text-uppercase">Yes</a>
                                             </div>
                                         </div>
                                         </div>
