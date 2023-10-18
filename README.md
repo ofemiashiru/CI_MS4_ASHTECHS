@@ -429,31 +429,11 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 ### HTML Validation
 The W3C Markup Validation Service was used to validate the HTML of the website. 
 
-movies.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fshow_movies) - No Errors Found
+index.html(Home) [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fash-techs-a3f0a77bec88.herokuapp.com%2F) - No Errors Found
 
-add_movie.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fadd_movie) - No Errors Found
+products.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fash-techs-a3f0a77bec88.herokuapp.com%2Fproducts%2F) - No Errors Found
 
-edit_movie.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fedit_movie%2F64aa76200062b2ede6c081c1) - No Errors Found
 
-reviews.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fshow_reviews%2F64aa76200062b2ede6c081c1) - No Errors Found
-
-add_review.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fadd_review%2F64aa76200062b2ede6c081c1) - No Errors Found
-
-edit_review.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fedit_review%2F64b4941eac9e68e3acbbbb53) - No Errors Found
-
-sign_in.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fsign_in) - No Errors Found
-
-register.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fregister) - No Errors Found
-
-profile.html [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fprofile%2Fajasko) - No Errors Found
-
-profile.html - admin [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fprofile%2Fadmin) - No Errors Found
-
-genres.html - admin [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fshow_genres) - No Errors Found
-
-add_genre.html - admin [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fadd_genre) - No Errors Found
-
-edit_genre.html - admin [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fedit_genre%2F64ba84070878e37c4dd6a478) No Errors Found
 
 ### CSS Validation
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.

@@ -132,19 +132,18 @@
                             </div>
                         </div>
                     {% endif %}
-                    <p class="mt-3 mb-n2 text-muted">Product information</p>
+                    <p class="mt-3 text-muted">Product information</p>
                     <p>
-                        <div class="text-uppercase thick-text mb-1 d-inline">
-                            {% if product.new_arrival %}
-                                <span class="bg-success py-1 px-3 text-white rounded">New Arrival</span>
-                            {% endif %}
-                            {% if product.deal %}
-                                <span class="bg-warning py-1 px-3 text-black rounded">Deal</span>
-                            {% endif %}
-                            {% if product.clearance %}
-                                <span class="bg-danger py-1 px-3 text-white rounded">Clearance</span>
-                            {% endif %}
-                        </div>
+                        {% if product.new_arrival %}
+                            <span class="text-uppercase thick-text bg-success py-1 px-3 text-white rounded">New Arrival</span>
+                        {% endif %}
+                        {% if product.deal %}
+                            <span class="text-uppercase thick-text bg-warning py-1 px-3 text-black rounded">Deal</span>
+                        {% endif %}
+                        {% if product.clearance %}
+                            <span class="text-uppercase thick-text bg-danger py-1 px-3 text-white rounded">Clearance</span>
+                        {% endif %}
+      
                         {{ product.description }}
                     </p>
                 </div>
