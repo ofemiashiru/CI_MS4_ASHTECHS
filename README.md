@@ -260,45 +260,6 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 <details><summary>movies</summary>
 <img src="docs/wireframes/movies.png" alt="movies wireframe">
 </details>
-<details><summary>add_movie</summary>
-<img src="docs/wireframes/add_movie.png" alt="add_movie wireframe">
-</details>
-<details><summary>edit_movie</summary>
-<img src="docs/wireframes/edit_movie.png" alt="edit_movie wireframe">
-</details>
-<details><summary>reviews</summary>
-<img src="docs/wireframes/reviews.png" alt="reviews wireframe">
-</details>
-<details><summary>add_review</summary>
-<img src="docs/wireframes/add_review.png" alt="add_review wireframe">
-</details>
-<details><summary>edit_review</summary>
-<img src="docs/wireframes/edit_review.png" alt="edit_review wireframe">
-</details>
-<details><summary>genres</summary>
-<img src="docs/wireframes/genres.png" alt="genres wireframe">
-</details>
-<details><summary>add_genre</summary>
-<img src="docs/wireframes/add_genre.png" alt="add_genre wireframe">
-</details>
-<details><summary>edit_genre</summary>
-<img src="docs/wireframes/edit_genre.png" alt="edit_genre wireframe">
-</details>
-<details><summary>sign_in</summary>
-<img src="docs/wireframes/sign_in.png" alt="sign_in wireframe">
-</details>
-<details><summary>register</summary>
-<img src="docs/wireframes/register.png" alt="register wireframe">
-</details>
-<details><summary>profile</summary>
-<img src="docs/wireframes/profile.png" alt="profile wireframe">
-</details>
-<details><summary>404</summary>
-<img src="docs/wireframes/404.png" alt="404 wireframe">
-</details>
-<details><summary>500</summary>
-<img src="docs/wireframes/500.png" alt="500 wireframe">
-</details>
 
 
 ## Technologies Used
