@@ -482,41 +482,45 @@ reviews.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A
 
 [JS Hint](https://jshint.com/) was used to validate the JavaScript of the website.
 
-<details><summary>script.js</summary>
-<p>One undefined variable called M which is being used by Materialize Javascript initialisation.</p>
-<img src="docs/validation/js/script.png" alt="script.js">
+<details><summary>footer.js</summary>
+<p>No Errors</p>
+<img src="docs/validation/js/footer.png" alt="footer.js">
 </details>
 
-<details><summary>register.js</summary>
-<img src="docs/validation/js/register.png" alt="register.js">
+<details><summary>handle_quantity_script.js</summary>
+<p>No Errors</p>
+<img src="docs/validation/js/handle_quantity_script.png" alt="handle_quantity_script.js">
 </details>
 
-<details><summary>drop_down_validator.js</summary>
-<img src="docs/validation/js/drop_down_validator.png" alt="drop_down_validator.js">
+
+<details><summary>handle_sort_selector.js</summary>
+<p>No Errors</p>
+<img src="docs/validation/js/handle_sort_selector.png" alt="handle_sort_selector.js">
 </details>
 
-<details><summary>in_html_script located in add_movie.html and edit_movie.html</summary>
-<p>One unused variable warning however it is used within fetch_movie_poster.js document. It has to be called in the HTML file in order for it to be recognised by Jinja. </p>
-<img src="docs/validation/js/in_html_script.png" alt="in_html_script for add and edit movie page">
+
+<details><summary>handle_update_delete_script.js</summary>
+<p>No Errors</p>
+<img src="docs/validation/js/handle_update_delete_script.png" alt="handle_update_delete_script.js">
 </details>
 
-<details><summary>fetch_movie_poster.js</summary>
-<p>One undefined variable warning however it is defined within in script for add and edit movie pages to hide api key</p>
-<img src="docs/validation/js/fetch_movie_poster.png" alt="fetch_movie_poster.js">
+
+<details><summary>profile.js</summary>
+<p>No Errors</p>
+<img src="docs/validation/js/profile.png" alt="profile.js">
 </details>
 
-<details><summary>character_count.js</summary>
-<img src="docs/validation/js/character_count.png" alt="character_count.js">
+<details><summary>stripe.js</summary>
+<p>Two unused variables as a result of Stripe and Jquery usage</p>
+<img src="docs/validation/js/stripe.png" alt="stripe.js">
 </details>
 
 
 ### Python Validation
 
-[Python Linter](https://pep8ci.herokuapp.com/) was used to test and validate the Python used in app.py
+[Python Linter](https://pep8ci.herokuapp.com/) was used to test as coding went on.
+On completion of the project I used the command `python3 -m flake8` to clear any other issues
 
-- app.py - No Errors
-
-![app python file validated](docs/validation/python/app_python_validate.png)
 
 ### Accessibility
 The WAVE WebAIM web accessibility tool was used to ensure the website met accessibility standards. 
