@@ -20,13 +20,13 @@
         </div>
     </li>
     <li class="list-inline-item dropdown">
-        <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="My account dropdown">
+        <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="My account dropdown">
             <div class="text-center">
                 <div><i class="fas fa-user text-navy-blue"></i></div>
                 <p class="my-0 under-icon-nav text-uppercase">My Account</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+        <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
             {% if request.user.is_authenticated %}
                 <a href="{% url 'profile' %}" class="dropdown-item" aria-label="My Profile">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="Logout">Logout</a>
