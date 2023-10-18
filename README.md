@@ -262,7 +262,7 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 </details>
 
 <details><summary>Products</summary>
-<img src="docs/wireframes/product.png" alt="Product wireframe">
+<img src="docs/wireframes/products.png" alt="Product wireframe">
 </details>
 
 <details><summary>Products Admin (Add and Edit)</summary>
