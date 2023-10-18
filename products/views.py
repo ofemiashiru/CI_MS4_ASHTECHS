@@ -102,7 +102,7 @@ def see_all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
-    paginator = Paginator(products, 16)
+    paginator = Paginator(products.order_by('name'), 16)
     page_number = request.GET.get("page")
 
     products_page_obj = paginator.get_page(page_number)
