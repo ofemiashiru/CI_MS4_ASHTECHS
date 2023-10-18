@@ -466,9 +466,17 @@ checkout_success.html [result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fas
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
 After testing the whole sites CSS and my own custom CSS all pages passed with no errors, however, there were a number of warnings present that were related to the webkit css extensions used.
 
-whole site [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - 1 Error found in the materialize.min.css
+whole site [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fash-techs-a3f0a77bec88.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-custom css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmovie-crazy-club-73ece9687233.herokuapp.com%2Fstatic%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Errors Found
+base.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fash-techs.s3.eu-west-2.amazonaws.com%2Fstatic%2Fcss%2Fbase.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Errors Found
+
+checkout.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fash-techs.s3.eu-west-2.amazonaws.com%2Fstatic%2Fcheckout%2Fcss%2Fcheckout.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Errors Found
+
+products.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fash-techs.s3.eu-west-2.amazonaws.com%2Fstatic%2Fproducts%2Fcss%2Fproducts.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Errors Found
+
+profile.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fash-techs.s3.eu-west-2.amazonaws.com%2Fstatic%2Fprofiles%2Fcss%2Fprofile.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Errors Found
+
+reviews.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fash-techs.s3.eu-west-2.amazonaws.com%2Fstatic%2Freviews%2Fcss%2Freviews.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Errors Found
 
 ### JS Validation
 
