@@ -23,7 +23,7 @@ class Order(models.Model):
     address_line_1 = models.CharField(max_length=90, null=False, blank=False)
     address_line_2 = models.CharField(max_length=90, null=False, blank=False)
     city = models.CharField(max_length=40, null=False, blank=False)
-    post_code = models.CharField(max_length=20, null=True, blank=True)
+    post_code = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(
         blank_label='Country *', max_length=80, null=False, blank=False
     )
