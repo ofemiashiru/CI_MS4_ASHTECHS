@@ -3,8 +3,10 @@ from django.db import models
 
 # Create your models here.
 class Brand(models.Model):
-    name = models.CharField(max_length=255)
-    friendly_name = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(max_length=255, null=False, blank=False)
+    friendly_name = models.CharField(
+        max_length=255, null=False, blank=False, default=''
+    )
 
     def __str__(self):
         return self.name
@@ -19,8 +21,10 @@ class Category(models.Model):
 
         verbose_name_plural = 'Categories'
 
-    name = models.CharField(max_length=255)
-    friendly_name = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(max_length=255, null=False, blank=False)
+    friendly_name = models.CharField(
+        max_length=255, null=False, blank=False, default=''
+    )
 
     def __str__(self):
         return self.name
@@ -34,13 +38,15 @@ class Product(models.Model):
         Brand, null=False, blank=False, on_delete=models.CASCADE)
 
     category = models.ForeignKey(
-        Category, null=True, blank=True, on_delete=models.SET_NULL)
+        Category, null=True, blank=False, on_delete=models.SET_NULL)
 
     is_accessory = models.BooleanField(null=False, blank=False, default=False)
 
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    name = models.CharField(max_length=254, null=False, blank=False)
+    description = models.TextField(null=False, blank=False)
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, blank=False
+    )
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True
     )
