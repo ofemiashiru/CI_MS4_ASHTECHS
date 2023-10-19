@@ -77,7 +77,7 @@
                                 </div>
                                 <a href="/products/{{product.id }}">
                                     {% if product.image %}
-                                        <img class="card-img border" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        <img class="card-img border p-2" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     {% else %}
                                         <img class="card-img border" src="{{ MEDIA_URL }}noimage.png" alt="No image for {{ product.name }}">
                                     {% endif %}
