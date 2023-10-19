@@ -528,9 +528,13 @@ Some pages cannot be tested due to being behind authentication, so I tested all 
 
 index.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/) - 1 Contrast Error.
 
-products.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/products) - 1 Contrast Error.
+products.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/products) - 1 Contrast Error.
 
-product_details.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/products/5) - 3 Contrast Errors.
+product_details.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/products/5) - 3 Contrast Errors.
+
+login.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/accounts/login/) - 2 Contrast Errors.
+
+signup.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/accounts/signup/) - 1 Contrast Error
 
 
 ### Performance 
@@ -538,39 +542,7 @@ Google Lighthouse Tool was used to test the performance of the website.
 <details><summary>movies</summary>
 <img src="docs/validation/performance/movies.png" alt="lighthouse for movies">
 </details>
-<details><summary>reviews</summary>
-<img src="docs/validation/performance/reviews.png" alt="lighthouse for reviews">
-</details>
-<details><summary>genres</summary>
-<img src="docs/validation/performance/genres.png" alt="lighthouse for genres">
-</details>
-<details><summary>sign_in</summary>
-<img src="docs/validation/performance/sign_in.png" alt="lighthouse for sign_in">
-</details>
-<details><summary>register</summary>
-<img src="docs/validation/performance/register.png" alt="lighthouse for register">
-</details>
-<details><summary>profile</summary>
-<img src="docs/validation/performance/profile.png" alt="lighthouse for profile">
-</details>
-<details><summary>add_movie</summary>
-<img src="docs/validation/performance/add_movie.png" alt="lighthouse for add_movie">
-</details>
-<details><summary>add_review</summary>
-<img src="docs/validation/performance/add_review.png" alt="lighthouse for add_review">
-</details>
-<details><summary>add_genre</summary>
-<img src="docs/validation/performance/add_genre.png" alt="lighthouse for add_genre">
-</details>
-<details><summary>edit_movie</summary>
-<img src="docs/validation/performance/edit_movie.png" alt="lighthouse for edit_movie">
-</details>
-<details><summary>edit_review</summary>
-<img src="docs/validation/performance/edit_review.png" alt="lighthouse for edit_review">
-</details>
-<details><summary>edit_genre</summary>
-<img src="docs/validation/performance/edit_genre.png" alt="lighthouse for edit_genre">
-</details>
+
 
 ### Performing tests on various devices 
 The website was tested on the following devices:
