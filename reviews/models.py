@@ -7,7 +7,7 @@ from profiles.models import UserProfile
 class Review(models.Model):
     user_profile = models.ForeignKey(
         UserProfile, on_delete=models.CASCADE, null=False,
-        blank=False, default='', related_name='reviews'
+        blank=False, related_name='reviews'
     )
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, null=False, blank=False

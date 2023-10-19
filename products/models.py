@@ -5,7 +5,7 @@ from django.db import models
 class Brand(models.Model):
     name = models.CharField(max_length=255, null=False, blank=False)
     friendly_name = models.CharField(
-        max_length=255, null=False, blank=False, default=''
+        max_length=255, null=False, blank=False
     )
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Category(models.Model):
 
     name = models.CharField(max_length=255, null=False, blank=False)
     friendly_name = models.CharField(
-        max_length=255, null=False, blank=False, default=''
+        max_length=255, null=False, blank=False
     )
 
     def __str__(self):
