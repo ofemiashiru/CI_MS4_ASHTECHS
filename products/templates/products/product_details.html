@@ -78,6 +78,7 @@
                                             </button>
                                         </div>
                                         <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item-id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <label for="id_qty_{{ product.id }}" hidden>Qty</label>
                                         <div class="input-group-append ml-1">
                                             <button class="increase_quantity btn text-white black-back-g border rounded-0" data-item-id="{{ product.id }}" id="increase_quantity_of_prod_{{ product.id }}" aria-label="increase quantity">
                                                 <i class="fa-solid fa-plus"></i>

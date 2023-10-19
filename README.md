@@ -530,6 +530,8 @@ index.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f
 
 products.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/products) - 1 Contrast Error.
 
+product_details.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/products/5) - 3 Contrast Errors.
+
 
 ### Performance 
 Google Lighthouse Tool was used to test the performance of the website. 
