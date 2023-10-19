@@ -63,9 +63,10 @@
                 <div class="col-lg-4 my-auto py-1 search-lg">
                     <form method="GET" action="{% url 'products' %}" class="search-form">
                         <div class="input-group w-100">
-                            <input class="search-bar form-control" type="text" name="q" placeholder="Search our site" required>
+                            <input class="search-bar form-control" id="search-input-main" type="text" name="q" placeholder="Search our site" required>
+                            <label for="search-input-main" class="bg-transparent" hidden>Search</label>
                             <div class="input-group-append">
-                                <button class="form-control btn search-btn navy-blue-back-g" type="submit" >
+                                <button class="form-control btn search-btn navy-blue-back-g" type="submit">
                                     <i class="fa-solid fa-magnifying-glass text-white"></i>
                                 </button>
                             </div>
