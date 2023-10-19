@@ -11,7 +11,6 @@ class TestViews(TestCase):
 
         template = 'products/products.html'
         self.assertTemplateUsed(response, template)
-    
 
     def test_see_product_details(self):
         brand = Brand.objects.create(
@@ -36,7 +35,7 @@ class TestViews(TestCase):
             deal=False,
             clearance=False
         )
-    
+
         response = self.client.get(f'/products/{product.id}/')
         self.assertEqual(response.status_code, 200)
 
