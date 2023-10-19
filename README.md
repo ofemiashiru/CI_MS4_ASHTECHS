@@ -523,19 +523,13 @@ On completion of the project I used the command `python3 -m flake8` to clear any
 
 
 ### Accessibility
-The WAVE WebAIM web accessibility tool was used to ensure the website met accessibility standards. 
+The WAVE WebAIM web accessibility tool was used to ensure the website met accessibility standards.
+Some pages cannot be tested due to being behind authentication, so I tested all the pages that were not. 
 
-movies.html [results](https://wave.webaim.org/report#/https://movie-crazy-club-73ece9687233.herokuapp.com/show_movies) - No Errors Found.
+index.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/) - 1 Contrast Error.
 
-reviews.html [results](https://wave.webaim.org/report#/https://movie-crazy-club-73ece9687233.herokuapp.com/show_reviews/64aa76200062b2ede6c081c1) - No Errors Found
+products.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/products) - 1 Contrast Error.
 
-sign_in.html [results](https://wave.webaim.org/report#/https://movie-crazy-club-73ece9687233.herokuapp.com/sign_in) - No Errors Found.
-
-register.html [results](https://wave.webaim.org/report#/https://movie-crazy-club-73ece9687233.herokuapp.com/register) - No Errors Found.
-
-404.html [results](https://wave.webaim.org/report#/https://movie-crazy-club-73ece9687233.herokuapp.com/profilesdfd) - No Errors Found.
-
-500.html [results](https://wave.webaim.org/report#/https://movie-crazy-club-73ece9687233.herokuapp.com/search) - No Errors Found.
 
 ### Performance 
 Google Lighthouse Tool was used to test the performance of the website. 
