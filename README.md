@@ -583,7 +583,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ### Testing user stories
 
-1.  <a id="user-story-1">I want to see all Products</a>.
+1.  <a id="user-story-1">I want to see all Products</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
