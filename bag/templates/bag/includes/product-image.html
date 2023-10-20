@@ -1,7 +1,7 @@
-<a href="/products/{{item.product.id }}" title="{{ product.name }}">
+<a href="/products/{{item.product.id }}" title="{{ item.product.name }}">
     {% if item.product.image %}
-        <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+        <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
     {% else %}
-        <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="No image for {{ product.name }}">
+        <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="No image for {{ item.product.name }}">
     {% endif %}
 </a>
