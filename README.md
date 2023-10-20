@@ -102,7 +102,7 @@
 
 | **Num** | **As an/a** | **I want to be able to** | **So that I can** |
 |------------|-------------|--------------------------|-------------------|
-|1|Shopper|See all products|Decide which item to purchase|
+|[User Story 1](#user-story-1)|Shopper|See all products|Decide which item to purchase|
 |2|Shopper|See individual product details|See specific details, such as price, quantity, description and review|
 |3|Shopper|Sort products by brand, price, rating and category|See products in ascending and descenging order|
 |4|Shopper|See my recent orders|Track my previous orders|
@@ -583,7 +583,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ### Testing user stories
 
-01. I want to see all Products.
+1.  <a id="user-story-1">I want to see all Products</a>.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
