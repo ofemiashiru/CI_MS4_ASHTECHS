@@ -952,7 +952,7 @@ Deployed using Heroku using the following steps:
 
 ### Media
 
-- Movie Wallpaper background | soure: [Wallpapers.com](https://wallpapers.com/)
+- Home page background image | soure: [Wallpapers.com](https://wallpapers.com/)
 
 - All movie poster images are API generated from [OMDb](https://www.omdbapi.com/)
 
@@ -960,13 +960,21 @@ Deployed using Heroku using the following steps:
 
 ### Code
 
-- Used [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) to add error routes for 404 and 500
+- Used [Stack Overflow](https://stackoverflow.com/questions/14268342/make-the-first-letter-uppercase-inside-a-django-template) to help capitalise text in Django templating.
 
-- Used [Code Institute Github Solutions](https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/static/js/script.js) to assist with validating materializes drop down correctly
+- Used [Stack Overflow](https://stackoverflow.com/questions/66707030/django-textarea-form) to help with adding a TextArea to my review form.
 
-- Used [Python Basics](https://pythonbasics.org/flask-redirect-and-errors/), [w3schools](https://www.w3schools.com/python/python_regex.asp), [Stack Overflow](https://stackoverflow.com/questions/33467536/how-to-check-if-a-string-is-made-only-of-letters-and-numbers) and [Pythex](https://pythex.org/) for regex and abort class on `valid_object_id` function in app.py
+- Used [Stack Overflow](https://stackoverflow.com/questions/66772595/django-form-widget-how-can-i-set-max-value-to-a-value-on-the-database-for-each) to create Widget and help with setting min and max values on them.
 
-- Used [Geeks for Geeks](https://www.geeksforgeeks.org/encoding-and-decoding-base64-strings-in-python/) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/atob) to encode/decode the OMDB api so it cannot be seen directly in the JS or HTML file
+- Used [Stack Overflow](https://stackoverflow.com/questions/23739030/restrict-django-floatfield-to-2-decimal-places) and [Django docs](https://docs.djangoproject.com/en/2.2/ref/templates/builtins/#floatformat) to aid with Floats and decimal numbers.
+
+- Used [Stack Overflow](https://stackoverflow.com/questions/3732106/django-template-variable-value-to-string-literal-comparison-fails) and [Django docs](https://docs.djangoproject.com/en/1.10/ref/templates/builtins/#stringformat) to aid with String conversion.
+
+- Used [Stack Overflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views) to aid with redirecting to the same page after POST.
+
+- Used [Dev.to](https://dev.to/sankalpjonna/save-your-django-models-using-updatefields-for-better-performance-50ig#:~:text=Use%20update_fields%20in%20save(),calling%20the%20save()%20method.&text=You%20can%20also%20choose%20to,names%20in%20the%20update_fields%20list.) to aid with using `update_fields` to update rating on products model whenever a review is submitted by customer.
+
+- Used [Django docs](https://docs.djangoproject.com/en/4.2/topics/pagination/) to aid with product page paganition.
 
 ## Acknowledgements
 
