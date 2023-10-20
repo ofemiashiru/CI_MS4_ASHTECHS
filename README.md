@@ -952,11 +952,13 @@ Deployed using Heroku using the following steps:
 
 ### Media
 
-- Home page background image | soure: [Wallpapers.com](https://wallpapers.com/)
+- Home page background image | soure: [Pexels.com](https://www.pexels.com/photo/woman-in-black-long-sleeved-top-1181317/) provided by Christina Morillo.
 
-- All movie poster images are API generated from [OMDb](https://www.omdbapi.com/)
+- All product images, names and descriptions were taken from [Currys](https://www.currys.co.uk/)
 
-- Image used on add and edit movie pages taken from [Font Awesome](https://fontawesome.com/icons/image?f=classic&s=solid)
+- All icons used on page were taken from [Font Awesome](https://fontawesome.com)
+
+- The logo and favicon was taken from [Favicon](https://favicon.io/emoji-favicons/robot)
 
 ### Code
 
@@ -982,3 +984,5 @@ I would like to take the opportunity to thank:
 - Mo Shami for continued mentorship, guidance and support throughout this project. 
 - Iris Smok for continued encouragement whilst working on this project.
 - and all the Teaching and Non-teaching Personnel at Code Institute.
+
+This is my final project and I have learned so much from the team and students at Code Institute and I would like to give you all a big thank you as well. You have helped my career immensely!
