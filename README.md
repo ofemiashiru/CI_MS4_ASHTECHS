@@ -327,21 +327,21 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ### Add Product
 
-- Allows Site Owner to add products
+- Allows Site Owner to add a product
 
-![Add Movie](docs/features/feature-add-movie.gif)
+![Add Movie](docs/features/feature-add-product.gif)
 
 ### Edit Product
 
-- Allows Site Owner to edit product
+- Allows Site Owner to edit a product
 
-![Edit Movie](docs/features/feature-edit-movie.gif)
+![Edit Movie](docs/features/feature-edit-product.gif)
 
 ### Delete Product
 
-- Allows Site Owner to delete products
+- Allows Site Owner to delete a product
 
-![Delete Movie](docs/features/feature-delete-movie.gif)
+![Delete Movie](docs/features/feature-delete-product.gif)
 
 ### Add Review
 
