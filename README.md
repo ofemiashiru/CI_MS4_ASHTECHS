@@ -319,6 +319,7 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 - Allows users to register with ASHTECHS
 
 ![Register](docs/features/feature-register.gif)
+![Register](docs/features/feature-register.png)
 
 ### Profile
 
