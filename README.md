@@ -105,7 +105,7 @@
 
 ### User Stories
 
-| **Number** | **As an/a** | **I want to be able to** | **So that I can** |
+| **Num** | **As an/a** | **I want to be able to** | **So that I can** |
 |------------|-------------|--------------------------|-------------------|
 |1|Shopper|See all products|Decide which item to purchase|
 |2|Shopper|See individual product details|See specific details, such as price, quantity, description and review|
@@ -120,36 +120,37 @@
 |11|Shopper|Easily update products quantity when purchasing it|Buy a certain amount of products|
 |12|Shopper|Receive an email confirmation when I puechase a product|Know that my purchase has been successful|
 |13|Shopper|Update my profile|Add new shipping/billing details to my profile|
-|14|Site User|Register to the site|See and edit my profile|
-|15|Site User|Log in and out|Access my personal account information|
-|16|Site User|Receive an email confirmation that I have registered my account|Confirm that I can log in|
-|17|Site Owner|To add products|Have more products on the site|
-|18|Site Owner|To edit products|Correct, update or change a product|
-|19|Site Owener|To delete products|Remove products we no longer sale|
+|14|Shopper|Add and Remove Items from my shopping bag|Have greater flexibility over what I purchased|
+|15|Site User|Register to the site|See and edit my profile|
+|16|Site User|Log in and out|Access my personal account information|
+|17|Site User|Receive an email confirmation that I have registered my account|Confirm that I can log in|
+|18|Site Owner|To add products|Have more products on the site|
+|19|Site Owner|To edit products|Correct, update or change a product|
+|20|Site Owner|To delete products|Remove products we no longer sale|
 
 ## Scope
 
 The scope of the project in its first release is defined by the following features:
 
-- Simple navigation that allows user to navigate between sections of the site. 
+- Simple navigation that allows user to navigate between sections of the site.
 - Allow users to log into their own accounts and perform CRUD operations on reviews and make purchases from site utilising Stripe implementation. Admin users should also be able to perform CRUD operations on products.
 - Allow all users to see the stored movies and reviews.
 - Allow all users to search all the movies that have been added.
-- Allow visitors to create an account as well as delete it if no longer needed.
+- Allow visitors to create an account and see their previous orders, wishlist and details on profile.
 - An error page (404.html) and internal server error page (500.html) that appears when visiting a page that does not exist or when an internal server error has been detected.
 - Clear and simple favicon icon to help users identify the site.
-- Navigation links to show and hide based on logged in and logged out users as well as admin and non-admin users 
 
 Features to be built in future releases:
 
-- Allow admin to review movie submissions to check whether a movie has already been added or not. Some movies over time have had the same title name so an extra field in the Movies collection that will signify approval that will alert admin so that they can approve it or not.
-- Further development to allow admin users to have super user controls and delete reviews and movies.
-- Ability for users to add a list of Actors to be submitted into the Movies collection.
+- Allow admin to add/edit/delete Brands and Categories.
+- Further development to allow Site Users to delete their own account.
+- Ability to send an unsuccessful email if the something goes wrong with their purchase.
 - Users to create groups which they can add other users to.
 
 ## Design
 
 ### Design Choices
+
 MMC was designed to mimic the look and feel of iMdb. It was very much styled on that basis however the layout is very simple so that users can accurately locate all the necesarry sections of the site with ease. The majority of the site is styled using Materialize components which has helped the site keep a consistent structure and made it fully responsive also. As alot of the images used are being generated from OMDbs api the site colours and layout need to be kept simple. My attempt with this was to see if I could essentially make the design an iMdb/Netflix clone.
 
 ### Colour
@@ -587,7 +588,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ### Testing user stories
 
-1. I want to see all movies on MCC.
+01. I want to see all movies on MCC.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -595,7 +596,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Movie Section](docs/features/feature-movie-section.gif)
 
-2. I want to create an account on MCC.
+02. I want to create an account on MCC.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -603,7 +604,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Register](docs/features/feature-register.gif)
 
-1. I want to add movies on MCC.
+03. I want to add movies on MCC.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
