@@ -381,7 +381,7 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ### 404 Page
 
-- Site Users should be presented with a 404 page if they visit an incorrect page
+- Site Users should be presented with a 404 page if they visit an incorrect path
 
 ![404](docs/features/feature-404-page.gif)
 
@@ -389,7 +389,7 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ### HTML Validation
 
-The W3C Markup Validation Service was used to validate the HTML of the website. 
+The W3C Markup Validation Service was used to validate the HTML of the website.
 In order to test some of the HTML validation links you must be logged in.
 
 index.html(Home) [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fash-techs-a3f0a77bec88.herokuapp.com%2F) - No Errors Found
