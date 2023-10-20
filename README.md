@@ -6,10 +6,7 @@
 
 [Live Project](https://ash-techs-a3f0a77bec88.herokuapp.com/)
 
-## Table of Content
-
 - [ASH|TECHS](#ashtechs)
-  - [Table of Content](#table-of-content)
   - [Project Goals](#project-goals)
     - [User Goals](#user-goals)
     - [Site Owner Goals](#site-owner-goals)
@@ -205,9 +202,9 @@ Using Figma I created a conceptual flow chart of how users will navigate through
 
 ### Database Structure
 
-Using Lucid chart I created an ERD to show how data will flow and be stored within ElephantSQL for Django.
+Using Lucid chart I created an ERD to show how data will flow and be stored within ElephantSQL.
 
-![ASHTHECS DB Image](docs/data_models/movie-crazy-club-erd.png)
+![ASHTHECS DB Image](docs/data_models/lucid-ashtech-db-plan.png)
 
 ### Wireframes
 
