@@ -611,6 +611,10 @@ Google Lighthouse Tool was used to test the performance of the website.
 <img src="docs/validation/performance/checkout.png" alt="lighthouse for Checkout">
 </details>
 
+<details><summary>Order History</summary>
+<img src="docs/validation/performance/order_history.png" alt="lighthouse for Order History">
+</details>
+
 ### Performing tests on various devices
 
 The website was tested on the following devices:
