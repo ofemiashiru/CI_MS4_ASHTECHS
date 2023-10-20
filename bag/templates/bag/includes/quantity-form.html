@@ -9,7 +9,7 @@
                             <i class="fa-solid fa-minus"></i>
                         </button>
                     </div>
-                    <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item-id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                    <input class="form-control qty_input" type="number" aria-label="Quantity" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item-id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                     <div class="input-group-append ml-1">
                         <button class="increase_quantity btn text-white black-back-g border rounded-0" aria-label="Increase quantity" data-item-id="{{ item.item_id }}" id="increase_quantity_of_prod_{{ item.item_id }}">
                             <i class="fa-solid fa-plus"></i>

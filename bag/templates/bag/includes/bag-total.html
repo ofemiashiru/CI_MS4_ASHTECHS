@@ -1,15 +1,15 @@
-<h6>
+<p class="mb-0">
     <strong>Bag Total: £{{ total|floatformat:2 }}</strong>
-</h6>
-<h6>
+</p>
+<p>
     Shipping: 
     {% if free_shipping_difference > 0 %}
         £{{ shipping|floatformat:2 }}
     {% else %}
         Free
     {% endif %}
-</h6>
-<h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+</p>
+<p class="mt-4 h4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></p>
 {% if free_shipping_difference > 0 %}
     <p class="mb-1 text-danger">
         Get free shipping if you spend <strong>£{{ free_shipping_difference }}</strong> more!
