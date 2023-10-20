@@ -565,9 +565,50 @@ signup.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77b
 
 ### Performance
 
-Google Lighthouse Tool was used to test the performance of the website. 
-<details><summary>movies</summary>
-<img src="docs/validation/performance/movies.png" alt="lighthouse for movies">
+Google Lighthouse Tool was used to test the performance of the website.
+
+<details><summary>Home</summary>
+<img src="docs/validation/performance/home.png" alt="lighthouse for Home">
+</details>
+
+<details><summary>Products</summary>
+<img src="docs/validation/performance/products.png" alt="lighthouse for Products">
+</details>
+
+<details><summary>Product Details</summary>
+<img src="docs/validation/performance/product_details.png" alt="lighthouse for Product Details">
+</details>
+
+<details><summary>Add Review</summary>
+<img src="docs/validation/performance/add_review.png" alt="lighthouse for Add Review">
+</details>
+
+<details><summary>Update Review</summary>
+<img src="docs/validation/performance/update_review.png" alt="lighthouse for Update Review">
+</details>
+
+<details><summary>Add Product</summary>
+<img src="docs/validation/performance/add_product.png" alt="lighthouse for Add Product">
+</details>
+
+<details><summary>Edit Product</summary>
+<img src="docs/validation/performance/edit_product.png" alt="lighthouse for Edit Product">
+</details>
+
+<details><summary>Sign Up</summary>
+<img src="docs/validation/performance/signup.png" alt="lighthouse for Sign Up">
+</details>
+
+<details><summary>Login</summary>
+<img src="docs/validation/performance/login.png" alt="lighthouse for Login">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/performance/profile.png" alt="lighthouse for Profile">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/validation/performance/checkout.png" alt="lighthouse for Checkout">
 </details>
 
 ### Performing tests on various devices
