@@ -25,7 +25,6 @@
     - [Structure](#structure)
       - [What links users can and cannot see](#what-links-users-can-and-cannot-see)
     - [Database Structure](#database-structure)
-    - [MongoDB Collections](#mongodb-collections)
     - [Wireframes](#wireframes)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
@@ -138,7 +137,7 @@ The scope of the project in its first release is defined by the following featur
 - Allow all users to search and sort all products.
 - Allow visitors to create an account and see their previous orders, wishlist and details on profile.
 - An error page (404.html) and internal server error page (500.html) that appears when visiting a page that does not exist or when an internal server error has been detected.
-- Clear and simple favicon icon to help users identify the site.
+- Clear and simple favicon icon to help users identify the site which is also used as the logo.
 
 Features to be built in future releases:
 
@@ -167,20 +166,9 @@ The main font used in the entirety of the website is "'Roboto', sans-serif". For
 
 The site has a total of 14 pages each having certain restrictions based on who is logged in. The entire site is fully responsive and has been tested within the industry standard width of 320px.
 
-The website consists of 14 main pages:
-
-- Main page which shows all movies stored, giving all users the ability to see details and reviews.
-- Sign in page that allows returning users to log in to their account.
-- Register page that allows visitors to the site to set up their own new accounts.
-- Profile page that allows logged in users to see and edit their movies as well as delete their own account. Admin user can also see all the users with accounts and delete them.
-- Add and edit movie pages which are only accessible to logged in users.
-- Add and edit review pages which are only accessible to logged in users.
-- Manage genere page which allows the admin user to see all genres stored and delete them.
-- Add and edit genre pages which are only accessible to admin user.
-
 Using Figma I created a conceptual flow chart of how users will navigate throughout the site.
 
-![MovieCrazyClub ConceptualFlow Image](docs/data_models/conceptual-flow-chart.png)
+![ASHTECHS ConceptualFlow Image](docs/data_models/conceptual-flow-chart.png)
 
 #### What links users can and cannot see
 
@@ -213,61 +201,13 @@ Using Figma I created a conceptual flow chart of how users will navigate through
   - Add/Edit/Delete Review
   - Add/Edit/Delete Product
 
-- Logged in users can only edit and delete their own reviews.
+- NOTE: Logged in users can only edit and delete their own reviews.
 
 ### Database Structure
 
 Using Lucid chart I created an ERD to show how data will flow and be stored within ElephantSQL for Django.
 
-![MovieCrazyClub MongoDB Image](docs/data_models/movie-crazy-club-erd.png)
-
-### MongoDB Collections
-
-<p>Genres</p>
-
-"_id":{"$oid":"UNIQUE_ID"},
-
-"genre_name":"Comedy"
-
-<p>Movies</p>
-
-
-"_id":{"$oid":"UNIQUE_ID"},
-
-"genre_name":"Comedy",
-
-"title":"Rush Hour",
-
-"year":{"$numberInt":"1998"},
-
-"plot":"When a Chinese diplomat's daughter is kidnapped in Los Angeles, he calls in Hong Kong Detective Inspector Lee (Jackie Chan) to assist the FBI with the case. But the FBI doesn't want anything to do with Lee, and they dump him off on the LAPD, who assign wisecracking Detective James Carter (Chris Tucker) to watch over him. Although Lee and Carter can't stand each other, they choose to work together to solve the case on their own when they figure out they've been ditched by both the FBI and police.",
-
-"rating":{"$numberInt":"89"},
-
-"director":"Brett Ratner",
-
-"poster":"IMAGE_FROM_OMDB_API",
-
-"created_by":"USER"
-
-<p>Reviews</p>
-
-"_id":{"$oid":"UNIQUE_ID"},
-
-"review":"This movie is really funny. I laughed from start to finish.",
-
-"title":"Rush Hour",
-
-"created_by":"USER"
-
-<p>Users</p>
-
-"_id":{"$oid":"UNIQUE_ID"},
-
-"username":"CHOSEN_USERNAME",
-
-"password":"HASHED_PASSWORD"
-
+![ASHTHECS DB Image](docs/data_models/movie-crazy-club-erd.png)
 
 ### Wireframes
 
