@@ -114,7 +114,7 @@
 |9|Shopper|Add reviews for specific products|Give opinion on products and help others to make decisions|
 |10|Shopper|Edit or Delete reviews for specific products|Remove or update an incorrectly submitted review|
 |11|Shopper|Easily update products quantity when purchasing it|Buy a certain amount of products|
-|12|Shopper|Receive an email confirmation when I puechase a product|Know that my purchase has been successful|
+|12|Shopper|Receive an email confirmation when I purchase a product|Know that my purchase has been successful|
 |13|Shopper|Update my profile|Add new shipping/billing details to my profile|
 |14|Shopper|Add and Remove Items from my shopping bag|Have greater flexibility over what I purchased|
 |15|Site User|Register to the site|See and edit my profile|
@@ -161,7 +161,7 @@ The main font used in the entirety of the website is "'Roboto', sans-serif". For
 
 ### Structure
 
-The site has a total of 14 pages each having certain restrictions based on who is logged in. The entire site is fully responsive and has been tested within the industry standard width of 320px.
+The site has a total of 13 main pages each having certain restrictions based on who is logged in whether that be visitor or authenticated user (admin and non-admin). The entire site is fully responsive and has been tested within the industry standard width of 320px using Chrome Dev Tools.
 
 Using Figma I created a conceptual flow chart of how users will navigate throughout the site.
 
@@ -298,25 +298,25 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ### Home
 
-- Displays shop now button and two products that are special types (Deal and Clearance)  (User story 1)
+- Displays shop now button and two product image links that navigate to 'special' types (Deal and Clearance)
 
-![Home](docs/features/feature-movie-section.gif)
+![Home](docs/features/feature-home.gif)
 
 ### Footer
 
-- Displays logo, copyright and links to product pages 
+- Displays logo, copyright, links to product pages and a contact link that opens a mailto link
 
-![Footer](docs/features/feature-footer.png)
+![Footer](docs/features/feature-footer.gif)
 
 ### Sign In
 
-- Allows users to sign into their own account  (User Story 5, 14, 15)
+- Allows users to sign into their own account and see their profile own profile.
 
 ![Sign In](docs/features/feature-sign-in.gif)
 
 ### Register
 
-- Allows users to register with ASHTECHS  (User Story 2, 14)
+- Allows users to register with ASHTECHS
 
 ![Register](docs/features/feature-register.gif)
 
@@ -599,230 +599,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Movie Section](docs/features/feature-movie-section.gif)
 
-02. I want to create an account on MCC.
 
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Register | Click on register link and enter new details | Correct details should be accepted and profile page with newly created account should appear. Flash message should confirm this. | Works as expected |
-
-![Register](docs/features/feature-register.gif)
-
-03. I want to add movies on MCC.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Add Movie | Click on Add movie and enter detials of movie | Correct details should be accepted and show_movies page should open with newly added film. Flash message should confirm this.  | Works as expected |
-
-![Add Movie](docs/features/feature-add-movie.gif)
-
-4. I want to add reviews on MCC.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Reviews | Click on see reviews button, click leave review and enter details | Correct details should be accepted and reviews for specific film should be displayed with newly added review. Flash message should confirm this. | Works as expected |
-
-![Add Review](docs/features/feature-see-add-review.gif)
-
-5. I want to log into my MCC account.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Navigation, Sign In and Profile| Click on Sign in and enter correct details | Profile should open with logged in user. Flash message should confirm this. | Works as expected |
-
-![Sign In](docs/features/feature-sign-in.gif)
-
-6. I want to edit movies on MCC.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Movies and Edit Movie | Click on the edit movie button, enter correct details and click update movie | Edit movie should confirm if user wants to update. Once confirmed it should navigate to the show_movies route displaying updated movie. Flash message should confirm this. | Works as expected |
-
-![Edit Movie](docs/features/feature-edit-movie.gif)
-
-7. I want to edit reviews on MCC.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Reviews and Edit Review | Click on the see reviews button, locate user review and click on the edit review button. Update review with correct details and click update review | Edit review should confirm if user wants to update. Once confirmed it should navigate to the show_revies route displaying update review. Flash message should confirm this. | Works as expected |
-
-![Edit Review](docs/features/feature-edit-review.gif)
-
-8. I want to delete my movies on MCC.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Movies and Delete Movie | Click on the delete movie button | Delete movie should confirm if user wants to delete. Once confirmed it should navigate to the show_movies route with deleted movie no longer present. Flash message should confirm this. | Works as expected |
-
-![Delete Movie](docs/features/feature-delete-movie.gif)
-
-
-9. I want delete my reviews on MCC.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Reviews and Delete Review | Click on see reviews button, locate your review and click delete review button | Delete review should confirm if user wants to delete. Once confirmed it should navigate to the show_reviews route with delete review no longer present. Flash message should confirm this. | Works as expected |
-
-
-![Delete Review](docs/features/feature-delete-review.gif)
-
-
-10. I want to use the search bar to search movies on MCC.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Search Bar | Type search criteria within the search bar | Should navigate to the search route and display relevant movies that match search criteria. Should also display if no match can be found | Works as expected |
-
-
-![Search bar](docs/features/feature-search-bar.gif)
-
-
-11. I want to delete my account if no longer needed.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Profile and Delete user | Click on the delete account button in profile | Delete user should confirm if user wants to delete. Once confirmed it should delete all associated, movies and reviews as well as their account and finally log the user out | Works as expected |
-
-
-![Delete User](docs/features/feature-delete-user.gif)
-
-
-12. I want all users to be able to see all movies.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Movies and Navigation| Click on the home link or logo | show_movies route should be open with all movies display | Works as expected |
-
-
-![Movie Section](docs/features/feature-movie-section.gif)
-
-
-13. I want all users to be able to see all reviews.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Reviews | Click on the see reviews button for specific film | show_reviews route should open with selected film and all reviews displayed. | Works as expected |
-
-![See Reviews](docs/features/feature-see-reviews.gif)
-
-
-14. I want all users to be able to create an account.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Register | Click on register link and enter new details | Correct details should be accepted and profile page with newly created account should appear. Flash message should confirm this. | Works as expected |
-
-
-![Register](docs/features/feature-register.gif)
-
-
-15. I want users who have created accounts to log in and see their profile.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Navigation, Sign In and Profile| Click on Sign in and enter correct details | Profile should open with logged in user. Flash message should confirm this. | Works as expected |
-
-![Sign In](docs/features/feature-sign-in.gif)
-
-
-16. I want account users to add a movie.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Add Movie | Click on Add movie and enter detials of movie | Correct details should be accepted and show_movies page should open with newly added film. Flash message should confirm this.  | Works as expected |
-
-![Add Movie](docs/features/feature-add-movie.gif)
-
-17. I want account users to edit their own movie.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Movies and Edit Movie | Click on the edit movie button, enter correct details and click update movie | Edit movie should confirm if user wants to update. Once confirmed it should navigate to the show_movies route displaying updated movie. Flash message should confirm this. | Works as expected |
-
-![Edit Movie](docs/features/feature-edit-movie.gif)
-
-18. I want account users to delete their own movie.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Movies and Delete Movie | Click on the delete movie button | Delete movie should confirm if user wants to delete. Once confirmed it should navigate to the show_movies route with deleted movie no longer present. Flash message should confirm this. | Works as expected |
-
-![Delete Movie](docs/features/feature-delete-movie.gif)
-
-19. I want account users to add reviews.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Reviews | Click on see reviews button, click leave review and enter details | Correct details should be accepted and reviews for specific film should be displayed with newly added review. Flash message should confirm this. | Works as expected |
-
-![Add Review](docs/features/feature-see-add-review.gif)
-
-20. I want account users to edit their own review.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Reviews and Edit Review | Click on the see reviews button, locate user review and click on the edit review button. Update review with correct details and click update review | Edit review should confirm if user wants to update. Once confirmed it should navigate to the show_revies route displaying update review. Flash message should confirm this. | Works as expected |
-
-![Edit Review](docs/features/feature-edit-review.gif)
-
-21. I want account users to delete their own review.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Reviews and Delete Review | Click on see reviews button, locate your review and click delete review button | Delete review should confirm if user wants to delete. Once confirmed it should navigate to the show_reviews route with delete review no longer present. Flash message should confirm this. | Works as expected |
-
-![Delete Review](docs/features/feature-delete-review.gif)
-
-22. I want to be able to log in as admin.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Sign In and Profile | Click sign in and log in as admin | Profile should open that displays other users accounts and Manage genre in the navigation. Flash message should confirm this. | Works as expected |
-
-![Admin Login](docs/features/feature-admin-log-in.gif)
-
-23. I want to be able to add a genre.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Manage Genres | Click add genre button, enter the correct details and add genre | show_genres route should appear with newly added genre. Flash message should confirm this. | Works as expected |
-
-
-![Manage Genres](docs/features/feature-manage-genres.gif)
-
-
-24. I want to be able to edit a genre.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Manage Genres | Click the edit genre button, enter the correct details, and click update genre | Manage genres should confirm if user wants to update genre. Once confirmed it should navigate to the show_genres route with updated genre displayed. Flash message should confirm this. | Works as expected |
-
-![Manage Genres](docs/features/feature-manage-genres.gif)
-
-25. I want to be able to delete a genre.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Manage Genres | Click the delete genre button and confirm deletion | Manage genres should confirm if user wants to delete genre. Once confirmed it should navigate to the show_genres route with deleted genre no longer present. All it's associated movies should also be deleted. Flash message should confirm this. | Works as expected |
-
-![Manage Genres](docs/features/feature-manage-genres.gif)
-
-26. I want to be able to prompt account users before updating or deleting.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| All Update and Delete functionality | Click on update or delete for specific movie, review or genre (admin) | Modal should appear confirming whether user wishes to update/delte item. User has choice to say yes or no | Works as expected |
-
-
-![Manage Genres](docs/features/feature-manage-genres.gif)
-
-
-27. I do not want users to use browser back button if they are looking for a page that does not exist.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| 404 Page | Type in an incorrect route in address bar | 404 template should be rendered with a button navigating to home beneath | Works as expected |
-
-![404](docs/features/feature-404-page.gif)
 
 
 ## Bugs
