@@ -43,7 +43,6 @@
     - [Checkout](#checkout)
     - [Checkout Success](#checkout-success)
     - [404 Page](#404-page)
-    - [500 Page](#500-page)
   - [Validation](#validation)
     - [HTML Validation](#html-validation)
     - [CSS Validation](#css-validation)
@@ -347,7 +346,7 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 - Allows Site Users to add review
 
-![Add Review](docs/features/feature-see-add-review.gif)
+![Add Review](docs/features/feature-add-review.gif)
 
 ### Edit Review
 
@@ -385,11 +384,6 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ![404](docs/features/feature-404-page.gif)
 
-### 500 Page
-
-- Site Users should be presented with a 500 page if there are any server issues
-
-![500](docs/features/feature-500-page.png)
 
 ## Validation
 
