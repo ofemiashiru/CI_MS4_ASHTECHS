@@ -262,20 +262,19 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ### Frameworks and Tools
 
-- Django
-- AWS
-- Bootstrap
-- ElephantSQL
-- Stripe
-- Git
-- GitHub
-- CodeAnywhere
-- Balsamiq
-- Lucid
-- Google Fonts
-- Adobe Color
-- Font Awesome
-- Favicon<span>.</span>io
+- Django - Used to develop backend infrastructure
+- AWS - Used S3 buckets to store static files
+- Bootstrap - Used to style the site and make it responsive
+- ElephantSQL - Used to store PostGreSQL databse used by Django
+- Stripe - Used to handle payments and webhooks sent back from Stripe
+- Git - Used to add and commit changes to my local repo and then push to remote branch
+- GitHub - Used to store source code of the site
+- Balsamiq - Used to create wireframes for the main pages
+- Lucid - Used to create ERD for the flow of data in project
+- Google Fonts - Used for the typography of the site
+- Adobe Color - Used to test and create the colour scheme for site
+- Font Awesome - Used to generate icons on the site
+- Favicon<span>.</span>io - Used to create Favicon and Logo for site
 
 ## Features
 
