@@ -583,13 +583,13 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ### Testing user stories
 
-01. I want to see all movies on MCC.
+01. I want to see all Products.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Movies and Navigation| Click on the home link or logo | show_movies route should be open with all movies display | Works as expected |
+| Navigation| Click All Products > All Products | Products page should open showing all products across the needed number of pages | Works as expected |
 
-![Movie Section](docs/features/feature-movie-section.gif)
+![See all Products](docs/features/feature-see-all-products.gif)
 
 
 
