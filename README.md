@@ -376,14 +376,14 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 - Allows Site Users to see their successful order details
 
-![Checkout Success](docs/features/checkout-success.gif)
+![Checkout Success](docs/features/checkout-success-1.png)
+![Checkout Success](docs/features/checkout-success-2.png)
 
 ### 404 Page
 
 - Site Users should be presented with a 404 page if they visit an incorrect page
 
 ![404](docs/features/feature-404-page.gif)
-
 
 ## Validation
 
