@@ -18,7 +18,7 @@
             <div class="col text-center mt-3">
                 <h2 class="page-title">Products</h2>
                 {% if request.user.is_superuser %}
-                    <a href="{% url 'add_product' %}" class="btn bg-success text-white rounded-0" title="Add product" aria-label="Add product">
+                    <a href="{% url 'add_product' %}" class="btn bg-success text-white rounded-0" title="Add product" aria-label="Add new product">
                         Add new product <i class="fa-solid fa-plus ml-1"></i>
                     </a>
                 {% endif %}

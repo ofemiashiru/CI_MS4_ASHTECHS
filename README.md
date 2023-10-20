@@ -161,7 +161,7 @@ For the colour scheme I opted for simple yet bold colours. I opted for different
 
 ### Fonts
 
-The main font used in the entirety of the website is "'Roboto', sans-serif". For the 'TECH' part of the logo I opted for 'Share Tech', sans-serif which has somewhat of a digital fill to it. The 'Share Tech' font is also used for the headings across the site. Both fonts were imported using Google Fonts API.
+The main font used in the entirety of the website is "'Roboto', sans-serif". For the 'TECH' part of the logo I opted for 'Share Tech', sans-serif which has somewhat of a digital feel to it. The 'Share Tech' font is also used for the headings across the site. Both fonts were imported using Google Fonts API.
 
 ### Structure
 
