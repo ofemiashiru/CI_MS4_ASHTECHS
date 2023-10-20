@@ -634,10 +634,22 @@ The website was tested on the following browsers:
 
 ### Responsiveness
 
-The website is completely responsive and has been tested on mobile, tablet and desktop:
+The website is completely responsive and has been tested on mobile, tablet and desktop. Here are a few pieces of evidence to display the sites responsiveness.
 
-<details><summary>Mobile, Tablet and Desktop</summary>
-<img src="docs/responsiveness/respsonsiveness_of_site.gif" alt="Responsiveness of Site">
+<details><summary>Home</summary>
+<img src="docs/responsiveness/home.gif" alt="Responsiveness of Home">
+</details>
+
+<details><summary>Products</summary>
+<img src="docs/responsiveness/products.gif" alt="Responsiveness of Products">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/responsiveness/profile.gif" alt="Responsiveness of Profile">
+</details>
+
+<details><summary>Bag</summary>
+<img src="docs/responsiveness/bag.gif" alt="Responsiveness of Bag">
 </details>
 
 ### Testing user stories
