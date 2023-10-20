@@ -272,7 +272,6 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 - GitHub
 - CodeAnywhere
 - Balsamiq
-- Figma
 - Lucid
 - Google Fonts
 - Adobe Color
@@ -310,26 +309,25 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ### Sign In
 
-- Allows users to sign into their own account and see their profile own profile.
+- Allows users to sign into their own account and see their own profile.
 
 ![Sign In](docs/features/feature-sign-in.gif)
 
 ### Register
 
-- Allows users to register with ASHTECHS
+- Allows users to register with ASHTECHS.
 
 ![Register](docs/features/feature-register.gif)
-![Register](docs/features/feature-register.png)
 
 ### Profile
 
-- Allow users to see their own profile (User Story 15)
+- Allow users to see their own profile
 
-![Non-admin Profile](docs/features/feature-profile-non-admin.png)
+![Profile](docs/features/feature-profile.png)
 
 ### Add Product
 
-- Allows Site Owner to add procut
+- Allows Site Owner to add products
 
 ![Add Movie](docs/features/feature-add-movie.gif)
 
