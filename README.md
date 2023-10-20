@@ -16,9 +16,6 @@
     - [Target Audience](#target-audience)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
     - [User Stories](#user-stories)
-      - [First-time User](#first-time-user)
-      - [Returning User](#returning-user)
-      - [Site Owner](#site-owner)
   - [Scope](#scope)
   - [Design](#design)
     - [Design Choices](#design-choices)
@@ -34,19 +31,20 @@
     - [Frameworks and Tools](#frameworks-and-tools)
   - [Features](#features)
     - [Logo Navigation and Search bar](#logo-navigation-and-search-bar)
-    - [Movie Section](#movie-section)
+    - [Home](#home)
     - [Footer](#footer)
     - [Sign In](#sign-in)
     - [Register](#register)
     - [Profile](#profile)
-    - [Add Movie](#add-movie)
-    - [Edit Movie](#edit-movie)
-    - [Delete Movie](#delete-movie)
+    - [Add Product](#add-product)
+    - [Edit Product](#edit-product)
+    - [Delete Product](#delete-product)
     - [Add Review](#add-review)
     - [Edit Review](#edit-review)
     - [Delete Review](#delete-review)
-    - [Manage Genres](#manage-genres)
-    - [Delete User](#delete-user)
+    - [Bag](#bag)
+    - [Checkout](#checkout)
+    - [Checkout Success](#checkout-success)
     - [404 Page](#404-page)
     - [500 Page](#500-page)
   - [Validation](#validation)
@@ -68,25 +66,27 @@
   - [Acknowledgements](#acknowledgements)
 
 
-## Project Goals 
+## Project Goals
 
 ### User Goals
-- See all movies added to MCC.
-- To see reviews of all movies.
-- To add movies to MCC.
-- To add reviews to movies.
+
+- To see all products within the store.
+- To make purchases.
+- To see all reviews within the store.
+- To leave product reviews.
+- To add items to wishlist.
 
 ### Site Owner Goals
-- To allow users to sign up to MCC.
-- To manage the genres on MCC.
-- To manage users accounts on MCC.
+
+- To allow users to purchase products.
+- To manage the admin of products.
 
 ## User Experience
 
 ### Target Audience
-- People who are fans of films. 
-- People who are part of a physical film club.
-- To be a central place for movie fans to share their reviews.
+
+- People who are interested in purchasing technology products. 
+- People looking for bargains and deals
 
 ### User Requirements and Expectations
 
@@ -94,55 +94,45 @@
 - Be able to easily browse between sections of the site.
 - All links to work as expected.
 - Appealing design that works well on both desktop and mobile devices.
-- Be able to log in and upload a movie of their choice.
-- Be able to add reviews to all movies on the site if logged in.
-- Be able to edit/delete users own movies.
+- Be able to browse products log in and make a purchase.
+- Be able to add reviews to all products if logged in.
 - Be able to edit/delete users own reviews.
-- All users to be able to search for movies using a search bar feature.
-- All users to be able to see movies and reviews
+- Be able to add and remove items from wishlist if logged in.
+- All users to b aable to sort and filter down to specific products.
+- All users to be able to search for products using a search bar feature.
+- All users to be able to see products and reviews.
 - Accessibility.
 
 ### User Stories
 
-#### First-time User 
-1. I want to see all movies on MCC.
-2. I want to create an account on MCC.
-3. I want to add movies on MCC.
-4. I want to add reviews on MCC.
-
-#### Returning User
-5. I want to log into my MCC account.
-6. I want to edit movies on MCC.
-7. I want to edit reviews on MCC.
-8. I want to delete my movies on MCC.
-9. I want to delete my reviews on MCC.
-10. I want to use the search bar to search movies on MCC.
-11. I want to delete my account if no longer needed.
-
-#### Site Owner 
-12. I want all users to be able to see all movies.
-13. I want all users to be able to see all reviews.
-14. I want all users to be able to create an account.
-15. I want users who have created accounts to log in and see their profile.
-16. I want account users to add a movie.
-17. I want account users to edit their own movie.
-18. I want account users to delete their own movie.
-19. I want account users to add reviews.
-20. I want account users to edit their own review.
-21. I want account users to delete their own review.
-22. I want to be able to log in as admin.
-23. I want to be able to add a genre.
-24. I want to be able to edit a genre.
-25. I want to be able to delete a genre.
-26. I want to be able to prompt account users before updating or deleting.
-27. I do not want users to use browser back button if they are looking for a page that does not exist.
+| **Number** | **As an/a** | **I want to be able to** | **So that I can** |
+|------------|-------------|--------------------------|-------------------|
+|1|Shopper|See all products|Decide which item to purchase|
+|2|Shopper|See individual product details|See specific details, such as price, quantity, description and review|
+|3|Shopper|Sort products by brand, price, rating and category|See products in ascending and descenging order|
+|4|Shopper|See my recent orders|Track my previous orders|
+|5|Shopper|See my wishlist|Track what items I want|
+|6|Shopper|Add and remove items from wishlist|See wishlist items in my profile|
+|7|Shopper|Use search bar to search products|Find a specific product|
+|8|Shopper|See all reviews|Make a choice on products based on previous reviews|
+|9|Shopper|Add reviews for specific products|Give opinion on products and help others to make decisions|
+|10|Shopper|Edit or Delete reviews for specific products|Remove or update an incorrectly submitted review|
+|11|Shopper|Easily update products quantity when purchasing it|Buy a certain amount of products|
+|12|Shopper|Receive an email confirmation when I puechase a product|Know that my purchase has been successful|
+|13|Shopper|Update my profile|Add new shipping/billing details to my profile|
+|14|Site User|Register to the site|See and edit my profile|
+|15|Site User|Log in and out|Access my personal account information|
+|16|Site User|Receive an email confirmation that I have registered my account|Confirm that I can log in|
+|17|Site Owner|To add products|Have more products on the site|
+|18|Site Owner|To edit products|Correct, update or change a product|
+|19|Site Owener|To delete products|Remove products we no longer sale|
 
 ## Scope
 
 The scope of the project in its first release is defined by the following features:
 
 - Simple navigation that allows user to navigate between sections of the site. 
-- Allow users to log into their own accounts and perform CRUD operations on movies and reviews associated to the moviews as well as their own account. Admin users should also be able to perform CRUD operations on genres and on the users with accounts.
+- Allow users to log into their own accounts and perform CRUD operations on reviews and make purchases from site utilising Stripe implementation. Admin users should also be able to perform CRUD operations on products.
 - Allow all users to see the stored movies and reviews.
 - Allow all users to search all the movies that have been added.
 - Allow visitors to create an account as well as delete it if no longer needed.
@@ -173,9 +163,11 @@ For the colour scheme I opted to base it on the colour scheme of iMdB.
 The main font used in the entirety of the website is "'Roboto', sans-serif". For the logo I opted for 'Bebas Neue', sans-serif which has a similar look to the iMdb logo. Both fonts were imported using Google Fonts API.
 
 ### Structure
+
 The site has a total of 14 pages each having certain restrictions based on who is logged in. The entire site is fully responsive and has been tested within the industry standard width of 320px.
 
 The website consists of 14 main pages:
+
 - Main page which shows all movies stored, giving all users the ability to see details and reviews.
 - Sign in page that allows returning users to log in to their account.
 - Register page that allows visitors to the site to set up their own new accounts.
@@ -193,17 +185,17 @@ Using Figma I created a conceptual flow chart of how users will navigate through
 #### What links users can and cannot see:
 
 - All users:
-    - Home, Sign In, Register
+  - Home, Sign In, Register
 - Logged in (non-admin user)
-    - Home, Profile, Add Movie, Sign Out
+  - Home, Profile, Add Movie, Sign Out
 - Logged in (admin user)
-    - Home, Profile, Add Movie, Manage Genres, Sign Out
+  - Home, Profile, Add Movie, Manage Genres, Sign Out
 
 - Logged in users can only edit and delete their own reviews and movies.
 
 ### Database Structure
 
-Using Lucid chart I created an ERD to show how data will flow and be stored within MongoDB collections.
+Using Lucid chart I created an ERD to show how data will flow and be stored within ElephantSQL for Django.
 
 ![MovieCrazyClub MongoDB Image](docs/data_models/movie-crazy-club-erd.png)
 
@@ -304,21 +296,25 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 ## Technologies Used
 
 ### Languages
+
 - HTML
 - CSS
 - JavaScript
 - Python
 
 ### Frameworks and Tools
+
 - Django
 - AWS
 - Bootstrap
 - ElephantSQL
+- Stripe
 - Git
 - GitHub
 - CodeAnywhere
 - Balsamiq
 - Figma
+- Lucid
 - Google Fonts
 - Adobe Color
 - Font Awesome
@@ -327,9 +323,10 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 ## Features
 
 ### Logo Navigation and Search bar
+
 - Navigation and Logo remains consistent on each page
 - Navigation and search bar are fully responsive and collapse when window is resized
-- Navigation allows users to easily navigate the site and search bar allows users to search movies (User story 10)
+- Navigation allows users to easily navigate the site and search bar allows users to search products (User story 10)
 - Logo in Navigation takes user back to the main page
 
 <p>Nav on Desktop, tablet and mobile</p>
@@ -341,93 +338,108 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 ![Search bar](docs/features/feature-search-bar.gif)
 
 
-### Movie Section
-- Displays all movies uploaded, with choice to leave review, edit or delete movie  (User story 1)
+### Home
 
-![Movie Section](docs/features/feature-movie-section.gif)
+- Displays shop now button and two products that are special types (Deal and Clearance)  (User story 1)
+
+![Home](docs/features/feature-movie-section.gif)
 
 ### Footer
-- Displays logo, copyright and social links 
+
+- Displays logo, copyright and links to product pages 
 
 ![Footer](docs/features/feature-footer.png)
 
-
 ### Sign In
+
 - Allows users to sign into their own account  (User Story 5, 14, 15)
 
 ![Sign In](docs/features/feature-sign-in.gif)
 
 
 ### Register
-- Allows users to register with MCC  (User Story 2, 14)
+
+- Allows users to register with ASHTECHS  (User Story 2, 14)
 
 ![Register](docs/features/feature-register.gif)
 
 ### Profile
+
 - Allow users to see their own profile (User Story 15)
-
-<p>Admin</p>
-
-![Admin Profile](docs/features/feature-profile-admin.png)
-
-<p>Non-admin User</p>
 
 ![Non-admin Profile](docs/features/feature-profile-non-admin.png)
 
-### Add Movie
-- Allows users to add a movie (User Story 3, 16)
+### Add Product
+
+- Allows Site Owner to add procut
 
 ![Add Movie](docs/features/feature-add-movie.gif)
 
+### Edit Product
 
-### Edit Movie
-- Allows users to edit their own movie  (User Story 6, 17, 26)
+- Allows Site Owner to edit product
 
 ![Edit Movie](docs/features/feature-edit-movie.gif)
 
-### Delete Movie
-- Allows users to delete their own movie  (User Story 8, 18, 26)
+### Delete Product
+
+- Allows Site Owner to delete products
 
 ![Delete Movie](docs/features/feature-delete-movie.gif)
 
 ### Add Review
-- Allows users to see and add reviews (User Story 4, 13, 19)
+
+- Allows Site Users to add review
 
 ![Add Review](docs/features/feature-see-add-review.gif)
 
 ### Edit Review
-- Allows users to edit reviews (User Story 7, 20, 26)
+
+- Allows Site Users to edit their own review
 
 ![Edit Review](docs/features/feature-edit-review.gif)
 
 ### Delete Review
-- Allows users to delete their own review  (User Story 9, 21, 26)
+
+- Allows Site Users to delete their own review
 
 ![Delete Review](docs/features/feature-delete-review.gif)
 
-### Manage Genres
-- Allow user (admin) to see, add and edit genres (User Story 23, 24, 25, 26)
+### Bag
 
-![Manage Genres](docs/features/feature-manage-genres.gif)
+- Allows Site Users to see their shopping bag contents
 
-### Delete User
-- Allow user to delete their account (User Story 11, 26)
+![Bag](docs/features/shopping-bag.gif)
 
-![Delete User](docs/features/feature-delete-user.gif)
+### Checkout
+
+- Allows Site Users to checkout
+
+![Checkout](docs/features/checkout.gif)
+
+
+### Checkout Success
+
+- Allows Site Users to see their successful order details
+
+![Checkout Success](docs/features/checkout-success.gif)
 
 ### 404 Page
-- Users should be presented with a 404 page if they visit an incorrect page (User Story 27)
+
+- Site Users should be presented with a 404 page if they visit an incorrect page
 
 ![404](docs/features/feature-404-page.gif)
 
 ### 500 Page
-- Users should be presented with a 500 page if there are any server issues
+
+- Site Users should be presented with a 500 page if there are any server issues
 
 ![500](docs/features/feature-500-page.png)
 
 ## Validation
 
 ### HTML Validation
+
 The W3C Markup Validation Service was used to validate the HTML of the website. 
 In order to test some of the HTML validation links you must be logged in.
 
@@ -463,6 +475,7 @@ checkout_success.html [result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fas
 
 
 ### CSS Validation
+
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
 After testing the whole sites CSS and my own custom CSS all pages passed with no errors, however, there were a number of warnings present that were related to the webkit css extensions used.
 
@@ -523,6 +536,7 @@ On completion of the project I used the command `python3 -m flake8` to clear any
 
 
 ### Accessibility
+
 The WAVE WebAIM web accessibility tool was used to ensure the website met accessibility standards.
 Some pages cannot be tested due to being behind authentication, so I tested all the pages that were not. 
 
@@ -538,26 +552,32 @@ signup.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77b
 
 
 ### Performance 
+
 Google Lighthouse Tool was used to test the performance of the website. 
 <details><summary>movies</summary>
 <img src="docs/validation/performance/movies.png" alt="lighthouse for movies">
 </details>
 
 
-### Performing tests on various devices 
+### Performing tests on various devices
+
 The website was tested on the following devices:
+
 - Apple MacBook Pro M1
 - Apple iPhone 11
 - Xiaomi Mi 11 Lite
 
 ### Browser compatibility
+
 The website was tested on the following browsers:
+
 - Google Chrome
 - Safari
 - Mozilla Firefox
 - Microsoft Edge
 
 ### Responsiveness
+
 The website is completely responsive and has been tested on mobile, tablet and desktop:
 
 <details><summary>Mobile, Tablet and Desktop</summary>
@@ -583,8 +603,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Register](docs/features/feature-register.gif)
 
-
-3. I want to add movies on MCC.
+1. I want to add movies on MCC.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
