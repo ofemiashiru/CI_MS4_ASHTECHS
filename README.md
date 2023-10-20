@@ -1,4 +1,5 @@
 # ASH|TECHS
+
 (Developer: Femi Ashiru)
 
 ![ASH|TECHS Website Responsive Image](docs/am-i-responsive.png)
@@ -22,7 +23,7 @@
     - [Colour](#colour)
     - [Fonts](#fonts)
     - [Structure](#structure)
-      - [What links users can and cannot see:](#what-links-users-can-and-cannot-see)
+      - [What links users can and cannot see](#what-links-users-can-and-cannot-see)
     - [Database Structure](#database-structure)
     - [MongoDB Collections](#mongodb-collections)
     - [Wireframes](#wireframes)
@@ -65,7 +66,6 @@
     - [Code](#code)
   - [Acknowledgements](#acknowledgements)
 
-
 ## Project Goals
 
 ### User Goals
@@ -85,8 +85,8 @@
 
 ### Target Audience
 
-- People who are interested in purchasing technology products. 
-- People looking for bargains and deals
+- People who are interested in purchasing technology products.
+- People looking for bargains and deals within tech.
 
 ### User Requirements and Expectations
 
@@ -134,34 +134,34 @@ The scope of the project in its first release is defined by the following featur
 
 - Simple navigation that allows user to navigate between sections of the site.
 - Allow users to log into their own accounts and perform CRUD operations on reviews and make purchases from site utilising Stripe implementation. Admin users should also be able to perform CRUD operations on products.
-- Allow all users to see the stored movies and reviews.
-- Allow all users to search all the movies that have been added.
+- Allow all users to see products and reviews for those products.
+- Allow all users to search and sort all products.
 - Allow visitors to create an account and see their previous orders, wishlist and details on profile.
 - An error page (404.html) and internal server error page (500.html) that appears when visiting a page that does not exist or when an internal server error has been detected.
 - Clear and simple favicon icon to help users identify the site.
 
 Features to be built in future releases:
 
-- Allow admin to add/edit/delete Brands and Categories.
-- Further development to allow Site Users to delete their own account.
-- Ability to send an unsuccessful email if the something goes wrong with their purchase.
-- Users to create groups which they can add other users to.
+- Allow admin to add/edit/delete Brands, Categories and User Accounts without accessing Django dashboard.
+- Further development to allow Site Users to delete their own account and cancel orders.
+- Ability to send an unsuccessful email if something goes wrong with their purchase.
+- Allow deals and clearance items to be seen on home page for mobile and tablet.
 
 ## Design
 
 ### Design Choices
 
-MMC was designed to mimic the look and feel of iMdb. It was very much styled on that basis however the layout is very simple so that users can accurately locate all the necesarry sections of the site with ease. The majority of the site is styled using Materialize components which has helped the site keep a consistent structure and made it fully responsive also. As alot of the images used are being generated from OMDbs api the site colours and layout need to be kept simple. My attempt with this was to see if I could essentially make the design an iMdb/Netflix clone.
+ASHTECHS was designed to mimic the look and feel of popular technonlogy retailer Currys PC World. The layout is a very simple and clean one with little clutter on the page so that users can accurately locate all the necesarry sections of the site with ease. The majority of the site is styled using Bootstrap components and custom CSS which has helped the site keep a consistent structure and made it fully responsive on Mobile and Tablet devices.
 
 ### Colour
 
-For the colour scheme I opted to base it on the colour scheme of iMdB.
+For the colour scheme I opted for simple yet bold colours. I opted for different shades of blue to represent Business ([Color Theory: Blue as a Branding Color](https://brandingcompass.com/branding/color-theory-blue-as-a-branding-color/)) as well as Loyalty, trust and security. I want Site Users to know that this brand can be trusted and that theme is also represented in the choice of logo taken from [Favicon](https://favicon.io/)
 
 ![Colour Scheme](docs/features/colour-scheme.png)
 
 ### Fonts
 
-The main font used in the entirety of the website is "'Roboto', sans-serif". For the logo I opted for 'Bebas Neue', sans-serif which has a similar look to the iMdb logo. Both fonts were imported using Google Fonts API.
+The main font used in the entirety of the website is "'Roboto', sans-serif". For the 'TECH' part of the logo I opted for 'Share Tech', sans-serif which has somewhat of a digital fill to it. The 'Share Tech' font is also used for the headings across the site. Both fonts were imported using Google Fonts API.
 
 ### Structure
 
@@ -178,21 +178,42 @@ The website consists of 14 main pages:
 - Manage genere page which allows the admin user to see all genres stored and delete them.
 - Add and edit genre pages which are only accessible to admin user.
 
-
 Using Figma I created a conceptual flow chart of how users will navigate throughout the site.
 
 ![MovieCrazyClub ConceptualFlow Image](docs/data_models/conceptual-flow-chart.png)
 
-#### What links users can and cannot see:
+#### What links users can and cannot see
 
 - All users:
-  - Home, Sign In, Register
+  - Home
+  - Products
+  - Product Details
+  - Shopping Bag
+  - Sign In
+  - Register
 - Logged in (non-admin user)
-  - Home, Profile, Add Movie, Sign Out
+  - Home
+  - Products
+  - Product Details
+  - Shopping Bag
+  - Sign Out
+  - Profile
+  - Checkout
+  - Checkout Success
+  - Add/Edit/Delete Review
 - Logged in (admin user)
-  - Home, Profile, Add Movie, Manage Genres, Sign Out
+  - Home
+  - Products
+  - Product Details
+  - Shopping Bag
+  - Sign Out
+  - Profile
+  - Checkout
+  - Checkout Success
+  - Add/Edit/Delete Review
+  - Add/Edit/Delete Product
 
-- Logged in users can only edit and delete their own reviews and movies.
+- Logged in users can only edit and delete their own reviews.
 
 ### Database Structure
 
@@ -338,7 +359,6 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ![Search bar](docs/features/feature-search-bar.gif)
 
-
 ### Home
 
 - Displays shop now button and two products that are special types (Deal and Clearance)  (User story 1)
@@ -356,7 +376,6 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 - Allows users to sign into their own account  (User Story 5, 14, 15)
 
 ![Sign In](docs/features/feature-sign-in.gif)
-
 
 ### Register
 
@@ -418,7 +437,6 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 
 ![Checkout](docs/features/checkout.gif)
 
-
 ### Checkout Success
 
 - Allows Site Users to see their successful order details
@@ -474,7 +492,6 @@ checkout_success.html [result](https://validator.w3.org/nu/?doc=https%3A%2F%2Fas
 
 403.html, 404.html and 500.html mirror index.html and have been tested manually by adding the text input directly with no errors
 
-
 ### CSS Validation
 
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
@@ -506,18 +523,15 @@ reviews.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A
 <img src="docs/validation/js/handle_quantity_script.png" alt="handle_quantity_script.js">
 </details>
 
-
 <details><summary>handle_sort_selector.js</summary>
 <p>No Errors</p>
 <img src="docs/validation/js/handle_sort_selector.png" alt="handle_sort_selector.js">
 </details>
 
-
 <details><summary>handle_update_delete_script.js</summary>
 <p>No Errors</p>
 <img src="docs/validation/js/handle_update_delete_script.png" alt="handle_update_delete_script.js">
 </details>
-
 
 <details><summary>profile.js</summary>
 <p>No Errors</p>
@@ -529,17 +543,15 @@ reviews.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A
 <img src="docs/validation/js/stripe.png" alt="stripe.js">
 </details>
 
-
 ### Python Validation
 
 [Python Linter](https://pep8ci.herokuapp.com/) was used to test as coding went on.
 On completion of the project I used the command `python3 -m flake8` to clear any other issues
 
-
 ### Accessibility
 
 The WAVE WebAIM web accessibility tool was used to ensure the website met accessibility standards.
-Some pages cannot be tested due to being behind authentication, so I tested all the pages that were not. 
+Some pages cannot be tested due to being behind authentication, so I tested all the pages that were not.
 
 index.html(Home) [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/) - 1 Contrast Error.
 
@@ -551,14 +563,12 @@ login.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77be
 
 signup.html [results](https://wave.webaim.org/report#/https://ash-techs-a3f0a77bec88.herokuapp.com/accounts/signup/) - 1 Contrast Error
 
-
-### Performance 
+### Performance
 
 Google Lighthouse Tool was used to test the performance of the website. 
 <details><summary>movies</summary>
 <img src="docs/validation/performance/movies.png" alt="lighthouse for movies">
 </details>
-
 
 ### Performing tests on various devices
 
@@ -585,7 +595,6 @@ The website is completely responsive and has been tested on mobile, tablet and d
 <img src="docs/responsiveness/respsonsiveness_of_site.gif" alt="Responsiveness of Site">
 </details>
 
-
 ### Testing user stories
 
 01. I want to see all movies on MCC.
@@ -610,9 +619,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 |-------------|------------|---------------------|-------------------|
 | Add Movie | Click on Add movie and enter detials of movie | Correct details should be accepted and show_movies page should open with newly added film. Flash message should confirm this.  | Works as expected |
 
-
 ![Add Movie](docs/features/feature-add-movie.gif)
-
 
 4. I want to add reviews on MCC.
 
@@ -620,9 +627,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 |-------------|------------|---------------------|-------------------|
 | Reviews | Click on see reviews button, click leave review and enter details | Correct details should be accepted and reviews for specific film should be displayed with newly added review. Flash message should confirm this. | Works as expected |
 
-
 ![Add Review](docs/features/feature-see-add-review.gif)
-
 
 5. I want to log into my MCC account.
 
@@ -632,7 +637,6 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Sign In](docs/features/feature-sign-in.gif)
 
-
 6. I want to edit movies on MCC.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
@@ -640,7 +644,6 @@ The website is completely responsive and has been tested on mobile, tablet and d
 | Movies and Edit Movie | Click on the edit movie button, enter correct details and click update movie | Edit movie should confirm if user wants to update. Once confirmed it should navigate to the show_movies route displaying updated movie. Flash message should confirm this. | Works as expected |
 
 ![Edit Movie](docs/features/feature-edit-movie.gif)
-
 
 7. I want to edit reviews on MCC.
 
