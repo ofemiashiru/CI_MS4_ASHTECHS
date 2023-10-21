@@ -107,7 +107,7 @@
 |[User Story 3](#user-story-3)|Shopper|Sort and filter products by brand, price, rating and category|See products in ascending and descenging order|
 |[User Story 4](#user-story-4)|Shopper|Purchase items from the site|Have the item which I want|
 |[User Story 5](#user-story-5)|Shopper|See my recent orders|See history of previous orders|
-|[User Story 6](#user-story-6)|Shopper|See add and remove items from wishlist|See wishlist items in my profile and track what items I want|
+|[User Story 6](#user-story-6)|Shopper|See, add and remove items from wishlist|See wishlist items in my profile and track what items I want|
 |[User Story 7](#user-story-7)|Shopper|Use search bar to search products|Find a specific product|
 |[User Story 8](#user-story-8)|Shopper|See all reviews|Make a choice on products based on previous reviews|
 |[User Story 9](#user-story-9)|Shopper|Add reviews for specific products|Give opinion on products and help others to make decisions|
@@ -623,7 +623,51 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Purchase items from the site](docs/features/feature-recent-orders.gif)
 
+6. <a id="user-story-6">See, add and remove items from wishlist</a>. [top](#user-stories)
 
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation, Profile | Click All Products > All Products > Select Product > Click Heart > Navigate to My Profile | User should be able to see their items in wishlist on profile when added and no longer when removed | Works as expected |
+
+![Purchase items from the site](docs/features/feature-wishlist.gif)
+
+7. <a id="user-story-7">Use search bar to search products</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Search bar | Type keyword in Search bar and click Search | Products page should appear with items that match the keyword entered | Works as expected |
+
+![Purchase items from the site](docs/features/feature-search-bar.gif)
+
+8. <a id="user-story-8">See all reviews</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation | Click All Products > By Rating > Select Low to High > Select a Product > Click See Reviews | Product Details page should scroll down to reviews | Works as expected |
+
+![Purchase items from the site](docs/features/feature-see-reviews.gif)
+
+9. <a id="user-story-9">Add reviews for specific products</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation | Click All Products > All Products > Select Product > Leave Review > Fill in review > Click Submit Review | Review should be added to product | Works as expected |
+
+![Purchase items from the site](docs/features/feature-add-review.gif)
+
+10.  <a id="user-story-10">Edit or Delete reviews for specific products</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation | Click All Products > All Products > Select Product > See Reviews > Click Edit Review > Make Changes > Click Update Review | Review should be updated on product | Works as expected |
+
+![Purchase items from the site](docs/features/feature-edit-review.gif)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation | Click All Products > All Products > Select Product > See Reviews > Click Delete Review | Modal should appear to confirm delete, when yes is clicked the review should be removed from product | Works as expected |
+
+![Purchase items from the site](docs/features/feature-delete-review.gif)
 
 ## Bugs
 
