@@ -619,7 +619,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Profile | Click My Account > Click My Profile | User should see Profile with Order History | Works as expected |
+| Profile | Click My Account > Click My Profile | User should see Profile with Order History and be able to click on each one | Works as expected |
 
 ![Purchase items from the site](docs/features/feature-recent-orders.gif)
 
