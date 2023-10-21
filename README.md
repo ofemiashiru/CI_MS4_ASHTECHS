@@ -103,25 +103,25 @@
 | **Num** | **As an/a** | **I want to be able to** | **So that I can** |
 |------------|-------------|--------------------------|-------------------|
 |[User Story 1](#user-story-1)|Shopper|See all products|Decide which item to purchase|
-|2|Shopper|See individual product details|See specific details, such as price, quantity, description and review|
-|3|Shopper|Sort products by brand, price, rating and category|See products in ascending and descenging order|
-|4|Shopper|See my recent orders|Track my previous orders|
-|5|Shopper|See my wishlist|Track what items I want|
-|6|Shopper|Add and remove items from wishlist|See wishlist items in my profile|
-|7|Shopper|Use search bar to search products|Find a specific product|
-|8|Shopper|See all reviews|Make a choice on products based on previous reviews|
-|9|Shopper|Add reviews for specific products|Give opinion on products and help others to make decisions|
-|10|Shopper|Edit or Delete reviews for specific products|Remove or update an incorrectly submitted review|
-|11|Shopper|Easily update products quantity when purchasing it|Buy a certain amount of products|
-|12|Shopper|Receive an email confirmation when I purchase a product|Know that my purchase has been successful|
-|13|Shopper|Update my profile|Add new shipping/billing details to my profile|
-|14|Shopper|Add and Remove Items from my shopping bag|Have greater flexibility over what I purchased|
-|15|Site User|Register to the site|See and edit my profile|
-|16|Site User|Log in and out|Access my personal account information|
-|17|Site User|Receive an email confirmation that I have registered my account|Confirm that I can log in|
-|18|Site Owner|To add products|Have more products on the site|
-|19|Site Owner|To edit products|Correct, update or change a product|
-|20|Site Owner|To delete products|Remove products we no longer sale|
+|[User Story 2](#user-story-2)|Shopper|See individual product details|See specific details, such as price, quantity, description and review|
+|[User Story 3](#user-story-3)|Shopper|Sort and filter products by brand, price, rating and category|See products in ascending and descenging order|
+|[User Story 4](#user-story-4)|Shopper|Purchase items from the site|Have the item which I want|
+|[User Story 5](#user-story-5)|Shopper|See my recent orders|See history of previous orders|
+|[User Story 6](#user-story-6)|Shopper|See add and remove items from wishlist|See wishlist items in my profile and track what items I want|
+|[User Story 7](#user-story-7)|Shopper|Use search bar to search products|Find a specific product|
+|[User Story 8](#user-story-8)|Shopper|See all reviews|Make a choice on products based on previous reviews|
+|[User Story 9](#user-story-9)|Shopper|Add reviews for specific products|Give opinion on products and help others to make decisions|
+|[User Story 10](#user-story-10)|Shopper|Edit or Delete reviews for specific products|Remove or update an incorrectly submitted review|
+|[User Story 11](#user-story-11)|Shopper|Easily update products quantity when purchasing it|Buy a certain amount of products|
+|[User Story 12](#user-story-12)|Shopper|Receive an email confirmation when I purchase a product|Know that my purchase has been successful|
+|[User Story 13](#user-story-13)|Shopper|Update my profile|Add new shipping/billing details to my profile|
+|[User Story 14](#user-story-14)|Shopper|Add and Remove Items from my shopping bag|Have greater flexibility over what I purchased|
+|[User Story 15](#user-story-15)|Site User|Register to the site|See and edit my profile|
+|[User Story 16](#user-story-16)|Site User|Log in and out|Access my personal account information|
+|[User Story 17](#user-story-17)|Site User|Receive an email confirmation that I have registered my account|Confirm that I can log in|
+|[User Story 18](#user-story-18)|Site Owner|To add products|Have more products on the site|
+|[User Story 19](#user-story-19)|Site Owner|To edit products|Correct, update or change a product|
+|[User Story 20](#user-story-20)|Site Owner|To delete products|Remove products we no longer sale|
 
 ## Scope
 
@@ -583,7 +583,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ### Testing user stories
 
-1.  <a id="user-story-1">I want to see all Products</a>. [top](#user-stories)
+1. <a id="user-story-1">See all Products</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -591,23 +591,55 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![See all Products](docs/features/feature-see-all-products.gif)
 
+2. <a id="user-story-2">See individual product details</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation| Click All Products > All Products > Select a Product | Product Details page should open with details of selected product | Works as expected |
+
+![See individual product details](docs/features/feature-see-product-details.gif)
+
+3. <a id="user-story-3">Sort and filter products by brand, price, rating and category</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation| Click All Products > All Products > Use Sort drop down > Use Filter Tags | Products are sorted and filtered to | Works as expected |
+
+![Sort products by brand, price, rating and category](docs/features/feature-sort-filter-products.gif)
+
+4. <a id="user-story-4">Purchase items from the site</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Bag, Checkout, Checout Success| Click All Products > All Products > Select Product > Add to Bag > Click Secure Checkout > Fill in details > Complete Order | Checkout Success page should be seen | Works as expected |
+
+![Purchase items from the site](docs/features/feature-purchase-product.gif)
+
+5. <a id="user-story-5">See my recent orders</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Profile | Click My Account > Click My Profile | User should see Profile with Order History | Works as expected |
+
+![Purchase items from the site](docs/features/feature-recent-orders.gif)
 
 
 
 ## Bugs
 
-| **Bug** | **Fix** | 
+| **Bug** | **Fix** |
 |-------------|------------|
 |Not so much of a bug but the OMDB api was shown in the fetch_movie_poster.js and the add/edit movie page which could present a potential security risk| Moved the api key to the env.py, encoded it in base64 within the app.py file and then decoded it when it reached the html within an internal script tag which could then be called in the fetch_movie_poster.js - source used to help with this are detailed in credits|
-
 
 ## Deployment
 
 You can fork the repository by:
+
 1. Navigating to the GitHub repository
 2. Click on "Fork" button in top right hand corner (Please note you must be signed in to Fork a repository)
 
 You can clone the repository by:
+
 1. Navigating to GitHub repository 
 2. Locate the "Code" button above the file list and click it 
 3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
@@ -617,6 +649,7 @@ You can clone the repository by:
 7. Press Enter to create your local clone in your chosen folder.
 
 Deployed using Heroku using the following steps:
+
 1. You will need to first create the requirements that Heroku will use to import the dependencies. To do so type the following command in your CLI ```pip3 freeze > requirements.txt```
 
 2. You will then need a Procfile which is needed to specify the commands that are executed by the Heroku app on startup. To do so type the following command in your CLI ```echo web: python app.py > Procfile```
@@ -687,6 +720,7 @@ Deployed using Heroku using the following steps:
 ## Acknowledgements
 
 I would like to take the opportunity to thank:
+
 - Mo Shami for continued mentorship, guidance and support throughout this project. 
 - Iris Smok for continued encouragement whilst working on this project.
 - and all the Teaching and Non-teaching Personnel at Code Institute.
