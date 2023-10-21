@@ -583,7 +583,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ### Testing user stories
 
-1.  <a id="user-story-1">See all Products</a>. [top](#user-stories)
+1. <a id="user-story-1">See all Products</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -591,7 +591,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![See all Products](docs/features/feature-see-all-products.gif)
 
-2.  <a id="user-story-2">See individual product details</a>. [top](#user-stories)
+2. <a id="user-story-2">See individual product details</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -599,7 +599,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![See individual product details](docs/features/feature-see-product-details.gif)
 
-3.  <a id="user-story-3">Sort and filter products by brand, price, rating and category</a>. [top](#user-stories)
+3. <a id="user-story-3">Sort and filter products by brand, price, rating and category</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -607,7 +607,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Sort products by brand, price, rating and category](docs/features/feature-sort-filter-products.gif)
 
-4.  <a id="user-story-4">Purchase items from the site</a>. [top](#user-stories)
+4. <a id="user-story-4">Purchase items from the site</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -615,7 +615,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Purchase items from the site](docs/features/feature-purchase-product.gif)
 
-5.  <a id="user-story-5">See my recent orders</a>. [top](#user-stories)
+5. <a id="user-story-5">See my recent orders</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -623,7 +623,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![See my recent orders](docs/features/feature-recent-orders.gif)
 
-6.  <a id="user-story-6">See, add and remove items from wishlist</a>. [top](#user-stories)
+6. <a id="user-story-6">See, add and remove items from wishlist</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -631,7 +631,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![See, add and remove items from wishlist](docs/features/feature-wishlist.gif)
 
-7.  <a id="user-story-7">Use search bar to search products</a>. [top](#user-stories)
+7. <a id="user-story-7">Use search bar to search products</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -639,7 +639,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Use search bar to search products](docs/features/feature-search-bar.gif)
 
-8.  <a id="user-story-8">See all reviews</a>. [top](#user-stories)
+8. <a id="user-story-8">See all reviews</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -647,7 +647,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![See all reviews](docs/features/feature-see-reviews.gif)
 
-9.  <a id="user-story-9">Add reviews for specific products</a>. [top](#user-stories)
+9. <a id="user-story-9">Add reviews for specific products</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -655,7 +655,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Add reviews for specific products](docs/features/feature-add-review.gif)
 
-10.   <a id="user-story-10">Edit or Delete reviews for specific products</a>. [top](#user-stories)
+10. <a id="user-story-10">Edit or Delete reviews for specific products</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -669,19 +669,16 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Edit or Delete reviews for specific products-2](docs/features/feature-delete-review.gif)
 
-11.   <a id="user-story-11">Easily update products quantity as well as remove it</a>. [top](#user-stories)
+11.  <a id="user-story-11">Easily update products quantity</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Bag | Add item to Bag > Click Bag > Change Quantity and Click Update | Quanity of product in bag should update as well as price | Works as expected |
 
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Bag | Add item to Bag > Click Bag > Click Remove | Item should be removed from bag and price updated | Works as expected |
 
 ![Easily update products quantity as well as remove it](docs/features/feature-update-remove-quantity.gif)
 
-12.    <a id="user-story-12">Receive an email confirmation when I purchase a product</a>. [top](#user-stories)
+12.  <a id="user-story-12">Receive an email confirmation when I purchase a product</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
@@ -690,6 +687,22 @@ The website is completely responsive and has been tested on mobile, tablet and d
 ![Receive an email confirmation when I purchase a product](docs/features/feature-purchase-product.gif)
 ![Receive an email confirmation when I purchase a product](docs/features/feature-receive-email-confirmation-2.png)
 ![Receive an email confirmation when I purchase a product](docs/features/feature-receive-email-confirmation-1.png)
+
+13. <a id="user-story-13">Update my profile</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Profile | Click My Account > My Profile > Fill out with new information > Click Update Information | Profile information will update with a message informing user it has been updated | Works as expected |
+
+![Update my profile](docs/features/feature-update-profile.gif)
+
+14. <a id="user-story-14">Add and Remove Items from my shopping bag</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Bag | Add item to Bag > Click Bag > Click Remove | Item should be removed from bag and price updated | Works as expected |
+
+![Easily update products quantity as well as remove it](docs/features/feature-update-remove-quantity.gif)
 
 ## Bugs
 
