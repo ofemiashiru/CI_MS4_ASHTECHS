@@ -112,7 +112,7 @@
 |[User Story 8](#user-story-8)|Shopper|See all reviews|Make a choice on products based on previous reviews|
 |[User Story 9](#user-story-9)|Shopper|Add reviews for specific products|Give opinion on products and help others to make decisions|
 |[User Story 10](#user-story-10)|Shopper|Edit or Delete reviews for specific products|Remove or update an incorrectly submitted review|
-|[User Story 11](#user-story-11)|Shopper|Easily update products quantity as well as remove it|Buy a certain amount of products|
+|[User Story 11](#user-story-11)|Shopper|Easily update products quantity|Buy a certain amount of products|
 |[User Story 12](#user-story-12)|Shopper|Receive an email confirmation when I purchase a product|Know that my purchase has been successful|
 |[User Story 13](#user-story-13)|Shopper|Update my profile|Add new shipping/billing details to my profile|
 |[User Story 14](#user-story-14)|Shopper|Add and Remove Items from my shopping bag|Have greater flexibility over what I purchased|
@@ -675,7 +675,6 @@ The website is completely responsive and has been tested on mobile, tablet and d
 |-------------|------------|---------------------|-------------------|
 | Bag | Add item to Bag > Click Bag > Change Quantity and Click Update | Quanity of product in bag should update as well as price | Works as expected |
 
-
 ![Easily update products quantity as well as remove it](docs/features/feature-update-remove-quantity.gif)
 
 12.  <a id="user-story-12">Receive an email confirmation when I purchase a product</a>. [top](#user-stories)
@@ -702,13 +701,43 @@ The website is completely responsive and has been tested on mobile, tablet and d
 |-------------|------------|---------------------|-------------------|
 | Bag | Add item to Bag > Click Bag > Click Remove | Item should be removed from bag and price updated | Works as expected |
 
-![Easily update products quantity as well as remove it](docs/features/feature-update-remove-quantity.gif)
+![Add and Remove Items from my shopping bag](docs/features/feature-update-remove-quantity.gif)
+
+15. <a id="user-story-15">Register to the site</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Register | Navigate to Register > Fill in information > Click Sign Up | An email should be sent confirming user registration, allowing user to verify their email address | Works as expected |
+
+![Register to the site](docs/features/feature-register.gif)
+
+16. <a id="user-story-16">Log in and out</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Profile, Sign In | Click My Account > Sign In > Fill in information | User should be navigated to home page and informed that they have been successfully logged in | Works as expected |
+
+![Log in](docs/features/feature-sign-in.gif)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation | Click My Account > Sign Out > Confirm Sign Out | User should be signed out of their account and informed that they have been signed out | Works as expected |
+
+![Log out](docs/features/feature-sign-out.gif)
+
+17. <a id="user-story-17">Log in and out</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Register | After registering go to user email account | User should have an email confirming their registration | Works as expected |
+
+![Log in](docs/features/feature-register.gif)
 
 ## Bugs
 
 | **Bug** | **Fix** |
 |-------------|------------|
-|Not so much of a bug but the OMDB api was shown in the fetch_movie_poster.js and the add/edit movie page which could present a potential security risk| Moved the api key to the env.py, encoded it in base64 within the app.py file and then decoded it when it reached the html within an internal script tag which could then be called in the fetch_movie_poster.js - source used to help with this are detailed in credits|
+|||
 
 ## Deployment
 
