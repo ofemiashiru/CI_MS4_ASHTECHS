@@ -763,9 +763,8 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 | **Bug** | **Fix** | **Commit**|
 |---------|---------|-----------|
-|Admin updating an existing product was overwriting the rating despite there being reviews |I decided to store the current rating within a variable and once the update had taken place to re add the rating back to the product with the `update_fields` keyword argument |[44729a1](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/44729a1d2360eaf482ac20b58817e8d91f795dba)||Favicon was not being picked up on live site|There appeared to be an extra foward slash in the link file path just after `{{ MEDIA_URL }}` which needed to be removed|[9fd8a3e](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/9fd8a3ebfaa650861ff843e646c318f1dd3e2522)|
-
-|a|s|d|d|
+|Admin updating an existing product was overwriting the rating despite there being reviews |I decided to store the current rating within a variable and once the update had taken place to re add the rating back to the product with the `update_fields` keyword argument |[44729a1](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/44729a1d2360eaf482ac20b58817e8d91f795dba)|
+|Favicon was not being picked up on live site|There appeared to be an extra foward slash in the link file path just after `{{ MEDIA_URL }}` which needed to be removed|[9fd8a3e](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/9fd8a3ebfaa650861ff843e646c318f1dd3e2522)| |as|d|dd|
 
 ## Deployment
 
