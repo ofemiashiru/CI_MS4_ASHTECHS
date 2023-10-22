@@ -727,13 +727,14 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ![Log out](docs/features/feature-sign-out.gif)
 
-17. <a id="user-story-17">Log in and out</a>. [top](#user-stories)
+17. <a id="user-story-17">Receive an email confirmation that I have registered my account</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | Register | After registering go to user email account | User should have an email confirming their registration | Works as expected |
 
-![Log in](docs/features/feature-register.gif)
+![Receive an email confirmation that I have registered my account](docs/features/feature-register.gif)
+![Receive an email confirmation that I have registered my account](docs/features/feature-register.png)
 
 18. <a id="user-story-18">To add products</a>. [top](#user-stories)
 
