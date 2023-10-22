@@ -767,6 +767,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 |Favicon was not being picked up on live site|There appeared to be an extra foward slash in the link file path just after `{{ MEDIA_URL }}` which needed to be removed|[9fd8a3e](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/9fd8a3ebfaa650861ff843e646c318f1dd3e2522)|
 |Products template was not being picked up when site loaded|I had created the template however it was in the wrong file location. I move it into the correct path from `profiles/templates/profile.html` to `profiles/templates/profiles/profile.html`|[ff615a6](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/ff615a6727abe267b7f67a664e3cdeee72914d81)|
 |The shipping cost was not being calculated correctly|I was using the wrong variable name to attempt to update the shipping_cost, so I had to change `self.order_total = 0` to `self.shipping_costs = 0`|[3c34749](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/3c34749610fa76d584e444c7f9501cb0e69286c1)|
+|Order line items were not being saved to the database|I realised I had missed out the line `super().save(*args, **kwargs)` which inherits the save method from the inherited `models.Model` class|[456a63e](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/84fdd1a4563308f89a5e5409f7730bfcf024aa5e)|
 
 ## Deployment
 
