@@ -819,7 +819,7 @@ Deployed using Heroku using the following steps:
 6. Be sure to update the "Config Vars" located in "Settings" > "Config Vars" > "Reveal Config Vars". You will need to set the following variables:
     - AWS_ACCESS_KEY_ID
     - AWS_SECRET_ACCESS_KEY
-    - DISABLE_COLLECTSTATIC (This should be set to 1 after initially collecting all static files)
+    - DISABLE_COLLECTSTATIC (Set to 1 after initially collecting all static files otherwise AWS will continue to pull through static files)
     - EMAIL_HOST_PASS
     - EMAIL_HOST_USER
     - HEROKU_POSTGRESQL_YELLOW_URL
