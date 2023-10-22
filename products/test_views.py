@@ -6,6 +6,8 @@ from products.models import Product, Brand, Category
 class TestViews(TestCase):
 
     def test_see_all_products(self):
+        """test view to see all products"""
+
         response = self.client.get('/products/')
         self.assertEqual(response.status_code, 200)
 
@@ -13,6 +15,8 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, template)
 
     def test_see_product_details(self):
+        """test view to see product details"""
+
         brand = Brand.objects.create(
             name='apple',
             friendly_name='Apple'
