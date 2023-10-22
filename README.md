@@ -2,7 +2,7 @@
 
 (Developer: Femi Ashiru)
 
-![ASH|TECHS Website Responsive Image](docs/am-i-responsive.png)
+![ASH|TECHS Website Responsive Image](docs/top-image.png)
 
 [Live Project](https://ash-techs-a3f0a77bec88.herokuapp.com/)
 
