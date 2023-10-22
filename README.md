@@ -778,8 +778,8 @@ You can fork the repository by:
 
 You can clone the repository by:
 
-1. Navigating to GitHub repository 
-2. Locate the "Code" button above the file list and click it 
+1. Navigating to GitHub repository
+2. Locate the "Code" button above the file list and click it
 3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
 4. Open Git Bash
 5. Change the current working directory to where you wish to clone the directory
@@ -790,7 +790,7 @@ Deployed using Heroku using the following steps:
 
 1. You will need to first create the requirements that Heroku will use to import the dependencies. To do so type the following command in your CLI ```pip3 freeze > requirements.txt```
 
-2. You will then need a Procfile which is needed to specify the commands that are executed by the Heroku app on startup. To do so type the following command in your CLI ```echo web: python app.py > Procfile```
+2. You will then need a Procfile which is needed to specify the commands that are executed by the Heroku app on startup. To do so type the following command in your CLI ```echo web: gunicorn ash_techs.wsgi:application > Procfile```
 
 3. Be sure to add, commit and push your changes once you have done the above two tasks
 4. Within Heroku follow the steps "New" > "Create New App" > Give app a name and choose the relevant region
@@ -804,12 +804,18 @@ Deployed using Heroku using the following steps:
 ![heroku step4](docs/heroku-steps/heroku-4.png)
 
 6. Be sure to update the "Config Vars" located in "Settings" > "Config Vars" > "Reveal Config Vars". You will need to set the following variables:
-    - IP
-    - MONGO_DBNAME
-    - MONGO_URI
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - DISABLE_COLLECTSTATIC (This should be set to 1 after initially collecting all static files)
+    - EMAIL_HOST_PASS
+    - EMAIL_HOST_USER
+    - HEROKU_POSTGRESQL_YELLOW_URL
     - SECRET_KEY
-    - OMDB_API_KEY
-    - PORT
+    - STRIPE_PUBLIC_KEY
+    - STRIPE_SECRET_KEY
+    - STRIPE_WH
+    - USE_AWS
+    - ALLOWED_HOSTS
 
 ![heroku step5](docs/heroku-steps/heroku-5a.jpg)
 
@@ -817,7 +823,7 @@ Deployed using Heroku using the following steps:
 
 ![heroku step6](docs/heroku-steps/heroku-6.png)
 
-7. Please also be sure to have set your Heroku API key within the Heroku CLI Toolbelt. The API key can be found in "Account Settings" > "Account" > "API Key"
+1. Please also be sure to have set your Heroku API key within the Heroku CLI Toolbelt. The API key can be found in "Account Settings" > "Account" > "API Key"
 
 ![heroku step7](docs/heroku-steps/heroku-7.png)
 
