@@ -588,7 +588,8 @@ In order to carry out the test that require registering and logging in you can u
 
 In order to make purchases you can use the following test credit card details:
 
-|**Card Number**|4242 4242 4242 4242|
+| **Card Number** | 4242 4242 4242 4242 |
+|-----------------|---------------------|
 |**Expiry**|04 / 24|
 |**CVC**|242|
 |**Zip Code**|42424|
