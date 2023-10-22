@@ -761,9 +761,10 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ## Bugs
 
-| **Bug** | **Fix** |
-|-------------|------------|
-|||
+| **Bug** | **Fix** | **Commit**|
+|---------|---------|-----------|
+|Admin updating an existing product was overwriting the rating despite there being reviews |I decided to store the current rating within a variable and once the update had taken place to re add the rating back to the product with the `update_fields` keyword argument |[44729a1](https://github.com/ofemiashiru/CI_MS4_PUMA/commit/44729a1d2360eaf482ac20b58817e8d91f795dba)|
+|---------|---------|-----------|
 
 ## Deployment
 
