@@ -590,9 +590,9 @@ In order to make purchases you can use the following test credit card details:
 
 | **Card Number** | 4242 4242 4242 4242 |
 |-----------------|---------------------|
-|**Expiry**|04 / 24|
-|**CVC**|242|
-|**Zip Code**|42424|
+| **Expiry** | 04 / 24 |
+| **CVC** | 242 |
+| **Zip Code** | 42424 |
 
 ![Checkout Details](docs/features/feature-checkout-details.png)
 
