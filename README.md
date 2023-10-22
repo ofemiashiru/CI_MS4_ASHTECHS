@@ -584,6 +584,17 @@ The website is completely responsive and has been tested on mobile, tablet and d
 
 ### Testing user stories
 
+In order to carry out the test that require registering and logging in you can use [Temp Mail](https://temp-mail.org/en/) to register a temporary email and receive confirmations.
+
+In order to make purchases you can use the following test credit card details:
+
+|**Card Number**|4242 4242 4242 4242|
+|**Expiry**|04 / 24|
+|**CVC**|242|
+|**Zip Code**|42424|
+
+![Checkout Details](docs/features/feature-checkout-details.png)
+
 1. <a id="user-story-1">See all Products</a>. [top](#user-stories)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
