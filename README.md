@@ -164,7 +164,7 @@ The site has a total of 13 main pages each having certain restrictions based on 
 
 Using Figma I created a conceptual flow chart of how users will navigate throughout the site.
 
-![ASHTECHS ConceptualFlow Image](docs/data_models/conceptual-flow-chart.png)
+![ASHTECHS ConceptualFlow Image](docs/data_models/ashtechs_flow_chart.png)
 
 #### What links users can and cannot see
 
