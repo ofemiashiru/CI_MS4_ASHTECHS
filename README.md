@@ -316,6 +316,7 @@ Using Lucid chart I created an ERD to show how data will flow and be stored with
 - Allows users to register with ASHTECHS.
 
 ![Register](docs/features/feature-register.gif)
+![Register](docs/features/feature-register.png)
 
 ### Profile
 
@@ -710,6 +711,7 @@ The website is completely responsive and has been tested on mobile, tablet and d
 | Register | Navigate to Register > Fill in information > Click Sign Up | An email should be sent confirming user registration, allowing user to verify their email address | Works as expected |
 
 ![Register to the site](docs/features/feature-register.gif)
+![Register to the site](docs/features/feature-register.png)
 
 16. <a id="user-story-16">Log in and out</a>. [top](#user-stories)
 
@@ -732,6 +734,30 @@ The website is completely responsive and has been tested on mobile, tablet and d
 | Register | After registering go to user email account | User should have an email confirming their registration | Works as expected |
 
 ![Log in](docs/features/feature-register.gif)
+
+18. <a id="user-story-18">To add products</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation, Add Product | Log in as Admin > Click All Products > All Products > Add new Product > Fill in details > Add Product | Product should be added and Admin informed that the new product has been added | Works as expected |
+
+![To add products](docs/features/feature-add-product.gif)
+
+19. <a id="user-story-19">To edit products</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation, Edit Product | Log in as Admin > Click All Products > All Products > Select A Product >  Click Edit > Update details > Update Product | Product should be updated and Admin informed that the product has been updated | Works as expected |
+
+![To edit products](docs/features/feature-edit-product.gif)
+
+20. <a id="user-story-20">To delete products</a>. [top](#user-stories)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation, Edit Product | Log in as Admin > Click All Products > All Products > Select A Product >  Click Delete > Confirm deletion | Product should be removed with all reviews and Admin informed that the product has been deleted | Works as expected |
+
+![To delete products](docs/features/feature-delete-product.gif)
 
 ## Bugs
 
