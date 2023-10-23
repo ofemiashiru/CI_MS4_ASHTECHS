@@ -1,6 +1,4 @@
 from django.test import TestCase
-from django.shortcuts import reverse, redirect
-from products.models import Product, Brand, Category
 
 
 class TestViews(TestCase):
