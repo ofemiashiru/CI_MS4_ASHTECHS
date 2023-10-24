@@ -476,7 +476,9 @@ reviews.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A
 ### Python Validation
 
 [Python Linter](https://pep8ci.herokuapp.com/) was used to test as coding went on.
-On completion of the project I used the command `python3 -m flake8` to clear any other issues
+On completion of the project I used the command `python3 -m flake8` to check other issues.
+
+Most issues where due to lengthy migration docs and docs linked with the local env file.
 
 ```
 ./.devcontainer/build-assets/http_server.py:22:80: E501 line too long (80 > 79 characters)
