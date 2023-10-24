@@ -4,7 +4,7 @@
 {% block extra_title %} Big brands small price tags{% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container header-container container-fluid">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -12,26 +12,28 @@
 {% endblock %} 
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-sm-12 col-lg-6 py-5 text-lg-left text-sm-center">
-                <h1 class="display-4 text-uppercase font-weight-bold text-white tag-line">Big Tech brands with small price tags</h1>
-                <div class="my-5">
-                    <h4>
-                    <a href="{% url 'products' %}" class="pb-btn btn btn-lg rounded-0 text-uppercase py-3 black-back-g thick-text border">
-                        Shop Now
+    <section class="container-fluid h-100 main-back">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-sm-12 col-lg-6 py-5 text-lg-left text-sm-center">
+                    <h1 class="display-4 text-uppercase font-weight-bold text-white tag-line">Big Tech brands with small price tags</h1>
+                    <div class="my-5">
+                        <h4>
+                        <a href="{% url 'products' %}" class="pb-btn btn btn-lg rounded-0 text-uppercase py-3 black-back-g thick-text border">
+                            Shop Now
+                        </a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6 d-none d-lg-block d-xl-block">
+                    <a href="/products/{{product_one.id }}" title="{{ product_one.name }}">
+                        <img class="home-page-image-1 mt-4" src="{{ product_one.image.url }}" alt="{{ product_one.name }}" >
                     </a>
-                    </h4>
+                    <a href="/products/{{product_two.id }}" title="{{ product_two.name }}">
+                        <img class="home-page-image-2" src="{{ product_two.image.url }}" alt="{{ product_two.name }}" >
+                    </a>
                 </div>
             </div>
-            <div class="col-sm-12 col-lg-6 d-none d-lg-block d-xl-block">
-                <a href="/products/{{product_one.id }}" title="{{ product_one.name }}">
-                    <img class="home-page-image-1 mt-4" src="{{ product_one.image.url }}" alt="{{ product_one.name }}" >
-                </a>
-                <a href="/products/{{product_two.id }}" title="{{ product_two.name }}">
-                    <img class="home-page-image-2" src="{{ product_two.image.url }}" alt="{{ product_two.name }}" >
-                </a>
-            </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
